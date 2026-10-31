@@ -1,5 +1,15 @@
 [
   {
+    "slug": "tin-bao-tiem-nghi-le-bang-ai",
+    "tieu_de": "Nhờ AI viết tin báo tiệm nghỉ lễ cho khách",
+    "tom_tat": "Một câu lệnh để AI viết tin báo tiệm nghỉ ngắn gọn, đủ ngày nghỉ, ngày mở lại và cách đặt lịch.",
+    "chu_de": "Chăm khách",
+    "ngay": "2026-11-01",
+    "phut": 3,
+    "viec": "Hôm nay nhờ AI viết tin báo tiệm nghỉ, rồi gửi cho khách quen qua Zalo trước ít nhất một tuần.",
+    "noi_dung": "Khách đến tiệm mà thấy đóng cửa thì rất dễ bỏ đi tiệm khác. Một tin báo trước, ngắn và rõ, giúp khách đặt lịch sớm hoặc hẹn lại.\n\n## Câu lệnh chép-dán\n\n> Bạn là chủ tiệm [nail/spa/tóc] tên [tên tiệm]. Viết giúp tôi tin nhắn Zalo báo tiệm nghỉ, dưới 60 chữ, giọng thân thiện. Phải có đủ: tiệm nghỉ từ [ngày, thứ] đến [ngày, thứ]; mở cửa lại ngày [ngày, thứ]; khách muốn làm trước khi nghỉ thì đặt lịch trước ngày [ngày] qua Zalo [số]. Cuối tin chúc khách [nghỉ lễ vui]. Không thêm khuyến mãi, không thêm điều tôi chưa ghi.\n\n## Cách làm\n\n- Mở ChatGPT, chép câu lệnh trên vào.\n- Thay chữ trong ngoặc vuông bằng **ngày thật**, kèm thứ trong tuần cho khách dễ nhớ.\n- Đọc lại, kiểm tra kỹ ngày nghỉ và ngày mở lại.\n- Gửi cho khách quen qua Zalo, ghim lên trang Zalo của tiệm, và in một tờ dán ở cửa.\n\n## Lưu ý\n\n- Gửi trước **ít nhất một tuần**, rồi nhắc lại ngắn một hai ngày trước khi nghỉ.\n- Tin báo nghỉ nên **tách riêng**, không lẫn với tin khuyến mãi.\n- Ai đã có lịch trong ngày nghỉ thì **nhắn riêng** để hẹn lại."
+  },
+  {
     "slug": "bang-viec-mo-dong-cua-tiem-bang-ai",
     "tieu_de": "Nhờ AI viết bảng việc mở cửa và đóng cửa tiệm",
     "tom_tat": "Một câu lệnh để AI viết bảng việc mở cửa và đóng cửa, in ra dán ở quầy cho thợ tích mỗi ngày.",
