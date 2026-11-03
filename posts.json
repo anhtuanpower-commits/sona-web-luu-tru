@@ -1,5 +1,25 @@
 [
   {
+    "slug": "loi-gioi-thieu-tiem-tren-facebook-zalo",
+    "tieu_de": "Nhờ AI viết lời giới thiệu tiệm cho trang Facebook và Zalo",
+    "tom_tat": "Một câu lệnh để AI viết 3 lời giới thiệu tiệm ngắn, đủ dịch vụ, khu vực và cách đặt lịch.",
+    "chu_de": "Viết nội dung",
+    "ngay": "2026-11-03",
+    "phut": 3,
+    "viec": "Hôm nay nhờ AI viết 3 lời giới thiệu tiệm, chọn 1 câu dán vào trang Facebook hoặc Zalo của tiệm.",
+    "noi_dung": "Khách lạ mở trang của tiệm sẽ đọc dòng giới thiệu đầu tiên. Dòng này cần nói ngay tiệm làm gì, ở đâu và đặt lịch thế nào.\n\n## Câu lệnh chép-dán\n\n> Bạn là chủ tiệm [nail/spa/tóc] tên [tên tiệm] ở [phường, quận]. Viết giúp tôi 3 lời giới thiệu tiệm khác nhau, mỗi lời dưới 30 chữ, giọng thân thiện. Mỗi lời phải có: tiệm làm [dịch vụ chính]; điểm tôi tự tin nhất là [ví dụ: thợ làm lâu năm, dụng cụ sạch, giá rõ ràng]; đặt lịch qua Zalo [số]. Không thêm khuyến mãi, giải thưởng hay con số tôi chưa ghi.\n\n## Cách làm\n\n- Mở ChatGPT, chép câu lệnh trên vào.\n- Thay chữ trong ngoặc vuông bằng **thông tin thật** của tiệm.\n- Chọn 1 lời ưng nhất, sửa chữ nào chưa giống cách tiệm hay nói.\n- Dán vào phần giới thiệu trên trang Facebook hoặc trang Zalo của tiệm, rồi mở bằng điện thoại xem có bị cắt chữ không.\n\n## Lưu ý\n\n- Mỗi lời chỉ mời khách làm **một việc**: nhắn Zalo đặt lịch.\n- Tên trang nên có loại dịch vụ và khu vực, ví dụ **Nail Hoa – Cầu Giấy**, để khách tìm dễ hơn.\n- Chỉ ghi điều có thật. Nếu chưa có giấy chứng nhận hay giải thưởng thì đừng viết."
+  },
+  {
+    "slug": "tin-chao-khach-moi-chi-duong-den-tiem",
+    "tieu_de": "Nhờ AI viết tin chào khách mới kèm chỉ đường đến tiệm",
+    "tom_tat": "Một câu lệnh để AI viết tin gửi khách mới ngay sau khi đặt lịch: giờ hẹn, địa chỉ, chỗ gửi xe, giờ nên đến.",
+    "chu_de": "Chăm khách",
+    "ngay": "2026-11-02",
+    "phut": 3,
+    "viec": "Hôm nay nhờ AI viết tin chào khách mới có địa chỉ, chỗ gửi xe và giờ nên đến, lưu sẵn trong Zalo.",
+    "noi_dung": "Khách đến lần đầu hay lo không tìm được tiệm, không biết gửi xe ở đâu. Một tin chào gửi ngay sau khi khách đặt lịch giúp khách yên tâm và đến đúng giờ.\n\n## Câu lệnh chép-dán\n\n> Bạn là chủ tiệm [nail/spa/tóc] tên [tên tiệm]. Viết giúp tôi tin nhắn Zalo chào khách mới vừa đặt lịch, dưới 80 chữ, giọng thân thiện. Phải có đủ: cảm ơn khách đã đặt lịch; giờ hẹn [giờ, thứ, ngày] làm [dịch vụ]; địa chỉ [địa chỉ] kèm link bản đồ [link]; chỗ gửi xe [mô tả]; nhờ khách đến trước [5-10] phút; nếu muốn dời lịch thì nhắn trước [số giờ] qua Zalo [số]. Không thêm khuyến mãi, không thêm điều tôi chưa ghi.\n\n## Cách làm\n\n- Mở ChatGPT, chép câu lệnh trên vào.\n- Thay chữ trong ngoặc vuông bằng **thông tin thật**. Link bản đồ lấy bằng cách mở Google Maps, tìm tiệm, bấm **Chia sẻ** rồi chọn sao chép đường liên kết.\n- Đọc lại, sửa cho giống cách tiệm hay nói.\n- Lưu tin này làm **tin nhắn nhanh** trong Zalo để lần sau chỉ cần đổi giờ hẹn.\n\n## Lưu ý\n\n- Gửi **ngay khi khách đặt lịch**, đừng đợi đến hôm trước.\n- Nếu tiệm khó tìm, thêm một mốc dễ thấy, ví dụ **cạnh tiệm thuốc**, **đối diện cổng chợ**.\n- Tối hôm trước vẫn gửi tin nhắc lịch như bình thường."
+  },
+  {
     "slug": "tin-bao-tiem-nghi-le-bang-ai",
     "tieu_de": "Nhờ AI viết tin báo tiệm nghỉ lễ cho khách",
     "tom_tat": "Một câu lệnh để AI viết tin báo tiệm nghỉ ngắn gọn, đủ ngày nghỉ, ngày mở lại và cách đặt lịch.",
