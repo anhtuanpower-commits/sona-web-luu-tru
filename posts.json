@@ -1,5 +1,15 @@
 [
   {
+    "slug": "goi-dich-vu-co-dau-bang-ai",
+    "tieu_de": "Nhờ AI viết gói làm đẹp cho cô dâu mùa cưới",
+    "tom_tat": "Một câu lệnh để AI viết 2-3 gói cô dâu rõ ràng: có gì, giá bao nhiêu, cọc và phí đi xa.",
+    "chu_de": "Bán hàng",
+    "ngay": "2026-11-04",
+    "phut": 3,
+    "viec": "Hôm nay nhờ AI viết 2 gói làm đẹp cô dâu với giá của tiệm, rồi lưu sẵn để gửi khi có người hỏi.",
+    "noi_dung": "Khách hỏi gói cô dâu thường hỏi nhiều câu: có làm thử không, có đi tận nhà không, cọc bao nhiêu. Viết sẵn gói rõ ràng giúp tiệm trả lời một lần là đủ.\n\n## Câu lệnh chép-dán\n\n> Bạn là chủ tiệm [tóc/trang điểm/nail/spa] tên [tên tiệm]. Viết giúp tôi 2 gói làm đẹp cho cô dâu để gửi qua Zalo, mỗi gói dưới 60 chữ, dễ đọc trên điện thoại. Gói 1 tên [tên], giá [số tiền], gồm [dịch vụ]. Gói 2 tên [tên], giá [số tiền], gồm [dịch vụ]. Ghi thêm: làm thử trước ngày cưới [có/không, giá]; người nhà đi cùng [giá mỗi người]; đi tận nơi [phí]; làm trước [giờ] sáng [phụ thu]; đặt cọc [số tiền] khi chốt lịch; hủy hoặc dời lịch báo trước [số ngày]. Không thêm quà tặng, giảm giá hay điều tôi chưa ghi.\n\n## Cách làm\n\n- Mở ChatGPT, chép câu lệnh trên vào.\n- Thay chữ trong ngoặc vuông bằng **giá và quy định thật** của tiệm. Mục nào tiệm không có thì xóa đi.\n- Đọc lại, nhất là số tiền và tiền cọc.\n- Lưu làm **tin nhắn nhanh** trong Zalo, khi có người hỏi gói cưới thì gửi ngay.\n\n## Lưu ý\n\n- Chỉ nên có **2 hoặc 3 gói**, mỗi gói ghi rõ có gì và không có gì.\n- Nếu nhận cọc, ghi rõ số tiền và cách trả lại khi tiệm phải hủy.\n- Hẹn xong sớm, để cô dâu còn thời gian đi đến nơi làm lễ."
+  },
+  {
     "slug": "loi-gioi-thieu-tiem-tren-facebook-zalo",
     "tieu_de": "Nhờ AI viết lời giới thiệu tiệm cho trang Facebook và Zalo",
     "tom_tat": "Một câu lệnh để AI viết 3 lời giới thiệu tiệm ngắn, đủ dịch vụ, khu vực và cách đặt lịch.",
