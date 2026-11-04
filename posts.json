@@ -1,5 +1,15 @@
 [
   {
+    "slug": "tin-bao-tiem-tre-gio-hen-bang-ai",
+    "tieu_de": "Nhờ AI viết tin báo khách khi tiệm trễ giờ hẹn",
+    "tom_tat": "Một câu lệnh để AI viết tin xin lỗi ngắn: trễ bao lâu, khách chọn đợi hay dời lịch.",
+    "chu_de": "Chăm khách",
+    "ngay": "2026-11-05",
+    "phut": 3,
+    "viec": "Hôm nay nhờ AI viết 1 tin báo trễ giờ hẹn, lưu làm tin nhắn nhanh để gửi khi tiệm đông khách.",
+    "noi_dung": "Ngày đông khách, thợ làm lố giờ là chuyện thường. Khách đến mà phải ngồi chờ không ai báo sẽ dễ bực. Một tin nhắn sớm giúp khách chủ động.\n\n## Câu lệnh chép-dán\n\n> Bạn là chủ tiệm [tóc/nail/spa] tên [tên tiệm]. Viết giúp tôi tin nhắn Zalo dưới 50 chữ báo khách [tên khách] có hẹn lúc [giờ hẹn] rằng tiệm sẽ trễ khoảng [số phút] phút. Xin lỗi ngắn, nói lý do [lý do ngắn], rồi hỏi khách muốn ghé trễ hơn hay dời sang [giờ khác]. Lời lẽ lịch sự, thân thiện. Không thêm quà tặng hay giảm giá nếu tôi không ghi.\n\n## Cách làm\n\n- Mở ChatGPT, chép câu lệnh trên vào.\n- Thay chữ trong ngoặc vuông. Số phút nên **nói dư một chút** cho chắc.\n- Đọc lại rồi lưu làm **tin nhắn nhanh** trong Zalo.\n- Khi thấy sắp trễ, sửa tên, giờ và gửi ngay, càng sớm càng tốt.\n\n## Lưu ý\n\n- Báo **trước khi khách rời nhà**, đừng đợi khách đến mới nói.\n- Luôn cho khách **2 lựa chọn**: đợi hoặc dời lịch.\n- Nếu muốn bù cho khách (nước uống, thêm dịch vụ nhỏ), tự ghi vào câu lệnh. Đừng để AI tự hứa."
+  },
+  {
     "slug": "goi-dich-vu-co-dau-bang-ai",
     "tieu_de": "Nhờ AI viết gói làm đẹp cho cô dâu mùa cưới",
     "tom_tat": "Một câu lệnh để AI viết 2-3 gói cô dâu rõ ràng: có gì, giá bao nhiêu, cọc và phí đi xa.",
