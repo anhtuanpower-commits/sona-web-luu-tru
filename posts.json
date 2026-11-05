@@ -1,5 +1,15 @@
 [
   {
+    "slug": "tin-bao-tiem-con-cho-trong-bang-ai",
+    "tieu_de": "Nhờ AI viết tin báo khách khi tiệm còn chỗ trống",
+    "tom_tat": "Một câu lệnh để AI viết tin ngắn mời khách quen vào giờ trống vừa có người hủy.",
+    "chu_de": "Bán hàng",
+    "ngay": "2026-11-06",
+    "phut": 3,
+    "viec": "Hôm nay nhờ AI viết 1 tin báo còn chỗ trống, lưu làm tin nhắn nhanh để gửi khi có khách hủy hẹn.",
+    "noi_dung": "Có khách hủy hẹn sát giờ thì thợ ngồi không. Nhắn sớm cho vài khách quen có thể lấp lại chỗ trống đó.\n\n## Câu lệnh chép-dán\n\n> Bạn là chủ tiệm [tóc/nail/spa] tên [tên tiệm]. Viết giúp tôi tin nhắn Zalo dưới 40 chữ báo khách [tên khách] rằng hôm nay tiệm vừa trống lịch lúc [giờ] với thợ [tên thợ], làm được [dịch vụ]. Hỏi khách có muốn ghé không và nhờ trả lời sớm để tiệm giữ chỗ. Lời lẽ thân thiện, không ép. Không thêm giảm giá hay quà tặng nếu tôi không ghi.\n\n## Cách làm\n\n- Mở ChatGPT, chép câu lệnh trên vào.\n- Thay chữ trong ngoặc vuông, đọc lại rồi lưu làm **tin nhắn nhanh** trong Zalo.\n- Khi có người hủy, sửa giờ và gửi cho **vài khách quen** hay đi giờ linh hoạt.\n- Ai trả lời trước thì giữ chỗ cho người đó, rồi nhắn lại người sau là đã kín.\n\n## Lưu ý\n\n- Chỉ nhắn khách quen đã từng nhắn với tiệm, đừng gửi hàng loạt.\n- Hỏi trước khách nào muốn được báo khi có chỗ trống, ghi chú lại để lần sau nhắn đúng người.\n- Nếu muốn có quà nhỏ, tự ghi vào câu lệnh. Đừng để AI tự hứa."
+  },
+  {
     "slug": "tin-bao-tiem-tre-gio-hen-bang-ai",
     "tieu_de": "Nhờ AI viết tin báo khách khi tiệm trễ giờ hẹn",
     "tom_tat": "Một câu lệnh để AI viết tin xin lỗi ngắn: trễ bao lâu, khách chọn đợi hay dời lịch.",
