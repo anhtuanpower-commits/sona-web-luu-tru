@@ -18,7 +18,7 @@ const indexHtml = readFileSync(join(ROOT, "index.html"), "utf8");
 test("luật nhận ra chuỗi giá, không bắt nhầm chữ thường", () => {
   for (const s of ["390.000đ", "49.000 đ", "1.990.000 VNĐ", "2,99 triệu", "390k", "500 nghìn", "1.490.000₫", "giá 2.990.000", "100.000 đồng"])
     assert.ok(timGia(s).length, "không nhận ra: " + s);
-  for (const s of ["3 điều", "300 khách", "8h–20h", "K80, K58, A5", "v1.4.0", "spa 1–3 người", "12 tuần", "36 bài", "Zalo 0965292875"])
+  for (const s of ["3 điều", "300 khách", "8h–20h", "K80, K58, A5", "v1.4.0", "spa 1–3 người", "12 tuần", "36 bài", "Zalo 0965292875", "font-size:1.125rem"])
     assert.deepEqual(timGia(s), [], "bắt nhầm: " + s);
   assert.equal(boGia("App 390.000đ trả một lần"), "App trả một lần");
 });

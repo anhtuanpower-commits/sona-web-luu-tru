@@ -5,7 +5,7 @@
 // (?![\p{L}]) để không bắt nhầm chữ thường như "3 điều", "300 khách".
 export const GIA_RE = /\d[\d.,]*\s?(?:đ|₫|vnđ|vnd|đồng|dong|k|nghìn|ngàn|triệu|tr)(?![\p{L}\d])/giu;
 // Số có dấu phân cách hàng nghìn đứng riêng (ba chữ số sau mỗi dấu chấm hoặc phẩy)
-export const SO_TIEN_RE = /(?<![\d.,])\d{1,3}(?:[.,]\d{3}){1,}(?![\d.,]*\d)/gu;
+export const SO_TIEN_RE = /(?<![\d.,])\d{1,3}(?:[.,]\d{3}){1,}(?![\d.,]*\d)(?![\p{L}%])/gu;
 // Trường dữ liệu chỉ dùng cho giá và luồng chuyển khoản có số tiền
 export const TRUONG_GIA = ["goi", "gia", "so_tien", "gia_niem_yet", "gia_ban", "gia_goc"];
 
