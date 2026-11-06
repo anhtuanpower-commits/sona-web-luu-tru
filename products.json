@@ -312,7 +312,7 @@
     "the_y": [
       "Xem tốt trên điện thoại",
       "Nút liên hệ Zalo trên mọi trang",
-      "Có thể tự sửa chữ qua trang quản trị"
+      "Tự sửa chữ qua trang quản trị, khi gói có trang quản trị"
     ],
     "diem_nhan": [
       "Báo cách làm và giá trước",
@@ -329,7 +329,7 @@
       "Bố cục và nội dung: Sắp xếp thông tin tiệm, sản phẩm, dịch vụ cho dễ đọc.",
       "Giao diện: Thiết kế theo màu và phong cách của anh chị, xem tốt trên điện thoại.",
       "Nút liên hệ: Nút Zalo, gọi điện trên các trang.",
-      "Trang quản trị: Nếu anh chị cần, có trang để tự sửa chữ và ảnh.",
+      "Trang quản trị: Khi gói có trang quản trị, anh chị tự sửa chữ và ảnh.",
       "Tên miền: SONA tư vấn cách gắn tên miền; chi phí bên ngoài (nếu có) báo trước."
     ],
     "cho_ai": "Tiệm, cửa hàng, cơ sở dịch vụ chưa có web.\nChủ kinh doanh có web cũ khó xem, khó sửa.\nNgười cần trang giới thiệu để gửi link cho khách.",
@@ -346,7 +346,7 @@
       },
       {
         "hoi": "Tôi có tự sửa nội dung được không?",
-        "dap": "Được, nếu anh chị cần trang quản trị. Phạm vi này ghi rõ trong báo giá."
+        "dap": "Được, khi gói có trang quản trị. Phạm vi này ghi rõ trong báo giá."
       },
       {
         "hoi": "Sau khi bàn giao có hỗ trợ không?",
@@ -369,8 +369,8 @@
     "nhan": "Dịch vụ · Marketing",
     "ten": "Marketing đa kênh",
     "ma_zalo": "DV-MKT",
-    "cau_ngan": "Viết và đăng bài theo lịch trên các kênh anh chị chọn, đúng giọng của tiệm.",
-    "phu_de": "SONA lên lịch nội dung, viết bài và đăng theo lịch trên các kênh anh chị chọn như Facebook, Zalo, TikTok, Threads, đúng giọng của tiệm.",
+    "cau_ngan": "Viết và đăng bài theo lịch lên Facebook, Threads, TikTok, Instagram, YouTube, đúng giọng của tiệm.",
+    "phu_de": "SONA lên lịch nội dung, viết bài và đăng theo lịch lên Facebook, Threads, TikTok, Instagram, YouTube, đúng giọng của tiệm.",
     "the_y": [
       "Lịch nội dung theo tuần",
       "Viết bài đúng giọng của tiệm",
@@ -389,12 +389,11 @@
     ],
     "loi_ich": [
       "Lịch nội dung: Kế hoạch bài theo tuần, theo dịp của tiệm.",
-      "Viết bài: Bài đăng Facebook, Zalo, TikTok, Threads đúng giọng của tiệm.",
-      "Ảnh cho bài: Chọn và chỉnh từ ảnh anh chị gửi.",
-      "Đăng theo lịch: Đăng lên các kênh anh chị chọn, sau khi anh chị duyệt.",
+      "Viết bài: Bài đăng cho Facebook, Threads, TikTok, Instagram, YouTube, đúng giọng của tiệm.",
+      "Đăng theo lịch: Đăng lên Facebook, Threads, TikTok, Instagram, YouTube sau khi anh chị duyệt.",
       "Báo cáo: Gửi anh chị danh sách bài đã đăng."
     ],
-    "cho_ai": "Chủ tiệm bận, không có người làm nội dung.\nTiệm có trang Facebook, Zalo, TikTok nhưng đăng không đều.\nNgười muốn có lịch đăng bài đều đặn.",
+    "cho_ai": "Chủ tiệm bận, không có người làm nội dung.\nTiệm có trang Facebook, TikTok, Instagram nhưng đăng không đều.\nNgười muốn có lịch đăng bài đều đặn.",
     "cach_nhan": "Nhắn nhu cầu qua Zalo: anh chị kể ngắn việc đang cần.\nSONA hỏi thêm để hiểu đúng, rồi báo cách làm và giá.\nAnh chị đồng ý thì SONA bắt đầu làm.\nSONA gửi lịch và bài để anh chị duyệt, rồi đăng theo lịch.\nBàn giao và hướng dẫn anh chị sử dụng.",
     "cam_ket": "Không có giá niêm yết: mỗi việc SONA báo giá riêng, anh chị đồng ý mới làm. Mỗi tháng SONA nhận số lượng việc có hạn để làm kỹ. SONA không hứa con số tương tác hay doanh số.",
     "cau_hoi": [
@@ -425,7 +424,7 @@
     ],
     "nut": "Liên hệ Zalo",
     "seo_tieu_de": "Marketing đa kênh – SONA",
-    "seo_mo_ta": "SONA lên lịch, viết và đăng bài theo lịch trên Facebook, Zalo, TikTok, Threads, đúng giọng của tiệm. Báo giá riêng."
+    "seo_mo_ta": "SONA lên lịch, viết và đăng bài theo lịch lên Facebook, Threads, TikTok, Instagram, YouTube, đúng giọng của tiệm. Báo giá riêng."
   },
   {
     "slug": "edit-video",
@@ -439,7 +438,7 @@
     "phu_de": "SONA dựng video ngắn giới thiệu dịch vụ, sản phẩm, ưu đãi cho Facebook, TikTok, Reels, Shorts, từ clip, ảnh và thông tin anh chị gửi.",
     "the_y": [
       "Video dọc cho TikTok, Reels, Shorts",
-      "Chèn chữ, phụ đề, nhạc được phép dùng",
+      "Chèn chữ, phụ đề tiếng Việt",
       "Anh chị duyệt trước khi xuất bản"
     ],
     "diem_nhan": [
@@ -457,7 +456,7 @@
       "Kịch bản ngắn: Gợi ý thứ tự cảnh và câu chữ nếu anh chị cần.",
       "Dựng video: Cắt ghép clip, ảnh anh chị gửi thành video ngắn.",
       "Chữ và phụ đề: Chèn chữ, phụ đề tiếng Việt.",
-      "Âm thanh: Nhạc nền được phép dùng.",
+      "Âm thanh: Dùng nhạc anh chị cung cấp hoặc nhạc có sẵn trong nền tảng đăng.",
       "Xuất video: Đúng khổ dọc, ngang cho từng kênh."
     ],
     "cho_ai": "Chủ tiệm có clip, ảnh nhưng không có thời gian dựng.\nTiệm cần video giới thiệu dịch vụ, ưu đãi cho mạng xã hội.\nNgười muốn đăng video đều mà không tự làm.",
