@@ -76,58 +76,6 @@
     ]
   },
   {
-    "slug": "sheet-lich-dang-spa",
-    "ma": "SP01",
-    "loai": "App",
-    "product_id": "pl4scc1",
-    "ten": "Lịch Đăng Spa: Hết Lo Nghĩ Bài Mỗi Tuần",
-    "phu_de": "App trên điện thoại có sẵn 36 bài đăng cho 12 tuần. Điền tên tiệm và bảng giá một lần, bài tự đổi theo tiệm mình.",
-    "anh_bia": "img/covers/sheet-lich-dang-spa.jpg",
-    "cho_ai": "Chủ spa tự làm marketing, không có nhân viên viết bài.",
-    "loi_ich": [
-      "36 bài đăng viết sẵn cho 12 tuần, mỗi tuần 3 bài, ghi rõ ngày đăng Facebook hay TikTok",
-      "Điền tên tiệm, dịch vụ, giá một lần, mọi bài tự đổi theo tiệm mình",
-      "Mỗi bài có câu mở đầu, nội dung và gợi ý quay video ngắn, bấm Chép bài là dán đăng",
-      "Một nút gửi 3 bài của tuần vào Zalo cho mình hoặc nhân viên",
-      "Kèm sổ thẻ buổi: ghi khách mua gói, trừ buổi, xem còn bao nhiêu buổi"
-    ],
-    "cach_nhan": "Anh chị bấm Liên hệ, nhắn Zalo SONA để được tư vấn.\nSONA gửi link app qua Zalo trong giờ 8h–20h.\nMở link trên điện thoại, bấm Thêm vào màn hình chính là dùng như app, không cần cài.",
-    "cam_ket": "SONA hỗ trợ qua Zalo 0965292875 đến khi anh chị dùng được.",
-    "cau_hoi": [
-      {
-        "hoi": "Em không rành công nghệ có dùng được không?",
-        "dap": "Được ạ. Mở link là dùng, chỉ cần điền tên tiệm và bảng giá ở mục Tiệm & HD. Vướng chỗ nào nhắn Zalo SONA hướng dẫn."
-      },
-      {
-        "hoi": "Mẫu bài có hợp với dịch vụ riêng của tiệm em không?",
-        "dap": "Bài tự lấy tên tiệm, dịch vụ và giá anh chị điền. Anh chị vẫn sửa được từng bài trước khi đăng."
-      },
-      {
-        "hoi": "Dữ liệu lưu ở đâu?",
-        "dap": "Lưu ngay trên điện thoại của anh chị. Nên bấm Sao lưu ra file mỗi tháng một lần để không mất khi đổi máy."
-      },
-      {
-        "hoi": "Có phải trả phí hàng tháng không?",
-        "dap": "Không. Trả một lần, không phí tháng. SONA báo giá riêng khi tư vấn qua Zalo."
-      }
-    ],
-    "nhan": "App · Bài đăng cho spa",
-    "diem_nhan": [
-      "Trả một lần, không phí tháng",
-      "Dùng trên điện thoại",
-      "Hỗ trợ qua Zalo"
-    ],
-    "ma_zalo": "LICHDANG",
-    "nut": "Liên hệ Zalo",
-    "nhom": "Nội dung",
-    "noi_bat": false,
-    "the_y": [
-      "36 bài đăng viết sẵn cho 12 tuần",
-      "Bài tự đổi theo tên tiệm, dịch vụ",
-      "Dùng trên điện thoại, không cần cài"
-    ]
-  },
-  {
     "slug": "lam-app-theo-nhu-cau",
     "ma": "DV01",
     "loai": "Dịch vụ",

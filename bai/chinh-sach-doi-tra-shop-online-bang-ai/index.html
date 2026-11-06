@@ -561,7 +561,7 @@ function renderGrid(){const words=norm(Q).split(/\s+/).filter(Boolean);
   $("#cats").innerHTML=have.length>1?`<button class="cat${CAT?"":" on"}" data-c="" aria-pressed="${!CAT}">Tất cả</button>`+have.map(k=>`<button class="cat${CAT===k?" on":""}" data-c="${esc(k)}" aria-pressed="${CAT===k}">${esc(k)}</button>`).join(""):"";
   document.querySelectorAll(".cat").forEach(b=>b.onclick=()=>{CAT=b.dataset.c;renderGrid()});
   const list=APPS().filter(hit).filter(p=>!CAT||groupOf(p)===CAT);
-  $("#grid").innerHTML=list.length?list.map(p=>card(p,false)).join(""):`<div class="empty"><b>${words.length?"Chưa có app phù hợp":"App sắp ra mắt"}</b>${words.length?"Anh chị thử từ khóa khác.":"Anh chị nhắn Zalo SONA để được tư vấn nhé."}</div>`;bindZalo()}
+  $("#grid").innerHTML=list.length?list.map(p=>card(p,list.length===1)).join(""):`<div class="empty"><b>${words.length?"Chưa có app phù hợp":"App sắp ra mắt"}</b>${words.length?"Anh chị thử từ khóa khác.":"Anh chị nhắn Zalo SONA để được tư vấn nhé."}</div>`;bindZalo()}
 /* ---------- mảng 2: Dịch vụ ---------- */
 function servicesPage(){const d=DV();setMeta((d.tieu_de||MAC_DINH.dv_tieu_de)+" · "+(SITE.ten_web||"SONA"),d.mo_ta||MAC_DINH.dv_mo_ta);const svcs=SVCS();
   $("#app").innerHTML=pageHead("Dịch vụ",d.tieu_de||MAC_DINH.dv_tieu_de,d.mo_ta||MAC_DINH.dv_mo_ta,
