@@ -2,7 +2,7 @@
 Web tĩnh, chạy được trên GitHub Pages, Cloudflare Pages hoặc bất kỳ chỗ nào miễn phí.
 - `site.json`: tên web, Zalo, email, thông tin NHẬN tiền công khai (mã ngân hàng, số tài khoản, tên). Không bao giờ ghi mật khẩu/OTP.
 - `products.json`: mỗi sản phẩm là 1 mục, thêm và sửa trong trang quản trị. Các trường: `ten, loai, nhan, phu_de, diem_nhan[], van_de[], loi_ich[], anh_bia, anh_minh_hoa[], cho_ai, cach_nhan, cam_ket, noi_dung, cau_hoi[], nut, ma_zalo, an`.
-- `index.html`: Trang chủ `#`, Sản phẩm `#san-pham`, trang chi tiết `#sp/<slug>` (một khung chung cho mọi sản phẩm), Giới thiệu `#gioi-thieu`, Liên hệ `#lien-he`, Học AI `#hoc`. Giao diện chỉnh qua các biến `--mau-*`, `--chu-*`, `--bo-goc-*`, `--khoang-*` ở đầu khối `<style>`.
+- `index.html`: menu App `#app` · Dịch vụ `#dich-vu` (trang con `#dich-vu/<slug>`) · Tài liệu & Ebook `#tai-lieu` · Học miễn phí `#hoc` (bài `/bai/<slug>/`) · Đối tác `#doi-tac` · Liên hệ `#lien-he`; thêm Giới thiệu `#gioi-thieu`. App và dịch vụ dùng một khung chi tiết `#sp/<slug>`. Đường dẫn cũ `#san-pham`, `#thong-tin` vẫn chạy. Giao diện chỉnh qua các biến `--mau-*`, `--chu-*`, `--bo-goc-*`, `--khoang-*` ở đầu khối `<style>`.
 - **Không đăng giá (D-045):** web không có giá, không có mã QR thanh toán. Mua hàng chỉ qua nút Liên hệ (Zalo). Luật chặn giá ở `admin/khong-gia.js`, dùng chung cho Admin, kiểm tra dữ liệu, trang SEO và kiểm thử.
 Mọi kênh (Facebook, TikTok, Zalo) sẽ dẫn link về `.../#sp/<slug>`.
 

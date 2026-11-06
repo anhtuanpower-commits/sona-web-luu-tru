@@ -4,7 +4,7 @@
 
 import { timGiaTrongDuLieu } from "./khong-gia.js";
 
-export const RESERVED = ["sp", "bai", "hoc", "trang", "thong-tin", "gioi-thieu", "lien-he", "san-pham", "admin", "img", "app", "scripts", "tests"];
+export const RESERVED = ["sp", "bai", "hoc", "trang", "thong-tin", "gioi-thieu", "lien-he", "san-pham", "dich-vu", "tai-lieu", "doi-tac", "hoc-mien-phi", "admin", "img", "app", "scripts", "tests"];
 export const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 export const SEO_TITLE_MAX = 65;
 export const SEO_DESC_MAX = 160;
@@ -111,6 +111,8 @@ export function checkSite(s, images = null) {
     if (!okImg(u)) push(out, f, it, k, true, "Đường dẫn ảnh không hợp lệ.");
     else if (u && images && !/^https:/.test(u) && !images.has(u)) push(out, f, it, k, false, `Không thấy ảnh ${u} trong kho.`);
   });
+  // Link Google Form đăng ký đối tác: để trống thì web ẩn nút; có thì phải là https://
+  if (s.doi_tac?.link_form && !okUrl(s.doi_tac.link_form)) push(out, f, it, "doi_tac.link_form", true, "Link form đăng ký đối tác phải bắt đầu bằng https://");
   if (!okLink(s.trang_chu?.nut_link)) push(out, f, it, "trang_chu.nut_link", true, "Link của nút phải bắt đầu bằng # hoặc https://");
   return out;
 }

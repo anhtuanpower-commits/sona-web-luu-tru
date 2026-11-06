@@ -22,12 +22,12 @@
     "youtube": "https://www.youtube.com/@sonaai-vn"
   },
   "trang_chu": {
-    "nhan": "SONA · Phần mềm cho chủ spa",
-    "mo_ta": "Hai app quản lý spa gọn trong điện thoại. Dữ liệu nằm trong tài khoản Google của chính tiệm anh chị.",
-    "nut_chu": "Xem sản phẩm",
-    "nut_link": "#san-pham",
-    "tieu_de_goi_y": "Hai app, hai cỡ tiệm.",
-    "mo_ta_goi_y": "Chọn app hợp với cách tiệm anh chị đang làm.",
+    "nhan": "App · Dịch vụ · Tài liệu",
+    "mo_ta": "SONA làm app dùng ngay cho chủ kinh doanh nhỏ, nhận làm app, web, marketing và video theo nhu cầu, và chia sẻ kiến thức miễn phí.",
+    "nut_chu": "Xem dịch vụ",
+    "nut_link": "#dich-vu",
+    "tieu_de_goi_y": "App nổi bật.",
+    "mo_ta_goi_y": "App dùng ngay trên điện thoại, dữ liệu nằm trong tài khoản Google của anh chị.",
     "tieu_de_cam_ket": "Đơn giản ngay từ đầu.",
     "cam_ket": [
       "Trả một lần: Không thu phí phần mềm hằng tháng.",
@@ -43,12 +43,25 @@
       "Liệu trình",
       "Chấm công",
       "Hoa hồng & lương"
-    ]
+    ],
+    "ba_mang": [
+      "App: App dùng ngay trên điện thoại, trả một lần, không phí tháng.",
+      "Dịch vụ: Làm app, thiết kế web, marketing đa kênh, edit video theo nhu cầu của anh chị.",
+      "Tài liệu & Ebook: Tài liệu cầm tay chỉ việc cho người kinh doanh nhỏ. Sắp ra mắt."
+    ],
+    "tieu_de_cach_lam": "Làm việc với SONA.",
+    "cach_lam": [
+      "Nhắn Zalo SONA: Kể việc anh chị đang cần: app, web, marketing hay video.",
+      "SONA tư vấn và báo giá riêng: SONA báo cách làm và giá trước. Anh chị đồng ý mới làm.",
+      "Làm và bàn giao: SONA làm, gửi anh chị duyệt, bàn giao và hướng dẫn sử dụng."
+    ],
+    "app_tieu_de": "App",
+    "app_mo_ta": "App dùng ngay trên điện thoại cho chủ kinh doanh nhỏ. Trả một lần, không phí tháng."
   },
   "thong_tin": {
-    "lam_gi": "SONA làm phần mềm đơn giản cho người kinh doanh nhỏ. Dễ hiểu, dễ dùng, dữ liệu là của chính anh chị.",
+    "lam_gi": "SONA làm phần mềm và dịch vụ công nghệ đơn giản cho người kinh doanh nhỏ. Dễ hiểu, dễ dùng, dữ liệu là của chính anh chị.",
     "cau_chuyen_tieu_de": "Bắt đầu từ tiệm spa.",
-    "cau_chuyen": "Chủ spa nhỏ làm nhiều việc cùng lúc: đón khách, làm dịch vụ, ghi sổ, tính tiền. SONA bắt đầu từ đó, với hai app quản lý spa chạy trong tài khoản Google của chính tiệm. Sau spa, SONA sẽ làm thêm công cụ cho các ngành kinh doanh nhỏ khác.",
+    "cau_chuyen": "Chủ spa nhỏ làm nhiều việc cùng lúc: đón khách, làm dịch vụ, ghi sổ, tính tiền. SONA bắt đầu từ đó, với app quản lý spa chạy trong tài khoản Google của chính tiệm, rồi làm thêm app, web, marketing và video theo nhu cầu cho người kinh doanh nhỏ.",
     "gia_tri": [
       "Thấu hiểu khách hàng: Làm đúng vấn đề khách đang gặp.",
       "Nhanh gọn: Biến việc phức tạp thành đơn giản.",
@@ -65,9 +78,51 @@
   },
   "lien_he": {
     "gio": "8h–20h",
-    "loi_moi": "Nhắn Zalo là nhanh nhất. SONA tư vấn, báo giá riêng và hẹn giờ cài app cùng anh chị.",
-    "band_tieu_de": "Muốn xem app chạy thế nào?",
-    "band_mo_ta": "Nhắn Zalo SONA để xem bản demo dữ liệu mẫu và được tư vấn app hợp với tiệm.",
+    "loi_moi": "Nhắn Zalo là nhanh nhất. SONA tư vấn, báo giá riêng và hẹn lịch làm việc cùng anh chị.",
+    "band_tieu_de": "Anh chị cần tư vấn?",
+    "band_mo_ta": "Nhắn Zalo SONA, kể việc anh chị đang cần. SONA tư vấn và báo giá riêng.",
     "rieng_tu": "SONA chỉ dùng số Zalo của anh chị để tư vấn và hỗ trợ. Nhắn \"Dừng\" là SONA không nhắn nữa."
+  },
+  "dich_vu": {
+    "tieu_de": "Dịch vụ",
+    "tieu_de_trang_chu": "SONA làm theo nhu cầu.",
+    "mo_ta": "SONA làm theo nhu cầu của anh chị: app, web, marketing, video. Kể nhu cầu qua Zalo, SONA báo cách làm và giá trước, anh chị đồng ý mới làm.",
+    "quy_trinh": [
+      "Nhắn Zalo SONA: Kể việc anh chị đang cần: app, web, marketing hay video.",
+      "SONA tư vấn và báo giá riêng: SONA báo cách làm và giá trước. Anh chị đồng ý mới làm.",
+      "Làm và bàn giao: SONA làm, gửi anh chị duyệt, bàn giao và hướng dẫn sử dụng."
+    ],
+    "ghi_chu": "Mỗi tháng SONA nhận số lượng việc có hạn để làm kỹ."
+  },
+  "tai_lieu": {
+    "tieu_de": "Tài liệu & Ebook",
+    "mo_ta": "Tài liệu cầm tay chỉ việc cho người kinh doanh nhỏ. SONA đang chuẩn bị, sắp ra mắt.",
+    "ghi_chu": "Nhắn Zalo để SONA báo anh chị khi tài liệu đầu tiên ra mắt. Trong lúc chờ, anh chị đọc các bài học miễn phí."
+  },
+  "hoc": {
+    "tieu_de": "Học kiến thức miễn phí",
+    "mo_ta": "Bài ngắn cho chủ tiệm và người kinh doanh nhỏ: chăm khách, bán hàng, quản lý tiệm, dùng AI. Đọc vài phút, làm được ngay."
+  },
+  "doi_tac": {
+    "tieu_de": "Đối tác SONA",
+    "mo_ta": "Cùng SONA mang công nghệ đơn giản đến nhiều chủ kinh doanh nhỏ hơn. SONA tìm người giới thiệu khách, đơn vị dịch vụ và cộng tác viên.",
+    "link_form": "",
+    "phu_hop": [
+      "Người giới thiệu khách: Anh chị quen chủ spa, chủ tiệm, chủ shop đang cần app, web, marketing hay video.",
+      "Đơn vị dịch vụ: Agency, studio, nhóm kỹ thuật muốn hợp tác làm chung hoặc giới thiệu khách qua lại.",
+      "Cộng tác viên: Người viết bài, dựng video, làm kỹ thuật muốn nhận việc cùng SONA."
+    ],
+    "quyen_loi": [
+      "Quyền lợi khi giới thiệu thành công: Mức cụ thể SONA trao đổi trực tiếp với từng đối tác.",
+      "Trao đổi trực tiếp: Làm việc với SONA qua Zalo, rõ ràng từng việc.",
+      "Hợp tác minh bạch: Thống nhất cách làm và quyền lợi trước khi bắt đầu."
+    ],
+    "buoc": [
+      "Bấm Đăng ký đối tác: Nhắn Zalo SONA tin \"Đăng ký đối tác SONA\".",
+      "Giới thiệu ngắn: Anh chị là ai, muốn hợp tác theo cách nào.",
+      "SONA trao đổi trực tiếp: Cách làm việc và quyền lợi cụ thể.",
+      "Bắt đầu hợp tác: Hai bên thống nhất rồi mới bắt đầu."
+    ],
+    "ghi_chu": "Web không thu thông tin cá nhân. Mọi trao đổi đăng ký làm qua Zalo."
   }
 }

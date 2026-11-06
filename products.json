@@ -236,5 +236,261 @@
     "cam_ket": "Sau khi mua, được hỗ trợ qua Zalo trong 7 ngày để hỏi thêm nếu chưa rõ cách dùng.",
     "anh_bia": "img/covers/chatgpt-cho-chu-spa-viet-bai-dang-tra-loi-inbox.jpg",
     "an": true
+  },
+  {
+    "slug": "lam-app-theo-nhu-cau",
+    "ma": "DV01",
+    "loai": "Dịch vụ",
+    "nhom": "Dịch vụ",
+    "nhan": "Dịch vụ · App",
+    "ten": "Làm app theo nhu cầu",
+    "ma_zalo": "DV-APP",
+    "cau_ngan": "App quản lý riêng, làm theo đúng cách anh chị đang vận hành.",
+    "phu_de": "SONA làm app quản lý riêng theo đúng cách tiệm, cửa hàng của anh chị đang làm việc, dùng được trên điện thoại.",
+    "the_y": [
+      "Làm theo quy trình riêng của anh chị",
+      "Dùng trên điện thoại và máy tính",
+      "Hướng dẫn sử dụng khi bàn giao"
+    ],
+    "diem_nhan": [
+      "Báo cách làm và giá trước",
+      "Anh chị đồng ý mới làm",
+      "Hỗ trợ qua Zalo"
+    ],
+    "tieu_de_van_de": "Phần mềm có sẵn chưa vừa.",
+    "van_de": [
+      "Phần mềm có sẵn không khớp cách tiệm đang làm. → App làm theo đúng quy trình của anh chị.",
+      "Dữ liệu rải rác ở sổ, Zalo, Excel. → Gom việc hằng ngày về một app.",
+      "Nhiều tính năng thừa, khó dùng. → Chỉ làm những màn hình anh chị cần."
+    ],
+    "loi_ich": [
+      "Tìm hiểu cách làm việc: SONA hỏi kỹ quy trình, vai trò và việc hằng ngày của anh chị.",
+      "Thiết kế màn hình: Màn hình gọn, đúng việc từng người cần làm.",
+      "Làm app: App dùng trên điện thoại và máy tính.",
+      "Dữ liệu: Ai giữ mã và dữ liệu được ghi rõ trong báo giá.",
+      "Bàn giao: Hướng dẫn sử dụng cho anh chị và nhân viên."
+    ],
+    "cho_ai": "Chủ tiệm, cửa hàng có cách làm riêng, phần mềm có sẵn chưa vừa.\nChủ kinh doanh đang quản lý bằng sổ, Zalo hoặc Excel và muốn gom về một app.\nNgười cần một công cụ nội bộ nhỏ, làm đúng việc.",
+    "cach_nhan": "Nhắn nhu cầu qua Zalo: anh chị kể ngắn việc đang cần.\nSONA hỏi thêm để hiểu đúng, rồi báo cách làm và giá.\nAnh chị đồng ý thì SONA bắt đầu làm.\nSONA làm, gửi anh chị xem và duyệt, sửa theo góp ý.\nBàn giao và hướng dẫn anh chị sử dụng.",
+    "cam_ket": "Không có giá niêm yết: mỗi việc SONA báo giá riêng, anh chị đồng ý mới làm. Mỗi tháng SONA nhận số lượng việc có hạn để làm kỹ.",
+    "cau_hoi": [
+      {
+        "hoi": "Giá bao nhiêu?",
+        "dap": "SONA báo giá riêng sau khi hiểu nhu cầu của anh chị. Anh chị đồng ý báo giá thì SONA mới bắt đầu làm."
+      },
+      {
+        "hoi": "Bao lâu thì xong?",
+        "dap": "Tùy phạm vi công việc. SONA ghi thời gian dự kiến trong báo giá để anh chị nắm trước."
+      },
+      {
+        "hoi": "Ai giữ mã và dữ liệu của app?",
+        "dap": "Dữ liệu là của anh chị. Ai giữ mã và dữ liệu được ghi rõ trong báo giá trước khi làm."
+      },
+      {
+        "hoi": "Sau khi bàn giao có hỗ trợ không?",
+        "dap": "Có. Mức hỗ trợ sau bàn giao ghi rõ trong báo giá của từng việc."
+      },
+      {
+        "hoi": "Liên hệ thế nào?",
+        "dap": "Anh chị bấm Liên hệ Zalo, kể ngắn việc đang cần. SONA trả lời trong giờ 8h–20h."
+      }
+    ],
+    "nut": "Liên hệ Zalo",
+    "seo_tieu_de": "Làm app theo nhu cầu – SONA",
+    "seo_mo_ta": "SONA làm app quản lý riêng theo đúng cách anh chị đang vận hành. Báo cách làm và giá trước, đồng ý mới làm."
+  },
+  {
+    "slug": "thiet-ke-web",
+    "ma": "DV02",
+    "loai": "Dịch vụ",
+    "nhom": "Dịch vụ",
+    "nhan": "Dịch vụ · Web",
+    "ten": "Thiết kế web",
+    "ma_zalo": "DV-WEB",
+    "cau_ngan": "Web giới thiệu tiệm, sản phẩm, dịch vụ, xem tốt trên điện thoại.",
+    "phu_de": "SONA thiết kế web giới thiệu tiệm, sản phẩm và dịch vụ của anh chị: gọn, rõ, xem tốt trên điện thoại, có nút liên hệ.",
+    "the_y": [
+      "Xem tốt trên điện thoại",
+      "Nút liên hệ Zalo trên mọi trang",
+      "Có thể tự sửa chữ qua trang quản trị"
+    ],
+    "diem_nhan": [
+      "Báo cách làm và giá trước",
+      "Anh chị đồng ý mới làm",
+      "Hỗ trợ qua Zalo"
+    ],
+    "tieu_de_van_de": "Khách tìm mà không thấy.",
+    "van_de": [
+      "Khách hỏi đi hỏi lại thông tin cơ bản. → Một trang web ghi rõ dịch vụ, cách liên hệ.",
+      "Chỉ có trang Facebook, khó giới thiệu đầy đủ. → Web riêng để gửi link cho khách.",
+      "Web cũ khó xem trên điện thoại. → Giao diện làm cho điện thoại trước."
+    ],
+    "loi_ich": [
+      "Bố cục và nội dung: Sắp xếp thông tin tiệm, sản phẩm, dịch vụ cho dễ đọc.",
+      "Giao diện: Thiết kế theo màu và phong cách của anh chị, xem tốt trên điện thoại.",
+      "Nút liên hệ: Nút Zalo, gọi điện trên các trang.",
+      "Trang quản trị: Nếu anh chị cần, có trang để tự sửa chữ và ảnh.",
+      "Tên miền: SONA tư vấn cách gắn tên miền; chi phí bên ngoài (nếu có) báo trước."
+    ],
+    "cho_ai": "Tiệm, cửa hàng, cơ sở dịch vụ chưa có web.\nChủ kinh doanh có web cũ khó xem, khó sửa.\nNgười cần trang giới thiệu để gửi link cho khách.",
+    "cach_nhan": "Nhắn nhu cầu qua Zalo: anh chị kể ngắn việc đang cần.\nSONA hỏi thêm để hiểu đúng, rồi báo cách làm và giá.\nAnh chị đồng ý thì SONA bắt đầu làm.\nSONA dựng bản xem trước, anh chị góp ý, SONA sửa.\nBàn giao và hướng dẫn anh chị sử dụng.",
+    "cam_ket": "Không có giá niêm yết: mỗi việc SONA báo giá riêng, anh chị đồng ý mới làm. Mỗi tháng SONA nhận số lượng việc có hạn để làm kỹ.",
+    "cau_hoi": [
+      {
+        "hoi": "Giá bao nhiêu?",
+        "dap": "SONA báo giá riêng sau khi hiểu nhu cầu của anh chị. Anh chị đồng ý báo giá thì SONA mới bắt đầu làm."
+      },
+      {
+        "hoi": "Bao lâu thì xong?",
+        "dap": "Tùy phạm vi công việc. SONA ghi thời gian dự kiến trong báo giá để anh chị nắm trước."
+      },
+      {
+        "hoi": "Tôi có tự sửa nội dung được không?",
+        "dap": "Được, nếu anh chị cần trang quản trị. Phạm vi này ghi rõ trong báo giá."
+      },
+      {
+        "hoi": "Sau khi bàn giao có hỗ trợ không?",
+        "dap": "Có. Mức hỗ trợ sau bàn giao ghi rõ trong báo giá của từng việc."
+      },
+      {
+        "hoi": "Liên hệ thế nào?",
+        "dap": "Anh chị bấm Liên hệ Zalo, kể ngắn việc đang cần. SONA trả lời trong giờ 8h–20h."
+      }
+    ],
+    "nut": "Liên hệ Zalo",
+    "seo_tieu_de": "Thiết kế web – SONA",
+    "seo_mo_ta": "SONA thiết kế web giới thiệu tiệm, sản phẩm, dịch vụ: gọn, xem tốt trên điện thoại, có nút liên hệ. Báo giá riêng."
+  },
+  {
+    "slug": "marketing-da-kenh",
+    "ma": "DV03",
+    "loai": "Dịch vụ",
+    "nhom": "Dịch vụ",
+    "nhan": "Dịch vụ · Marketing",
+    "ten": "Marketing đa kênh",
+    "ma_zalo": "DV-MKT",
+    "cau_ngan": "Viết và đăng bài theo lịch trên các kênh anh chị chọn, đúng giọng của tiệm.",
+    "phu_de": "SONA lên lịch nội dung, viết bài và đăng theo lịch trên các kênh anh chị chọn như Facebook, Zalo, TikTok, Threads, đúng giọng của tiệm.",
+    "the_y": [
+      "Lịch nội dung theo tuần",
+      "Viết bài đúng giọng của tiệm",
+      "Anh chị duyệt trước khi đăng"
+    ],
+    "diem_nhan": [
+      "Báo cách làm và giá trước",
+      "Anh chị duyệt trước khi đăng",
+      "Hỗ trợ qua Zalo"
+    ],
+    "tieu_de_van_de": "Không có thời gian đăng bài.",
+    "van_de": [
+      "Bận việc tiệm, trang lâu không có bài mới. → Có lịch đăng đều theo tuần.",
+      "Không biết viết gì cho hay. → SONA lên ý tưởng và viết theo giọng tiệm.",
+      "Mỗi kênh đăng một kiểu, mất thời gian. → Một lịch nội dung dùng cho nhiều kênh."
+    ],
+    "loi_ich": [
+      "Lịch nội dung: Kế hoạch bài theo tuần, theo dịp của tiệm.",
+      "Viết bài: Bài đăng Facebook, Zalo, TikTok, Threads đúng giọng của tiệm.",
+      "Ảnh cho bài: Chọn và chỉnh từ ảnh anh chị gửi.",
+      "Đăng theo lịch: Đăng lên các kênh anh chị chọn, sau khi anh chị duyệt.",
+      "Báo cáo: Gửi anh chị danh sách bài đã đăng."
+    ],
+    "cho_ai": "Chủ tiệm bận, không có người làm nội dung.\nTiệm có trang Facebook, Zalo, TikTok nhưng đăng không đều.\nNgười muốn có lịch đăng bài đều đặn.",
+    "cach_nhan": "Nhắn nhu cầu qua Zalo: anh chị kể ngắn việc đang cần.\nSONA hỏi thêm để hiểu đúng, rồi báo cách làm và giá.\nAnh chị đồng ý thì SONA bắt đầu làm.\nSONA gửi lịch và bài để anh chị duyệt, rồi đăng theo lịch.\nBàn giao và hướng dẫn anh chị sử dụng.",
+    "cam_ket": "Không có giá niêm yết: mỗi việc SONA báo giá riêng, anh chị đồng ý mới làm. Mỗi tháng SONA nhận số lượng việc có hạn để làm kỹ. SONA không hứa con số tương tác hay doanh số.",
+    "cau_hoi": [
+      {
+        "hoi": "Giá bao nhiêu?",
+        "dap": "SONA báo giá riêng sau khi hiểu nhu cầu của anh chị. Anh chị đồng ý báo giá thì SONA mới bắt đầu làm."
+      },
+      {
+        "hoi": "Bao lâu thì xong?",
+        "dap": "Tùy phạm vi công việc. SONA ghi thời gian dự kiến trong báo giá để anh chị nắm trước."
+      },
+      {
+        "hoi": "SONA có đăng lên trang của tôi không?",
+        "dap": "Có, nếu anh chị cấp quyền đăng. Mọi bài anh chị duyệt trước khi đăng."
+      },
+      {
+        "hoi": "Có cam kết tăng khách không?",
+        "dap": "SONA không hứa con số. SONA cam kết làm đúng lịch và nội dung đã thống nhất."
+      },
+      {
+        "hoi": "Sau khi bàn giao có hỗ trợ không?",
+        "dap": "Có. Mức hỗ trợ sau bàn giao ghi rõ trong báo giá của từng việc."
+      },
+      {
+        "hoi": "Liên hệ thế nào?",
+        "dap": "Anh chị bấm Liên hệ Zalo, kể ngắn việc đang cần. SONA trả lời trong giờ 8h–20h."
+      }
+    ],
+    "nut": "Liên hệ Zalo",
+    "seo_tieu_de": "Marketing đa kênh – SONA",
+    "seo_mo_ta": "SONA lên lịch, viết và đăng bài theo lịch trên Facebook, Zalo, TikTok, Threads, đúng giọng của tiệm. Báo giá riêng."
+  },
+  {
+    "slug": "edit-video",
+    "ma": "DV04",
+    "loai": "Dịch vụ",
+    "nhom": "Dịch vụ",
+    "nhan": "Dịch vụ · Video",
+    "ten": "Edit video",
+    "ma_zalo": "DV-VIDEO",
+    "cau_ngan": "Dựng video ngắn giới thiệu dịch vụ, ưu đãi từ clip và ảnh anh chị gửi.",
+    "phu_de": "SONA dựng video ngắn giới thiệu dịch vụ, sản phẩm, ưu đãi cho Facebook, TikTok, Reels, Shorts, từ clip, ảnh và thông tin anh chị gửi.",
+    "the_y": [
+      "Video dọc cho TikTok, Reels, Shorts",
+      "Chèn chữ, phụ đề, nhạc được phép dùng",
+      "Anh chị duyệt trước khi xuất bản"
+    ],
+    "diem_nhan": [
+      "Báo cách làm và giá trước",
+      "Anh chị duyệt trước khi xuất",
+      "Hỗ trợ qua Zalo"
+    ],
+    "tieu_de_van_de": "Có clip mà không có thời gian dựng.",
+    "van_de": [
+      "Quay nhiều clip nhưng không có thời gian dựng. → SONA dựng thành video hoàn chỉnh.",
+      "Video tự làm thiếu chữ, thiếu phụ đề. → Chèn chữ, phụ đề rõ ràng.",
+      "Không rõ khổ video cho từng kênh. → Xuất đúng khổ cho từng kênh."
+    ],
+    "loi_ich": [
+      "Kịch bản ngắn: Gợi ý thứ tự cảnh và câu chữ nếu anh chị cần.",
+      "Dựng video: Cắt ghép clip, ảnh anh chị gửi thành video ngắn.",
+      "Chữ và phụ đề: Chèn chữ, phụ đề tiếng Việt.",
+      "Âm thanh: Nhạc nền được phép dùng.",
+      "Xuất video: Đúng khổ dọc, ngang cho từng kênh."
+    ],
+    "cho_ai": "Chủ tiệm có clip, ảnh nhưng không có thời gian dựng.\nTiệm cần video giới thiệu dịch vụ, ưu đãi cho mạng xã hội.\nNgười muốn đăng video đều mà không tự làm.",
+    "cach_nhan": "Nhắn nhu cầu qua Zalo: anh chị kể ngắn việc đang cần.\nSONA hỏi thêm để hiểu đúng, rồi báo cách làm và giá.\nAnh chị đồng ý thì SONA bắt đầu làm.\nAnh chị gửi clip, ảnh; SONA dựng bản đầu, anh chị góp ý, SONA sửa.\nBàn giao và hướng dẫn anh chị sử dụng.",
+    "cam_ket": "Không có giá niêm yết: mỗi việc SONA báo giá riêng, anh chị đồng ý mới làm. Mỗi tháng SONA nhận số lượng việc có hạn để làm kỹ.",
+    "cau_hoi": [
+      {
+        "hoi": "Giá bao nhiêu?",
+        "dap": "SONA báo giá riêng sau khi hiểu nhu cầu của anh chị. Anh chị đồng ý báo giá thì SONA mới bắt đầu làm."
+      },
+      {
+        "hoi": "Bao lâu thì xong?",
+        "dap": "Tùy phạm vi công việc. SONA ghi thời gian dự kiến trong báo giá để anh chị nắm trước."
+      },
+      {
+        "hoi": "Tôi cần gửi gì?",
+        "dap": "Clip, ảnh, thông tin dịch vụ hoặc ưu đãi muốn giới thiệu. SONA hướng dẫn cách quay nếu anh chị cần."
+      },
+      {
+        "hoi": "Được sửa mấy lần?",
+        "dap": "Số lần sửa thống nhất trong báo giá."
+      },
+      {
+        "hoi": "Sau khi bàn giao có hỗ trợ không?",
+        "dap": "Có. Mức hỗ trợ sau bàn giao ghi rõ trong báo giá của từng việc."
+      },
+      {
+        "hoi": "Liên hệ thế nào?",
+        "dap": "Anh chị bấm Liên hệ Zalo, kể ngắn việc đang cần. SONA trả lời trong giờ 8h–20h."
+      }
+    ],
+    "nut": "Liên hệ Zalo",
+    "seo_tieu_de": "Edit video ngắn – SONA",
+    "seo_mo_ta": "SONA dựng video ngắn giới thiệu dịch vụ, ưu đãi cho TikTok, Reels, Shorts từ clip và ảnh anh chị gửi. Báo giá riêng."
   }
 ]

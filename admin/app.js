@@ -378,7 +378,7 @@ function applySiteForm(site, root) {
     if (site.thanh_toan.so_tai_khoan) site.thanh_toan.so_tai_khoan = site.thanh_toan.so_tai_khoan.replace(/\s/g, "");
     if (site.thanh_toan.ten_tai_khoan) site.thanh_toan.ten_tai_khoan = site.thanh_toan.ten_tai_khoan.toUpperCase();
   }
-  ["trang_chu", "thong_tin", "lien_he", "seo", "mang_xa_hoi"].forEach(k => { if (site[k] && !Object.keys(site[k]).length) delete site[k]; });
+  ["trang_chu", "thong_tin", "lien_he", "dich_vu", "tai_lieu", "hoc", "doi_tac", "seo", "mang_xa_hoi"].forEach(k => { if (site[k] && !Object.keys(site[k]).length) delete site[k]; });
   return site;
 }
 function siteEditor({ title, sub, cr, sections, pv = "", message, after }) {
@@ -404,25 +404,34 @@ function viewHome() {
       { t: "Khu đầu trang", h: field("trang_chu.nhan", "Nhãn nhỏ trên khẩu hiệu", tc.nhan, { ph: "SONA · Phần mềm cho chủ spa" }) + field("khau_hieu", "Khẩu hiệu (tiêu đề lớn, dùng chung cả web)", s.khau_hieu, { ph: "Công nghệ cho mọi người", hint: "SONA chỉ dùng một khẩu hiệu. Khẩu hiệu này hiện ở trang chủ, trang Giới thiệu, chân trang và tiêu đề Google." })
         + field("trang_chu.mo_ta", "Mô tả dưới tiêu đề", tc.mo_ta, { area: true, rows: 3 })
         + imageField("trang_chu.anh_banner", "Ảnh banner (không bắt buộc)", tc.anh_banner, "Ảnh ngang tỉ lệ khoảng 16:7, hiện phía trên tiêu đề.") },
-      { t: "Nút chính", d: "Nút đầu tiên dưới mô tả. Nút thứ hai luôn là Liên hệ tư vấn qua Zalo.", h: field("trang_chu.nut_chu", "Chữ trên nút", tc.nut_chu, { ph: "Xem sản phẩm" })
-        + field("trang_chu.nut_link", "Nút dẫn tới", tc.nut_link, { ph: "#san-pham", hint: "Trang trong web: <b>#san-pham</b>, <b>#hoc</b>, <b>#gioi-thieu</b>, <b>#lien-he</b>, <b>#sp/duong-dan-san-pham</b>. Trang ngoài: bắt đầu bằng <b>https://</b>" }) },
+      { t: "Ba mảng của SONA", d: "Ba khối dưới phần đầu trang chủ, theo thứ tự App · Dịch vụ · Tài liệu & Ebook (link cố định).", h: field("trang_chu.ba_mang[]", "Mỗi dòng một mảng, dạng \"Tên: mô tả\"", (tc.ba_mang || []).join("\n"), { area: true, rows: 3 }) },
+      { t: "Khối \"Làm việc với SONA\"", h: field("trang_chu.tieu_de_cach_lam", "Tiêu đề", tc.tieu_de_cach_lam, { ph: "Làm việc với SONA." }) + field("trang_chu.cach_lam[]", "Các bước, mỗi dòng \"Tiêu đề: mô tả\"", (tc.cach_lam || []).join("\n"), { area: true, rows: 3 }) },
+      { t: "Trang App", h: field("trang_chu.app_tieu_de", "Tiêu đề trang App", tc.app_tieu_de, { ph: "App" }) + field("trang_chu.app_mo_ta", "Mô tả trang App", tc.app_mo_ta, { area: true, rows: 2 }) },
+      { t: "Nút phụ", d: "Nút thứ hai dưới mô tả. Nút thứ nhất luôn là Liên hệ Zalo.", h: field("trang_chu.nut_chu", "Chữ trên nút", tc.nut_chu, { ph: "Xem dịch vụ" })
+        + field("trang_chu.nut_link", "Nút dẫn tới", tc.nut_link, { ph: "#dich-vu", hint: "Trang trong web: <b>#app</b>, <b>#dich-vu</b>, <b>#tai-lieu</b>, <b>#hoc</b>, <b>#doi-tac</b>, <b>#gioi-thieu</b>, <b>#lien-he</b>, <b>#sp/duong-dan</b>. Trang ngoài: bắt đầu bằng <b>https://</b>" }) },
       { t: "Cam kết của SONA", d: "Khối ba lời hứa trên nền kem. Chỉ ghi điều đã được duyệt.", h: field("trang_chu.tieu_de_cam_ket", "Tiêu đề khối", tc.tieu_de_cam_ket, { ph: "Đơn giản ngay từ đầu." }) + field("trang_chu.cam_ket[]", "Mỗi dòng một cam kết, dạng \"Tiêu đề: mô tả\"", (tc.cam_ket || []).join("\n"), { area: true, rows: 4, ph: "Trả một lần, không phí tháng: Mua một lần, không thu phí phần mềm hằng tháng." }) },
       { t: "Khối \"Một màn hình\"", h: field("trang_chu.mot_man_tieu_de", "Tiêu đề", tc.mot_man_tieu_de, { ph: "Việc cả ngày, gọn trên một app." }) + field("trang_chu.mot_man_mo_ta", "Dòng phụ", tc.mot_man_mo_ta, { area: true, rows: 2 }) + field("trang_chu.mot_man_nhan[]", "Nhãn (mỗi dòng một nhãn)", (tc.mot_man_nhan || []).join("\n"), { area: true, rows: 3 }) + imageField("trang_chu.anh_mot_man", "Ảnh màn hình ngang (chỉ dữ liệu mẫu)", tc.anh_mot_man, "Ảnh tỉ lệ 4:3. Để trống thì hiện khung tạm.") },
-      { t: "Ô tìm kiếm (trang Sản phẩm)", h: toggle("!trang_chu.an_o_tim", "Hiện ô tìm kiếm", !tc.an_o_tim) + field("trang_chu.o_tim", "Chữ gợi ý trong ô", tc.o_tim, { ph: "Anh chị đang cần gì?" }) },
-      { t: "Khối gợi ý sản phẩm", d: `Thứ tự, ẩn hay hiện từng sản phẩm sửa ở mục <a href="#/san-pham">Sản phẩm</a>.`, h: field("trang_chu.tieu_de_goi_y", "Tiêu đề khối sản phẩm ở trang chủ (hiện sản phẩm bật \"Nổi bật\")", tc.tieu_de_goi_y, { ph: "Hai app, hai cỡ tiệm." }) + field("trang_chu.mo_ta_goi_y", "Dòng phụ khối sản phẩm", tc.mo_ta_goi_y, { ph: "Chọn app hợp với cách tiệm anh chị đang làm." })
-        + toggle("!trang_chu.an_loc_loai", "Hiện bộ lọc loại sản phẩm ở trang Sản phẩm (App, Tài liệu, Dịch vụ)", !tc.an_loc_loai) },
+      { t: "Ô tìm kiếm (trang App)", h: toggle("!trang_chu.an_o_tim", "Hiện ô tìm kiếm", !tc.an_o_tim) + field("trang_chu.o_tim", "Chữ gợi ý trong ô", tc.o_tim, { ph: "Anh chị đang cần gì?" }) },
+      { t: "Khối gợi ý sản phẩm", d: `Thứ tự, ẩn hay hiện từng sản phẩm sửa ở mục <a href="#/san-pham">Sản phẩm</a>.`, h: field("trang_chu.tieu_de_goi_y", "Tiêu đề khối App ở trang chủ (hiện app bật \"Nổi bật\", tối đa 2)", tc.tieu_de_goi_y, { ph: "App nổi bật." }) + field("trang_chu.mo_ta_goi_y", "Dòng phụ khối sản phẩm", tc.mo_ta_goi_y, { ph: "Chọn app hợp với cách tiệm anh chị đang làm." })
+        + toggle("!trang_chu.an_loc_loai", "Hiện bộ lọc nhóm ở trang App", !tc.an_loc_loai) },
     ],
   });
 }
 function viewInfoPage() {
   const t = D.site.thong_tin || {};
   siteEditor({
-    title: "Giới thiệu và Liên hệ", sub: "Hai trang hệ thống, không xóa được. Số Zalo, hotline, email sửa ở Cấu hình web.", cr: [["Trang", "#/trang"], ["Giới thiệu và Liên hệ"]], pv: "#gioi-thieu", message: "Sửa trang Giới thiệu, Liên hệ",
+    title: "Các trang hệ thống", sub: "Giới thiệu, Dịch vụ, Tài liệu & Ebook, Học miễn phí, Đối tác, Liên hệ. Không xóa được. Số Zalo, hotline, email sửa ở Cấu hình web.", cr: [["Trang", "#/trang"], ["Các trang hệ thống"]], pv: "#gioi-thieu", message: "Sửa các trang hệ thống",
     sections: [
       { t: "SONA làm gì", h: field("thong_tin.lam_gi", "Đoạn giới thiệu", t.lam_gi, { area: true, rows: 4, ph: "SONA làm công cụ AI đơn giản cho người kinh doanh nhỏ ở Việt Nam…" }) },
       { t: "SONA làm gì (khối hai cột)", h: field("thong_tin.cau_chuyen_tieu_de", "Tiêu đề", t.cau_chuyen_tieu_de, { ph: "Bắt đầu từ tiệm spa." }) + field("thong_tin.cau_chuyen", "Đoạn chữ", t.cau_chuyen, { area: true, rows: 4 }) },
       { t: "Giá trị cốt lõi", h: field("thong_tin.gia_tri[]", "Mỗi dòng một giá trị, dạng \"Tên: mô tả\"", (t.gia_tri || []).join("\n"), { area: true, rows: 5, hint: "Để trống thì web dùng 5 giá trị cốt lõi SONA (bản rút gọn)." }) },
       { t: "Cách làm việc với SONA", d: "Hiện ở trang chủ và trang Giới thiệu. Mua hàng chỉ qua Liên hệ, không có chuyển khoản trên web (D-045).", h: field("thong_tin.cach_mua[]", "Mỗi dòng một bước, dạng \"Tiêu đề: mô tả\"", (t.cach_mua || []).join("\n"), { area: true, rows: 4, ph: "Nhắn Zalo SONA: Kể cách tiệm đang làm. SONA gợi ý app phù hợp." }) + field("thong_tin.ghi_chu_buoc", "Dòng nhỏ dưới các bước", t.ghi_chu_buoc) },
+      { t: "Trang Dịch vụ", d: "Danh sách dịch vụ lấy từ mục Sản phẩm, loại \"Dịch vụ\". Mỗi dịch vụ có trang riêng theo khung chung.", h: field("dich_vu.tieu_de", "Tiêu đề", D.site.dich_vu?.tieu_de, { ph: "Dịch vụ" }) + field("dich_vu.tieu_de_trang_chu", "Tiêu đề khối Dịch vụ ở trang chủ", D.site.dich_vu?.tieu_de_trang_chu, { ph: "SONA làm theo nhu cầu." }) + field("dich_vu.mo_ta", "Mô tả", D.site.dich_vu?.mo_ta, { area: true, rows: 3 }) + field("dich_vu.quy_trinh[]", "Cách SONA làm việc, mỗi dòng \"Tiêu đề: mô tả\"", (D.site.dich_vu?.quy_trinh || []).join("\n"), { area: true, rows: 3 }) + field("dich_vu.ghi_chu", "Dòng nhỏ dưới các bước", D.site.dich_vu?.ghi_chu) },
+      { t: "Trang Tài liệu & Ebook", d: "Chưa bán (D-046). Sản phẩm loại \"Tài liệu\" đang hiện sẽ tự vào trang này; chưa có thì hiện khung \"Sắp ra mắt\" và nút nhận thông báo qua Zalo.", h: field("tai_lieu.tieu_de", "Tiêu đề", D.site.tai_lieu?.tieu_de, { ph: "Tài liệu & Ebook" }) + field("tai_lieu.mo_ta", "Mô tả", D.site.tai_lieu?.mo_ta, { area: true, rows: 2 }) + field("tai_lieu.ghi_chu", "Dòng nhỏ", D.site.tai_lieu?.ghi_chu, { area: true, rows: 2 }) },
+      { t: "Trang Học miễn phí", d: "Bài học sửa ở mục Bài viết. Đường dẫn cũ #hoc và /bai/… vẫn chạy.", h: field("hoc.tieu_de", "Tiêu đề", D.site.hoc?.tieu_de, { ph: "Học kiến thức miễn phí" }) + field("hoc.mo_ta", "Mô tả", D.site.hoc?.mo_ta, { area: true, rows: 2 }) },
+      { t: "Trang Đối tác SONA", d: "Không ghi số hoa hồng (SONA trao đổi trực tiếp). Web tĩnh không thu thông tin cá nhân; đăng ký qua Zalo hoặc Google Form.", h: field("doi_tac.tieu_de", "Tiêu đề", D.site.doi_tac?.tieu_de, { ph: "Đối tác SONA" }) + field("doi_tac.mo_ta", "Mô tả", D.site.doi_tac?.mo_ta, { area: true, rows: 2 })
+        + field("doi_tac.phu_hop[]", "Ai phù hợp, mỗi dòng \"Tên: mô tả\"", (D.site.doi_tac?.phu_hop || []).join("\n"), { area: true, rows: 3 }) + field("doi_tac.quyen_loi[]", "Quyền lợi, mỗi dòng \"Tên: mô tả\"", (D.site.doi_tac?.quyen_loi || []).join("\n"), { area: true, rows: 3 })
+        + field("doi_tac.buoc[]", "Các bước đăng ký, mỗi dòng \"Tên: mô tả\"", (D.site.doi_tac?.buoc || []).join("\n"), { area: true, rows: 4 }) + field("doi_tac.link_form", "Link Google Form đăng ký (không bắt buộc)", D.site.doi_tac?.link_form, { ph: "https://forms.gle/…", hint: "Để trống thì web ẩn nút \"Điền form đăng ký\"." }) + field("doi_tac.ghi_chu", "Dòng nhỏ", D.site.doi_tac?.ghi_chu) },
       { t: "Trang Liên hệ", h: field("lien_he.loi_moi", "Lời mời liên hệ", D.site.lien_he?.loi_moi, { area: true, rows: 2 }) + field("lien_he.gio", "Giờ trả lời tin nhắn", D.site.lien_he?.gio, { ph: "8h–20h" }) + field("lien_he.rieng_tu", "Dòng lưu ý riêng tư", D.site.lien_he?.rieng_tu, { area: true, rows: 2 }) },
       { t: "Dải kêu gọi cuối trang (nền tối, mọi trang)", h: field("lien_he.band_tieu_de", "Tiêu đề", D.site.lien_he?.band_tieu_de, { ph: "Muốn xem app chạy thế nào?" }) + field("lien_he.band_mo_ta", "Dòng phụ", D.site.lien_he?.band_mo_ta, { area: true, rows: 2 }) },
     ],
@@ -477,7 +486,7 @@ function viewSeo() {
 function viewPages() {
   crumbs([["Trang"]]);
   const sys = [["Trang chủ", "Khu đầu trang, nút, ô tìm kiếm, khối gợi ý", "#/trang-chu", "Sửa"], ["Sản phẩm", "Danh sách và trang chi tiết sản phẩm", "#/san-pham", "Quản lý"],
-    ["Học AI", "Thư mục và bài học", "#/bai-viet", "Quản lý"], ["Giới thiệu và Liên hệ", "Giới thiệu SONA, giá trị, cách làm việc, liên hệ", "#/trang/thong-tin", "Sửa"]];
+    ["Học AI", "Thư mục và bài học", "#/bai-viet", "Quản lý"], ["Các trang hệ thống", "Giới thiệu, Dịch vụ, Tài liệu, Học miễn phí, Đối tác, Liên hệ", "#/trang/thong-tin", "Sửa"]];
   view(`${head("Trang", "Trang hệ thống của web và các trang riêng anh chị tự tạo (giới thiệu, chính sách, hướng dẫn…).", `<a class="btn" href="#/trang/moi">${I.plus} Tạo trang mới</a>`)}
   <section class="panel"><h2>Trang hệ thống</h2><div class="rows">${sys.map(([t, d, h, a]) => `<a class="rowi" href="${h}"><span class="ri">${I.lock}</span><span class="rt"><b>${t}</b><small>${d}</small></span>${chip("Hệ thống")}<span class="rgo">${a} ›</span></a>`).join("")}</div></section>
   <section class="panel"><h2>Trang riêng</h2>${D.pages.length ? `<div class="rows">${D.pages.map(p => `<a class="rowi" href="#/trang/${esc(p.slug)}"><span class="ri">${I.page}</span><span class="rt"><b>${esc(p.tieu_de || "(chưa có tiêu đề)")}</b><small>/trang/${esc(p.slug)}/${p.cap_nhat ? " · sửa " + fmtDate(p.cap_nhat) : ""}</small></span>${isDraft(p) ? chip("Nháp", "warn") : chip("Đã xuất bản", "ok")}<span class="rgo">Sửa ›</span></a>`).join("")}</div>`
@@ -629,18 +638,18 @@ function viewProductForm(slug) {
         ${field("nhan", "Nhãn nhỏ trên tên (không bắt buộc)", p.nhan, { ph: "Spa có nhân viên" })}
         ${field("nhom", "Nhóm (bộ lọc ở trang Sản phẩm)", p.nhom, { ph: "Quản lý spa" })}
         ${field("cau_ngan", "Một câu ngắn trên thẻ sản phẩm", p.cau_ngan, { ph: "Cho spa có lễ tân, quản lý và nhiều kỹ thuật viên." })}
-        ${field("the_y", "Ba ý ngắn trên thẻ sản phẩm (mỗi dòng một ý)", (p.the_y || []).join("\n"), { area: true, rows: 3 })}
+        ${field("the_y", "Ba ý ngắn trên thẻ (mỗi dòng một ý)", (p.the_y || []).join("\n"), { area: true, rows: 3 })}
         ${field("phu_de", "Mô tả ngắn (hiện trên thẻ sản phẩm và dưới tên)", p.phu_de, { area: true, rows: 3 })}
         ${field("diem_nhan", "Điểm nhấn (mỗi dòng một ý ngắn, hiện dưới mô tả)", (p.diem_nhan || []).join("\n"), { area: true, rows: 3, ph: "Trả một lần, không phí tháng" })}</div>
         <p class="hint">Web không đăng giá (D-045). Không ghi số tiền ở bất kỳ ô nào; khách hỏi giá qua nút Liên hệ.</p></section>
       <section class="panel"><h2>Vấn đề giải quyết</h2>${field("tieu_de_van_de", "Tiêu đề khối", p.tieu_de_van_de, { ph: "Bớt sổ, bớt nhớ." })}${field("van_de", "Mỗi dòng một vấn đề. Viết \"Trước đây → Với app\" để hiện hai vế", (p.van_de || []).join("\n"), { area: true, rows: 4, ph: "Lịch hẹn ghi sổ, dễ sót. → Lịch hẹn ghi trên cùng một app." })}</section>
-      <section class="panel"><h2>Tính năng chính</h2>${field("loi_ich", "Mỗi dòng một tính năng. Viết \"Tên: mô tả\" để có tiêu đề riêng", (p.loi_ich || []).join("\n"), { area: true, rows: 6, ph: "Lịch hẹn & khách hàng: Lịch hẹn, hồ sơ khách hàng" })}</section>
+      <section class="panel"><h2>Tính năng chính (dịch vụ: "SONA làm gì")</h2>${field("loi_ich", "Mỗi dòng một tính năng. Viết \"Tên: mô tả\" để có tiêu đề riêng", (p.loi_ich || []).join("\n"), { area: true, rows: 6, ph: "Lịch hẹn & khách hàng: Lịch hẹn, hồ sơ khách hàng" })}</section>
       <section class="panel"><h2>Hình ảnh</h2><div class="fgrid">${imageField("anh_bia", "Ảnh bìa", p.anh_bia, "Ảnh ngang tỉ lệ 16:9, hiện trên thẻ sản phẩm và đầu trang chi tiết.")}
         <div class="fld" data-f="anh_minh_hoa"><label>Ảnh màn hình dọc khổ điện thoại (chỉ ảnh chụp với dữ liệu mẫu, không dùng dữ liệu khách thật)</label><div class="gal" data-rows="anh_minh_hoa">${(p.anh_minh_hoa || []).map(galRow).join("")}</div><div><button type="button" class="btn ghost sm" id="addGal">${I.plus} Thêm ảnh</button></div></div></div></section>
       <section class="panel"><h2>Dành cho ai</h2><div class="fgrid">${field("chu_thich_anh", "Chú thích ảnh màn hình (mỗi dòng ứng với một ảnh, theo thứ tự)", (p.chu_thich_anh || []).join("\n"), { area: true, rows: 3, ph: "Lịch hẹn" })}${field("cho_ai", "Mỗi dòng một kiểu khách phù hợp", p.cho_ai, { area: true, rows: 4 })}${field("chon_neu", "\"Chọn sản phẩm này nếu\" (trang Sản phẩm, khối so sánh; mỗi dòng một ý)", (p.chon_neu || []).join("\n"), { area: true, rows: 3 })}</div></section>
       <section class="panel"><h2>Nội dung chi tiết</h2>${mdEditor("noi_dung", "Phần chi tiết (không bắt buộc, hiện dưới mục lợi ích)", p.noi_dung || "")}</section>
       <section class="panel"><h2>Câu hỏi thường gặp</h2><div class="subrows" data-rows="cau_hoi">${(p.cau_hoi || []).map(qaRow).join("")}</div><div><button type="button" class="btn ghost sm" id="addQa">${I.plus} Thêm câu hỏi</button></div></section>
-      <section class="panel"><h2>Cách bắt đầu và cam kết</h2><div class="fgrid">${field("cach_nhan", "Các bước bắt đầu (mỗi dòng một bước)", p.cach_nhan, { area: true, rows: 4 })}${field("cam_ket", "Cam kết (chỉ ghi điều đã được duyệt)", p.cam_ket, { area: true, rows: 2 })}</div></section>
+      <section class="panel"><h2>Cách bắt đầu / Quy trình làm việc và cam kết</h2><div class="fgrid">${field("cach_nhan", "Các bước bắt đầu (mỗi dòng một bước)", p.cach_nhan, { area: true, rows: 4 })}${field("cam_ket", "Cam kết (chỉ ghi điều đã được duyệt)", p.cam_ket, { area: true, rows: 2 })}</div></section>
       <section class="panel"><h2>Nút Liên hệ</h2><div class="fgrid two">${field("nut", "Chữ trên nút", p.nut, { ph: "Liên hệ tư vấn" })}${field("ma_zalo", "Mã trong tin nhắn Zalo", p.ma_zalo, { ph: "SPAPRO", hint: "Khách bấm nút, web chép sẵn tin \"MÃ – Em muốn tư vấn Tên sản phẩm\" để SONA biết khách đến từ trang nào." })}</div></section>
     </div>
     <aside class="eside stack">
