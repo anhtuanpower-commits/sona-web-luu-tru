@@ -422,7 +422,7 @@ function viewInfoPage() {
   siteEditor({
     title: "Các trang hệ thống", sub: "Giới thiệu, Dịch vụ, Tài liệu & Ebook, Học miễn phí, Đối tác, Liên hệ. Không xóa được. Số Zalo, hotline, email sửa ở Cấu hình web.", cr: [["Trang", "#/trang"], ["Các trang hệ thống"]], pv: "#gioi-thieu", message: "Sửa các trang hệ thống",
     sections: [
-      { t: "SONA làm gì", h: field("thong_tin.lam_gi", "Đoạn giới thiệu", t.lam_gi, { area: true, rows: 4, ph: "SONA làm công cụ AI đơn giản cho người kinh doanh nhỏ ở Việt Nam…" }) },
+      { t: "SONA làm gì", h: field("thong_tin.lam_gi", "Đoạn giới thiệu", t.lam_gi, { area: true, rows: 4, ph: "SONA làm phần mềm và dịch vụ công nghệ đơn giản cho người kinh doanh nhỏ…" }) },
       { t: "SONA làm gì (khối hai cột)", h: field("thong_tin.cau_chuyen_tieu_de", "Tiêu đề", t.cau_chuyen_tieu_de, { ph: "Bắt đầu từ tiệm spa." }) + field("thong_tin.cau_chuyen", "Đoạn chữ", t.cau_chuyen, { area: true, rows: 4 }) },
       { t: "Giá trị cốt lõi", h: field("thong_tin.gia_tri[]", "Mỗi dòng một giá trị, dạng \"Tên: mô tả\"", (t.gia_tri || []).join("\n"), { area: true, rows: 5, hint: "Để trống thì web dùng 5 giá trị cốt lõi SONA (bản rút gọn)." }) },
       { t: "Cách làm việc với SONA", d: "Hiện ở trang chủ và trang Giới thiệu. Mua hàng chỉ qua Liên hệ, không có chuyển khoản trên web (D-045).", h: field("thong_tin.cach_mua[]", "Mỗi dòng một bước, dạng \"Tiêu đề: mô tả\"", (t.cach_mua || []).join("\n"), { area: true, rows: 4, ph: "Nhắn Zalo SONA: Kể cách tiệm đang làm. SONA gợi ý app phù hợp." }) + field("thong_tin.ghi_chu_buoc", "Dòng nhỏ dưới các bước", t.ghi_chu_buoc) },
@@ -438,18 +438,15 @@ function viewInfoPage() {
   });
 }
 function viewSettings() {
-  const s = D.site, m = s.mang_xa_hoi || {}, t = s.thanh_toan || {};
+  const s = D.site, m = s.mang_xa_hoi || {};
   siteEditor({
-    title: "Cấu hình web", sub: "Tên, logo, liên hệ, mạng xã hội, chân trang và tài khoản nhận tiền.", cr: [["Cấu hình web"]], pv: "#lien-he", message: "Sửa cấu hình web",
+    title: "Cấu hình web", sub: "Tên, logo, liên hệ, mạng xã hội và chân trang. Web không đăng thông tin thanh toán.", cr: [["Cấu hình web"]], pv: "#lien-he", message: "Sửa cấu hình web",
     sections: [
       { t: "Thương hiệu", h: field("ten_web", "Tên web", s.ten_web, { req: true }) + imageField("logo", "Logo (ảnh vuông)", s.logo, "Hiện ở góc trên trang web. Nên dùng ảnh PNG vuông 192×192.") + imageField("favicon", "Biểu tượng tab trình duyệt (favicon)", s.favicon, "Ảnh PNG vuông nhỏ, 48×48 đến 192×192.") },
       { t: "Liên hệ", d: "Web chưa có biểu mẫu liên hệ. Khách liên hệ qua Zalo, hotline, email dưới đây; các thông tin này hiện ở chân trang và trang Liên hệ.", h:
         field("zalo", "Số Zalo", s.zalo, { inputmode: "tel" }) + field("hotline", "Hotline", s.hotline, { inputmode: "tel" }) + field("email", "Email", s.email, { type: "email" }) + field("dia_chi", "Địa chỉ (không bắt buộc)", s.dia_chi) },
       { t: "Mạng xã hội", h: field("mang_xa_hoi.facebook", "Facebook", m.facebook, { ph: "https://facebook.com/…" }) + field("mang_xa_hoi.tiktok", "TikTok", m.tiktok, { ph: "https://tiktok.com/@…" }) + field("mang_xa_hoi.youtube", "YouTube", m.youtube, { ph: "https://youtube.com/@…" }) },
       { t: "Chân trang", h: field("chan_trang", "Dòng chữ cuối trang", s.chan_trang, { ph: ph("© " + (s.ten_web || "SONA") + " · " + (s.khau_hieu || "") + (s.email ? " · " + s.email : "")), hint: "Để trống thì web tự ghi tên, khẩu hiệu và email." }) },
-      { t: "Tài khoản nhận tiền (lưu tham khảo, web không hiện)", d: `<span class="warnline">${I.warn} Theo D-045 web không có mã QR hay số tiền; mục này chỉ lưu lại. Không bao giờ ghi mật khẩu hay mã OTP.</span>`, h:
-        field("thanh_toan.ten_ngan_hang", "Tên ngân hàng", t.ten_ngan_hang) + field("thanh_toan.ngan_hang", "Mã ngân hàng (6 số)", t.ngan_hang, { inputmode: "numeric", hint: "VietinBank 970415 · Vietcombank 970436 · MB 970422 · Techcombank 970407 · BIDV 970418 · ACB 970416 · Agribank 970405" })
-        + field("thanh_toan.so_tai_khoan", "Số tài khoản", t.so_tai_khoan, { inputmode: "numeric" }) + field("thanh_toan.ten_tai_khoan", "Tên chủ tài khoản (không dấu)", t.ten_tai_khoan) },
     ],
   });
 }
@@ -486,7 +483,7 @@ function viewSeo() {
 function viewPages() {
   crumbs([["Trang"]]);
   const sys = [["Trang chủ", "Khu đầu trang, nút, ô tìm kiếm, khối gợi ý", "#/trang-chu", "Sửa"], ["Sản phẩm", "Danh sách và trang chi tiết sản phẩm", "#/san-pham", "Quản lý"],
-    ["Học AI", "Thư mục và bài học", "#/bai-viet", "Quản lý"], ["Các trang hệ thống", "Giới thiệu, Dịch vụ, Tài liệu, Học miễn phí, Đối tác, Liên hệ", "#/trang/thong-tin", "Sửa"]];
+    ["Học miễn phí", "Thư mục và bài học", "#/bai-viet", "Quản lý"], ["Các trang hệ thống", "Giới thiệu, Dịch vụ, Tài liệu, Học miễn phí, Đối tác, Liên hệ", "#/trang/thong-tin", "Sửa"]];
   view(`${head("Trang", "Trang hệ thống của web và các trang riêng anh chị tự tạo (giới thiệu, chính sách, hướng dẫn…).", `<a class="btn" href="#/trang/moi">${I.plus} Tạo trang mới</a>`)}
   <section class="panel"><h2>Trang hệ thống</h2><div class="rows">${sys.map(([t, d, h, a]) => `<a class="rowi" href="${h}"><span class="ri">${I.lock}</span><span class="rt"><b>${t}</b><small>${d}</small></span>${chip("Hệ thống")}<span class="rgo">${a} ›</span></a>`).join("")}</div></section>
   <section class="panel"><h2>Trang riêng</h2>${D.pages.length ? `<div class="rows">${D.pages.map(p => `<a class="rowi" href="#/trang/${esc(p.slug)}"><span class="ri">${I.page}</span><span class="rt"><b>${esc(p.tieu_de || "(chưa có tiêu đề)")}</b><small>/trang/${esc(p.slug)}/${p.cap_nhat ? " · sửa " + fmtDate(p.cap_nhat) : ""}</small></span>${isDraft(p) ? chip("Nháp", "warn") : chip("Đã xuất bản", "ok")}<span class="rgo">Sửa ›</span></a>`).join("")}</div>`
