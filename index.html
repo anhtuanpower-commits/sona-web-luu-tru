@@ -117,10 +117,23 @@ header.menu.da-cuon{border-bottom-color:var(--mau-vien)}
 .nut-tron:hover{background:var(--mau-nen-phu)}
 .nut-tron svg{width:20px;height:20px}
 .chi-may-tinh{display:none!important}
-@media(min-width:1024px){.nav{display:flex}.menu-phai{margin-left:0}.chi-may-tinh{display:inline-flex!important}.chi-dien-thoai{display:none!important}}
-.bang-menu{position:fixed;inset:var(--cao-menu) 0 0 0;background:var(--mau-nen);padding:var(--khoang-6) var(--khoang-le);display:none;flex-direction:column;gap:var(--khoang-2);z-index:19}
+@media(min-width:1200px){.nav{display:flex;align-items:center}.menu-phai{margin-left:0}.chi-may-tinh{display:inline-flex!important}.chi-dien-thoai{display:none!important}}
+.nav-dv{position:relative}
+.nav-dv>button{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:var(--bo-goc-vien-thuoc);font-size:.9375rem;font-weight:500;color:var(--mau-chu-phu);background:transparent;border:0;cursor:pointer}
+.nav-dv>button:hover{color:var(--mau-chu);background:var(--mau-nen-phu)}
+.nav-dv>button.on{background:var(--mau-nhan-nhat);color:var(--mau-chu)}
+.chev{width:7px;height:7px;border-right:1.75px solid currentColor;border-bottom:1.75px solid currentColor;transform:translateY(-2px) rotate(45deg)}
+.dv-menu{display:none;position:absolute;top:100%;left:0;min-width:260px;padding:12px 0 0;z-index:30}
+.dv-menu::before{content:"";position:absolute;inset:12px 0 0;background:var(--mau-nen-noi);border:1px solid var(--mau-vien);border-radius:var(--bo-goc-vua);box-shadow:var(--bong-3);z-index:-1}
+.dv-menu a{display:block;padding:10px 18px;border-radius:0;font-size:.9375rem;color:var(--mau-chu)}
+.dv-menu a:first-child{margin-top:8px}.dv-menu a:last-child{margin-bottom:8px}
+.dv-menu a.tat-ca{color:var(--mau-nhan-dam);font-weight:600;border-top:1px solid var(--mau-vien);margin-top:4px;padding-top:12px}
+.nav-dv:hover .dv-menu,.nav-dv:focus-within .dv-menu,.nav-dv.mo .dv-menu{display:block}
+.bang-menu{position:fixed;inset:var(--cao-menu) 0 0 0;background:var(--mau-nen);padding:var(--khoang-5) var(--khoang-le) var(--khoang-7);display:none;flex-direction:column;gap:2px;z-index:19;overflow-y:auto}
 .bang-menu.mo{display:flex}
-.bang-menu a{font-size:1.75rem;font-weight:700;letter-spacing:-.02em;padding:var(--khoang-2) 0}
+.bang-menu>a{font-size:1.5rem;font-weight:700;letter-spacing:-.02em;padding:var(--khoang-2) 0}
+.bang-menu .sub{display:grid;gap:2px;padding:0 0 var(--khoang-2) var(--khoang-4);border-left:2px solid var(--mau-vien);margin-left:2px}
+.bang-menu .sub a{font-size:1.0625rem;font-weight:500;color:var(--mau-chu-phu);padding:6px 0}
 /* ---------- khung điện thoại vẽ bằng CSS (10.5) ---------- */
 .dt{position:relative;width:min(72%,280px);aspect-ratio:390/844;border-radius:var(--bo-goc-rat-lon);border:10px solid var(--mau-khung-may);background:var(--mau-khung-may);box-shadow:var(--bong-3);flex:none;overflow:hidden}
 .dt img{width:100%;height:100%;object-fit:cover;border-radius:30px}
@@ -146,6 +159,26 @@ header.menu.da-cuon{border-bottom-color:var(--mau-vien)}
 .card{background:var(--mau-nen-phu);border-radius:var(--bo-goc-lon);padding:clamp(24px,16px + 2vw,40px) clamp(24px,16px + 2vw,40px) 0;display:flex;flex-direction:column;overflow:hidden;transition:box-shadow var(--chuyen-vua),transform var(--chuyen-vua)}
 .card:hover{box-shadow:var(--bong-2);transform:translateY(-2px)}
 .card.mot{grid-column:1/-1}
+.card.dv{padding-bottom:clamp(24px,16px + 2vw,40px)}
+.card.dv .o-ico{margin:0 0 var(--khoang-4)}
+@media(min-width:1024px){.cards.ba{grid-template-columns:repeat(3,1fr)}}
+.card.sap{padding-bottom:clamp(24px,16px + 2vw,40px);border:1px dashed var(--mau-vien);background:transparent}
+.sap-bia{margin:var(--khoang-4) 0;aspect-ratio:3/4;max-height:220px;border-radius:var(--bo-goc-vua);background:var(--mau-nen-phu);display:grid;place-items:center;color:var(--mau-nhan-dam)}
+.sap-bia svg{width:40px;height:40px}
+.anh-the img.bia-the{width:100%;height:100%;object-fit:cover;border-radius:var(--bo-goc-vua) var(--bo-goc-vua) 0 0}
+.ba-mang{display:grid;gap:var(--khoang-4);margin-top:var(--khoang-8);text-align:left}
+@media(min-width:768px){.ba-mang{grid-template-columns:repeat(3,1fr)}}
+.mang{background:var(--mau-nen-phu);border-radius:var(--bo-goc-lon);padding:clamp(24px,16px + 2vw,40px);display:flex;flex-direction:column;gap:var(--khoang-2);transition:box-shadow var(--chuyen-vua),transform var(--chuyen-vua)}
+.mang:hover{box-shadow:var(--bong-2);transform:translateY(-2px)}
+.mang .o-ico{margin:0 0 var(--khoang-3)}
+.mang h3{font-size:clamp(1.375rem,1.2rem + .8vw,1.75rem);font-weight:700}
+.mang p{color:var(--mau-chu-phu)}
+.mang .nut-chu{margin-top:auto;padding-top:var(--khoang-3)}
+.o-ico.lon{width:120px;height:120px;margin:auto}.o-ico.lon svg{width:52px;height:52px}
+.pd-anh.dv{align-items:center;padding-bottom:clamp(32px,4vw,56px);height:auto;min-height:280px}
+.pains .sau.dv::before{content:"SONA làm"}
+@media(min-width:1024px){.steps.bon{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:768px){.steps.bon{grid-template-columns:1fr 1fr}}
 .card h3{font-size:clamp(1.75rem,1.4rem + 1.2vw,2.25rem);font-weight:700;letter-spacing:-.02em;margin-top:var(--khoang-2)}
 .card h3 a:hover{color:var(--mau-nhan-dam)}
 .card .cau{color:var(--mau-chu-phu);margin-top:var(--khoang-2)}
@@ -334,18 +367,20 @@ body.pv{padding-top:28px}body.pv header.menu{top:28px}
 </style></head><body>
 <header class="menu" id="menu"><div class="wrap">
   <a class="brand" href="#" id="brand" aria-label="SONA, về trang chủ"><img class="mark" src="img/mark-192.png" alt="" width="32" height="32"><span id="siteName">SONA</span></a>
-  <nav class="nav" aria-label="Mục chính"><a href="#san-pham" id="navSp">Sản phẩm</a><a href="#hoc" id="navHoc">Học AI</a><a href="#gioi-thieu" id="navInfo">Giới thiệu</a><a href="#lien-he" id="navLh">Liên hệ</a></nav>
+  <nav class="nav" aria-label="Mục chính"><a href="#app" id="navApp">App</a>
+    <div class="nav-dv" id="navDvWrap"><button type="button" id="navDv" aria-expanded="false" aria-controls="dvMenu">Dịch vụ<span class="chev"></span></button><div class="dv-menu" id="dvMenu"></div></div>
+    <a href="#tai-lieu" id="navTl">Tài liệu &amp; Ebook</a><a href="#hoc" id="navHoc">Học miễn phí</a><a href="#doi-tac" id="navDt">Đối tác</a><a href="#lien-he" id="navLh">Liên hệ</a></nav>
   <div class="menu-phai">
     <button class="nut-tron" id="doiNen" type="button" aria-label="Đổi chế độ sáng tối"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg></button>
     <a class="btn nho chi-may-tinh" id="zaloTop" href="#lien-he">Liên hệ Zalo</a>
     <a class="btn nho chi-dien-thoai" id="zaloTopM" href="#lien-he">Zalo</a>
     <button class="nut-tron chi-dien-thoai" id="moMenu" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="bangMenu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div></div></header>
-<nav class="bang-menu" id="bangMenu" aria-label="Menu điện thoại"><a href="#">Trang chủ</a><a href="#san-pham">Sản phẩm</a><a href="#hoc">Học AI</a><a href="#gioi-thieu">Giới thiệu</a><a href="#lien-he">Liên hệ</a></nav>
+<nav class="bang-menu" id="bangMenu" aria-label="Menu điện thoại"><a href="#">Trang chủ</a><a href="#app">App</a><a href="#dich-vu">Dịch vụ</a><div class="sub" id="dvSub"></div><a href="#tai-lieu">Tài liệu &amp; Ebook</a><a href="#hoc">Học miễn phí</a><a href="#doi-tac">Đối tác</a><a href="#gioi-thieu">Giới thiệu</a><a href="#lien-he">Liên hệ</a></nav>
 <main id="app"></main>
 <footer><div class="wrap"><div class="cot-chan">
   <div><a class="brand" href="#"><img class="mark" src="img/mark-192.png" alt="" width="32" height="32"><span id="fName">SONA</span></a><p class="kh" id="fSlogan"></p></div>
-  <div><h4>Sản phẩm</h4><nav class="ds" id="fSp" aria-label="Sản phẩm"></nav></div>
+  <div><h4>App và dịch vụ</h4><nav class="ds" id="fSp" aria-label="App và dịch vụ"></nav></div>
   <div><h4>SONA</h4><nav class="ds" id="flinks" aria-label="Trang khác"></nav></div>
   <div><h4>Liên hệ</h4><div class="ds" id="fsoc"></div></div>
 </div><div class="dong-cuoi" id="foot">© SONA</div></div></footer>
@@ -371,6 +406,10 @@ const ICON={
   box:sv('<path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/>'),
   book:sv('<path d="M4 4h6a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-6a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h7z"/>'),
   doc:sv('<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/>'),
+  app2:sv('<rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/>'),
+  globe:sv('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>'),
+  mega:sv('<path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"/>'),
+  chev:sv('<path d="M6 9l6 6 6-6"/>',2),
   folder:sv('<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',1.8)};
 const FEAT_ICONS=[ICON.users,ICON.cal,ICON.cart,ICON.layers,ICON.clock,ICON.box,ICON.book,ICON.doc];
 const MARK_S='<svg class="dau-s" viewBox="0 0 64 64" aria-hidden="true"><g transform="skewY(-18) translate(0 11)" fill="#f0b458"><rect x="16" y="12" width="40" height="17" rx="5"/><rect x="8" y="34" width="40" height="17" rx="5"/></g></svg>';
@@ -382,44 +421,60 @@ const splitTitle=s=>{s=String(s);const i=s.indexOf(":");return i>0&&i<60?[s.slic
 let SITE={},PRODUCTS=[],POSTS=[],PAGES=[],Q="",CAT="";
 /* Xem trước từ trang Admin: dữ liệu chưa lưu nằm tạm trong máy, chỉ dùng khi mở với ?preview=1 */
 const PREVIEW=/[?&]preview=1(&|$)/.test(location.search);
-/* Chữ mặc định khi ô tương ứng trong Admin để trống (theo đặc tả PV-015). Không có giá (D-045). */
+/* Chữ mặc định khi ô tương ứng trong Admin để trống (theo đặc tả PV-015 và PV-015b). Không có giá (D-045). */
 const MAC_DINH={
   khau_hieu:"Công nghệ cho mọi người",
-  nhan:"SONA · Phần mềm cho chủ spa",
-  mo_ta:"Hai app quản lý spa gọn trong điện thoại. Dữ liệu nằm trong tài khoản Google của chính tiệm anh chị.",
-  tieu_de_sp:"Hai app, hai cỡ tiệm.",mo_ta_sp:"Chọn app hợp với cách tiệm anh chị đang làm.",
+  nhan:"App · Dịch vụ · Tài liệu",
+  mo_ta:"SONA làm app dùng ngay cho chủ kinh doanh nhỏ, nhận làm app, web, marketing và video theo nhu cầu, và chia sẻ kiến thức miễn phí.",
+  ba_mang:["App: App dùng ngay trên điện thoại, trả một lần, không phí tháng.","Dịch vụ: Làm app, thiết kế web, marketing đa kênh, edit video theo nhu cầu của anh chị.","Tài liệu & Ebook: Tài liệu cầm tay chỉ việc cho người kinh doanh nhỏ. Sắp ra mắt."],
+  tieu_de_sp:"App nổi bật.",mo_ta_sp:"App dùng ngay trên điện thoại, dữ liệu nằm trong tài khoản Google của anh chị.",
   tieu_de_cam_ket:"Đơn giản ngay từ đầu.",
   cam_ket:["Trả một lần: Không thu phí phần mềm hằng tháng.","Dữ liệu là của tiệm: App và dữ liệu nằm trong tài khoản Google của spa. Tiệm giữ toàn quyền.","SONA cài cùng anh chị: Hẹn giờ gọi video, hướng dẫn từng bước. Anh chị tự bấm, SONA không điều khiển máy."],
-  mot_man_tieu_de:"Việc cả ngày, gọn trên một app.",
-  mot_man_mo_ta:"Từ lúc khách đặt lịch đến lúc chốt tiền cuối ngày, anh chị xem và ghi ở cùng một chỗ.",
-  mot_man_nhan:["Lịch hẹn","Tạo đơn","Tiền quầy","Liệu trình","Chấm công","Hoa hồng & lương"],
+  cach_lam:["Nhắn Zalo SONA: Kể việc anh chị đang cần: app, web, marketing hay video.","SONA tư vấn và báo giá riêng: SONA báo cách làm và giá trước. Anh chị đồng ý mới làm.","Làm và bàn giao: SONA làm, gửi anh chị duyệt, bàn giao và hướng dẫn sử dụng."],
   cach_mua:["Nhắn Zalo SONA: Kể cách tiệm đang làm. SONA gợi ý app phù hợp.","Hẹn giờ gọi video: SONA hướng dẫn anh chị cài app vào tài khoản Google của spa và tự bấm cấp quyền.","Dùng hằng ngày: Thêm app ra màn hình chính điện thoại, mở là dùng."],
   ghi_chu_buoc:"Anh chị chỉ cần một tài khoản Google của spa và điện thoại hoặc máy tính.",
-  lam_gi:"SONA làm phần mềm đơn giản cho người kinh doanh nhỏ. Dễ hiểu, dễ dùng, dữ liệu là của chính anh chị.",
+  app_tieu_de:"App",app_mo_ta:"App dùng ngay trên điện thoại cho chủ kinh doanh nhỏ. Trả một lần, không phí tháng.",
+  dv_tieu_de:"Dịch vụ",dv_mo_ta:"SONA làm theo nhu cầu của anh chị: app, web, marketing, video. Kể nhu cầu qua Zalo, SONA báo cách làm và giá trước, anh chị đồng ý mới làm.",
+  dv_ghi_chu:"Mỗi tháng SONA nhận số lượng việc có hạn để làm kỹ.",
+  tl_tieu_de:"Tài liệu & Ebook",tl_mo_ta:"Tài liệu cầm tay chỉ việc cho người kinh doanh nhỏ. SONA đang chuẩn bị, sắp ra mắt.",
+  tl_ghi_chu:"Nhắn Zalo để SONA báo anh chị khi tài liệu đầu tiên ra mắt. Trong lúc chờ, anh chị đọc các bài học miễn phí.",
+  hoc_tieu_de:"Học kiến thức miễn phí",hoc_mo_ta:"Bài ngắn cho chủ tiệm và người kinh doanh nhỏ: chăm khách, bán hàng, quản lý tiệm, dùng AI. Đọc vài phút, làm được ngay.",
+  dt_tieu_de:"Đối tác SONA",dt_mo_ta:"Cùng SONA mang công nghệ đơn giản đến nhiều chủ kinh doanh nhỏ hơn. SONA tìm người giới thiệu khách, đơn vị dịch vụ và cộng tác viên.",
+  dt_phu_hop:["Người giới thiệu khách: Anh chị quen chủ spa, chủ tiệm, chủ shop đang cần app, web, marketing hay video.","Đơn vị dịch vụ: Agency, studio, nhóm kỹ thuật muốn hợp tác làm chung hoặc giới thiệu khách qua lại.","Cộng tác viên: Người viết bài, dựng video, làm kỹ thuật muốn nhận việc cùng SONA."],
+  dt_quyen_loi:["Quyền lợi khi giới thiệu thành công: Mức cụ thể SONA trao đổi trực tiếp với từng đối tác.","Trao đổi trực tiếp: Làm việc với SONA qua Zalo, rõ ràng từng việc.","Hợp tác minh bạch: Thống nhất cách làm và quyền lợi trước khi bắt đầu."],
+  dt_buoc:["Bấm Đăng ký đối tác: Nhắn Zalo SONA tin \"Đăng ký đối tác SONA\".","Giới thiệu ngắn: Anh chị là ai, muốn hợp tác theo cách nào.","SONA trao đổi trực tiếp: Cách làm việc và quyền lợi cụ thể.","Bắt đầu hợp tác: Hai bên thống nhất rồi mới bắt đầu."],
+  dt_ghi_chu:"Web không thu thông tin cá nhân. Mọi trao đổi đăng ký làm qua Zalo.",
+  lam_gi:"SONA làm phần mềm và dịch vụ công nghệ đơn giản cho người kinh doanh nhỏ. Dễ hiểu, dễ dùng, dữ liệu là của chính anh chị.",
   cau_chuyen_tieu_de:"Bắt đầu từ tiệm spa.",
-  cau_chuyen:"Chủ spa nhỏ làm nhiều việc cùng lúc: đón khách, làm dịch vụ, ghi sổ, tính tiền. SONA bắt đầu từ đó, với hai app quản lý spa chạy trong tài khoản Google của chính tiệm. Sau spa, SONA sẽ làm thêm công cụ cho các ngành kinh doanh nhỏ khác.",
+  cau_chuyen:"Chủ spa nhỏ làm nhiều việc cùng lúc: đón khách, làm dịch vụ, ghi sổ, tính tiền. SONA bắt đầu từ đó, với app quản lý spa chạy trong tài khoản Google của chính tiệm, rồi làm thêm app, web, marketing và video theo nhu cầu cho người kinh doanh nhỏ.",
   gia_tri:["Thấu hiểu khách hàng: Làm đúng vấn đề khách đang gặp.","Nhanh gọn: Biến việc phức tạp thành đơn giản.","Uy tín: Hứa gì làm nấy, minh bạch.","Hiệu quả: Tập trung vào kết quả.","Dữ liệu: Quyết định dựa trên thực tế."],
   gio:"8h–20h",
-  loi_moi:"Nhắn Zalo là nhanh nhất. SONA tư vấn, báo giá riêng và hẹn giờ cài app cùng anh chị.",
-  band_tieu_de:"Muốn xem app chạy thế nào?",
-  band_mo_ta:"Nhắn Zalo SONA để xem bản demo dữ liệu mẫu và được tư vấn app hợp với tiệm.",
+  loi_moi:"Nhắn Zalo là nhanh nhất. SONA tư vấn, báo giá riêng và hẹn lịch làm việc cùng anh chị.",
+  band_tieu_de:"Anh chị cần tư vấn?",
+  band_mo_ta:"Nhắn Zalo SONA, kể việc anh chị đang cần. SONA tư vấn và báo giá riêng.",
   rieng_tu:"SONA chỉ dùng số Zalo của anh chị để tư vấn và hỗ trợ. Nhắn \"Dừng\" là SONA không nhắn nữa."};
 const TC=()=>SITE.trang_chu||{};const TT=()=>SITE.thong_tin||{};const LH=()=>SITE.lien_he||{};
+const DV=()=>SITE.dich_vu||{};const TL=()=>SITE.tai_lieu||{};const DT=()=>SITE.doi_tac||{};const HOC=()=>SITE.hoc||{};
 const khauHieu=()=>SITE.khau_hieu||MAC_DINH.khau_hieu;
 const pick=(v,d)=>{const l=lines(v);return l.length?l:d};
 const logoSrc=()=>SITE.logo||"img/mark-192.png";
+const isSvc=p=>catOf(p)==="Dịch vụ",isApp=p=>catOf(p)==="App",isDoc=p=>catOf(p)==="Tài liệu";
+const linkOf=p=>(isSvc(p)?"#dich-vu/":"#sp/")+p.slug;
+const APPS=()=>PRODUCTS.filter(isApp),SVCS=()=>PRODUCTS.filter(isSvc),DOCS=()=>PRODUCTS.filter(isDoc);
 function setMeta(title,desc){document.title=title;const m=document.querySelector('meta[name="description"]');if(m&&desc)m.content=String(desc).slice(0, 300)}
 const zaloUrl=()=>SITE.zalo?"https://zalo.me/"+String(SITE.zalo).replace(/\D/g,""):"";
 const zaloShow=()=>{const d=String(SITE.zalo||"").replace(/\D/g,"");return d.length===10?d.slice(0,4)+" "+d.slice(4,7)+" "+d.slice(7):SITE.zalo||""};
-function toast(t){const e=$("#toast");e.textContent=t;e.style.display="block";clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display="none",2200)}
+function toast(t){const e=$("#toast");e.textContent=t;e.style.display="block";clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display="none",2400)}
 async function copy(t){try{await navigator.clipboard.writeText(t);toast("Đã sao chép")}catch(e){toast("Giữ tay vào chữ để sao chép")}}
-/* Nút Liên hệ: mở Zalo SONA, chép sẵn tin nhắn có mã sản phẩm. Đây là cách mua duy nhất (D-045). */
-function contactBtn(label,p,cls=""){const u=zaloUrl();const msg=p?`${p.ma_zalo?p.ma_zalo+" – ":""}Em muốn tư vấn ${p.ten}`:"Em cần SONA tư vấn";
+/* Nút Liên hệ: mở Zalo SONA, chép sẵn tin nhắn (có mã sản phẩm, dịch vụ). Đây là cách mua duy nhất (D-045).
+   p: sản phẩm/dịch vụ, hoặc chuỗi tin nhắn soạn sẵn. */
+function contactBtn(label,p,cls=""){const u=zaloUrl();const msg=typeof p==="string"?p:p?`${p.ma_zalo?p.ma_zalo+" – ":""}Em muốn tư vấn ${p.ten}`:"Em cần SONA tư vấn";
   return u?`<a class="btn ${cls}" href="${esc(u)}" target="_blank" rel="noopener" data-zalo="${esc(msg)}">${esc(label||"Liên hệ Zalo")}</a>`:`<a class="btn ${cls}" href="#lien-he">${esc(label||"Liên hệ")}</a>`}
-function bindZalo(){document.querySelectorAll("[data-zalo]").forEach(a=>a.onclick=()=>{try{navigator.clipboard.writeText(a.dataset.zalo).then(()=>toast("Đã chép tin nhắn, dán vào Zalo để gửi SONA"),()=>{})}catch(e){}})}
+function bindZalo(){document.querySelectorAll("[data-zalo]").forEach(a=>a.onclick=()=>{try{navigator.clipboard.writeText(a.dataset.zalo).then(()=>toast("Đã chép tin \""+a.dataset.zalo+"\", dán vào Zalo để gửi SONA"),()=>{})}catch(e){}})}
 /* Khung điện thoại: ảnh thật (chỉ dữ liệu mẫu) hoặc khung tạm có chữ */
 const phone=(src,t,s,cls="")=>`<div class="dt ${cls}">${src?`<img src="${esc(src)}" alt="${esc(t)}${s?" – "+esc(s):""} (dữ liệu mẫu)" loading="lazy">`:`<div class="man"><b>${esc(t)}</b><span>${esc(s||"Ảnh màn hình")}</span><small>dữ liệu mẫu · sắp có</small></div>`}</div>`;
 const firstShot=p=>lines(p.anh_minh_hoa)[0]||"";
+const svcIcon=p=>{const t=norm(p.ten+" "+p.slug);return /video/.test(t)?ICON.video:/web/.test(t)?ICON.globe:/marketing|bai/.test(t)?ICON.mega:ICON.app2};
 async function load(){
   try{[SITE,PRODUCTS]=await Promise.all([fetch("site.json").then(r=>r.json()),fetch("products.json").then(r=>r.json())])}catch(e){SITE={};PRODUCTS=[]}
   try{POSTS=await fetch("posts.json",{cache:"no-cache"}).then(r=>r.json())}catch(e){POSTS=[]}
@@ -433,117 +488,149 @@ async function load(){
   $("#siteName").textContent=name;$("#fName").textContent=name;$("#fSlogan").textContent=khauHieu();document.querySelectorAll(".mark").forEach(i=>i.src=logoSrc());
   if(SITE.favicon){const l=document.querySelector('link[rel="icon"]');if(l)l.href=SITE.favicon}
   if(zaloUrl())["#zaloTop","#zaloTopM"].forEach(s=>{const a=$(s);a.href=zaloUrl();a.target="_blank";a.rel="noopener"});
+  /* menu con Dịch vụ: lấy từ dữ liệu, thêm dịch vụ mới là tự có */
+  const dv=SVCS().map(p=>`<a href="${linkOf(p)}">${esc(p.ten)}</a>`).join("");
+  $("#dvMenu").innerHTML=dv+`<a href="#dich-vu" class="tat-ca">Tất cả dịch vụ →</a>`;$("#dvSub").innerHTML=dv;
   $("#foot").textContent=SITE.chan_trang||"© "+new Date().getFullYear()+" "+name+" · "+(SITE.seo?.dia_chi_web||"").replace(/^https:\/\/|\/$/g,"");
-  $("#fSp").innerHTML=PRODUCTS.map(p=>`<a href="#sp/${esc(p.slug)}">${esc(p.ten)}</a>`).join("");
-  $("#flinks").innerHTML=[["#gioi-thieu","Giới thiệu"],["#hoc","Học AI"],["#lien-he","Liên hệ"]].map(([h,t])=>`<a href="${h}">${t}</a>`).join("")+PAGES.filter(x=>x.hien_chan_trang).map(x=>`<a href="#trang/${esc(x.slug)}">${esc(x.tieu_de)}</a>`).join("");
+  $("#fSp").innerHTML=[...APPS(),...SVCS()].map(p=>`<a href="${linkOf(p)}">${esc(p.ten)}</a>`).join("");
+  $("#flinks").innerHTML=[["#tai-lieu","Tài liệu & Ebook"],["#hoc","Học miễn phí"],["#doi-tac","Đối tác"],["#gioi-thieu","Giới thiệu"],["#lien-he","Liên hệ"]].map(([h,t])=>`<a href="${h}">${t}</a>`).join("")+PAGES.filter(x=>x.hien_chan_trang).map(x=>`<a href="#trang/${esc(x.slug)}">${esc(x.tieu_de)}</a>`).join("");
   const S=SITE.mang_xa_hoi||{};const okU=u=>/^https:\/\//.test(u||"");
   $("#fsoc").innerHTML=[zaloUrl()&&`<a href="${zaloUrl()}" target="_blank" rel="noopener">Zalo ${esc(zaloShow())}</a>`,SITE.hotline&&`<a href="tel:${esc(SITE.hotline.replace(/[^\d+]/g,""))}">Hotline ${esc(SITE.hotline)}</a>`,
     okU(S.facebook)&&`<a href="${esc(S.facebook)}" target="_blank" rel="noopener">Facebook</a>`,okU(S.tiktok)&&`<a href="${esc(S.tiktok)}" target="_blank" rel="noopener">TikTok</a>`,okU(S.youtube)&&`<a href="${esc(S.youtube)}" target="_blank" rel="noopener">YouTube</a>`].filter(Boolean).join("");
   route()}
 function route(){const h=location.hash||(window.SONA_ROUTE?"#"+window.SONA_ROUTE:"");closeMenu();
   const pm=h.match(/^#trang\/([\w-]+)/);const pg=pm&&PAGES.find(x=>x.slug===pm[1]);
-  const m=h.match(/^#sp\/([\w-]+)/);const p=m&&PRODUCTS.find(x=>x.slug===m[1]);
+  const m=h.match(/^#(?:sp|dich-vu)\/([\w-]+)/);const p=m&&PRODUCTS.find(x=>x.slug===m[1]);
   const b=h.match(/^#bai\/([\w-]+)/);const a=b&&POSTS.find(x=>x.slug===b[1]);
-  const t=h.match(/^#hoc\/(.+)$/);const hoc=/^#hoc/.test(h)||!!a;const info=/^#(gioi-thieu|thong-tin)/.test(h);const lh=/^#lien-he/.test(h);const sp=/^#san-pham/.test(h)||!!m;
-  document.body.classList.toggle("pdp",!!p);[["#navHoc",hoc],["#navInfo",info],["#navSp",sp],["#navLh",lh]].forEach(([s,on])=>{$(s).classList.toggle("on",on);on?$(s).setAttribute("aria-current","page"):$(s).removeAttribute("aria-current")});
-  p?product(p):a?article(a):pg?pageView(pg):t?hocFolder(decodeURIComponent(t[1])):hoc?hocPage():info?infoPage():lh?contactPage():sp?productsPage():home();bindZalo();window.scrollTo(0,0)}
+  const t=h.match(/^#hoc\/(.+)$/);const hoc=/^#hoc/.test(h)||!!a;
+  const is=re=>re.test(h);
+  const svc=is(/^#dich-vu/)||(p&&isSvc(p)),app=!svc&&(is(/^#(app|san-pham)/)||(p&&isApp(p))),tl=is(/^#tai-lieu/)||(p&&isDoc(p)),dt=is(/^#doi-tac/),lh=is(/^#lien-he/),info=is(/^#(gioi-thieu|thong-tin)/);
+  document.body.classList.toggle("pdp",!!p);
+  [["#navApp",app],["#navDv",svc],["#navTl",tl],["#navHoc",hoc],["#navDt",dt],["#navLh",lh]].forEach(([s,on])=>{$(s).classList.toggle("on",!!on);on?$(s).setAttribute("aria-current","page"):$(s).removeAttribute("aria-current")});
+  p?product(p):a?article(a):pg?pageView(pg):t&&!/^#hoc-mien-phi/.test(h)?hocFolder(decodeURIComponent(t[1])):hoc?hocPage():info?infoPage():lh?contactPage():dt?partnerPage():is(/^#tai-lieu/)?docsPage():is(/^#dich-vu/)?servicesPage():is(/^#(app|san-pham)/)?appPage():home();bindZalo();window.scrollTo(0,0)}
 /* ---------- khối dùng chung ---------- */
 const W=s=>`<div class="wrap">${s}</div>`;
 const head=(nhan,h,phu,cls="")=>`<div class="dau-khoi ${cls}">${nhan?`<span class="nhan">${esc(nhan)}</span>`:""}<h2>${esc(h)}</h2>${phu?`<p class="phu">${esc(phu)}</p>`:""}</div>`;
-const card=(p,one)=>{const y=lines(p.the_y).slice(0,3);return`<article class="card${one?" mot":""}"><span class="nhan">${esc(p.nhan||groupOf(p))}</span><h3><a href="#sp/${esc(p.slug)}">${esc(p.ten)}</a></h3><p class="cau">${esc(p.cau_ngan||p.phu_de)}</p>
+const pageHead=(nhan,h,phu,extra="")=>`<section class="page-h">${W(`<div class="dau-khoi">${nhan?`<span class="nhan">${esc(nhan)}</span>`:""}<h1>${esc(h)}</h1>${phu?`<p class="phu">${esc(phu)}</p>`:""}</div>${extra}`)}</section>`;
+/* Thẻ app: có khung điện thoại. Thẻ dịch vụ: có biểu tượng, không ảnh. */
+const card=(p,one)=>{const y=lines(p.the_y).slice(0,3),svc=isSvc(p);return`<article class="card${one?" mot":""}${svc?" dv":""}">${svc?`<div class="o-ico">${svcIcon(p)}</div>`:""}<span class="nhan">${esc(p.nhan||groupOf(p))}</span><h3><a href="${linkOf(p)}">${esc(p.ten)}</a></h3><p class="cau">${esc(p.cau_ngan||p.phu_de)}</p>
   ${y.length?`<ul class="cham">${y.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}
-  <div class="hang-nut"><a class="nut-chu" href="#sp/${esc(p.slug)}">Tìm hiểu thêm ${ICON.arrow}</a>${contactBtn("Liên hệ Zalo",p,"phu-btn nho")}</div>
-  <div class="anh-the">${phone(firstShot(p),p.ten,p.anh_ghi_chu||"Ảnh màn hình",p.slug.length%2?"phai":"")}</div></article>`};
+  <div class="hang-nut"><a class="nut-chu" href="${linkOf(p)}">Tìm hiểu thêm ${ICON.arrow}</a>${contactBtn("Liên hệ Zalo",p,"phu-btn nho")}</div>
+  ${svc?"":`<div class="anh-the">${p.anh_bia&&!firstShot(p)?`<img class="bia-the" src="${esc(p.anh_bia)}" alt="${esc(p.ten)}" loading="lazy">`:phone(firstShot(p),p.ten,p.anh_ghi_chu||"Ảnh màn hình",p.slug.length%2?"phai":"")}</div>`}</article>`};
 const stepsHtml=(l,cls="ba")=>`<ol class="steps ${cls}">${l.map(x=>{const[t,d]=splitTitle(x);return`<li>${t?`<div><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`:`<p style="margin:0;color:var(--mau-chu)">${esc(d)}</p>`}</li>`}).join("")}</ol>`;
-const promises=()=>{const cm=pick(TC().cam_ket,MAC_DINH.cam_ket);const ic=[ICON.bill,ICON.lock,ICON.video,ICON.chat];
-  return`<section class="khoi nen-phu">${W(`<h2 class="giua" style="text-align:center">${esc(TC().tieu_de_cam_ket||MAC_DINH.tieu_de_cam_ket)}</h2><div class="luoi-3">${cm.map((x,i)=>{const[t,d]=splitTitle(x);return`<div class="loi-hua"><div class="o-ico">${ic[i%ic.length]}</div>${t?`<h3>${esc(t)}</h3>`:""}<p>${esc(d)}</p></div>`}).join("")}</div>`)}</section>`};
-const howTo=(l)=>`<section class="khoi nen-phu">${W(`<h2>${l.length===3?"Ba bước để bắt đầu.":"Các bước để bắt đầu."}</h2>${stepsHtml(l,l.length===3?"ba":"ba")}<p class="ghi-chu">${esc(TT().ghi_chu_buoc||MAC_DINH.ghi_chu_buoc)}</p>`)}</section>`;
+const cols3=(list,icons,cls="")=>`<div class="luoi-3 ${cls}">${list.map((x,i)=>{const[t,d]=splitTitle(x);return`<div class="loi-hua">${icons?`<div class="o-ico">${icons[i%icons.length]}</div>`:""}${t?`<h3>${esc(t)}</h3>`:""}<p>${esc(d)}</p></div>`}).join("")}</div>`;
+const promises=()=>`<section class="khoi nen-phu">${W(`<h2 class="giua" style="text-align:center">${esc(TC().tieu_de_cam_ket||MAC_DINH.tieu_de_cam_ket)}</h2>${cols3(pick(TC().cam_ket,MAC_DINH.cam_ket),[ICON.bill,ICON.lock,ICON.video,ICON.chat])}`)}</section>`;
+const howTo=(l,title,note)=>`<section class="khoi nen-phu">${W(`<h2>${esc(title||(l.length===3?"Ba bước để bắt đầu.":"Các bước để bắt đầu."))}</h2>${stepsHtml(l)}${note?`<p class="ghi-chu">${esc(note)}</p>`:""}`)}</section>`;
 const band=(t,d,p)=>`<section class="khoi">${W(`<div class="band">${MARK_S}<h2>${esc(t||LH().band_tieu_de||MAC_DINH.band_tieu_de)}</h2><p class="phu">${esc(d||LH().band_mo_ta||MAC_DINH.band_mo_ta)}</p><div class="hang-nut">${contactBtn(SITE.zalo?"Liên hệ Zalo "+zaloShow():"Liên hệ",p)}</div><p class="nho-chu">SONA trả lời từ ${esc(LH().gio||MAC_DINH.gio)} hằng ngày.</p></div>`)}</section>`;
-/* ---------- trang chủ (đặc tả 5) ---------- */
+const learnBlock=()=>{const fl=folders().slice(0,4).map(x=>x[0]);return POSTS.length?`<section class="khoi">${W(`<div class="the-hoc"><div><span class="nhan">Miễn phí</span><h2 style="margin-top:var(--khoang-2)">${esc(HOC().tieu_de||MAC_DINH.hoc_tieu_de)}.</h2><p class="phu">${esc(HOC().mo_ta||MAC_DINH.hoc_mo_ta)}</p><div class="hang-nut"><a class="btn phu-btn" href="#hoc">Vào học</a></div></div>
+    <div class="vien-thuoc">${fl.map(k=>`<a href="#hoc/${encodeURIComponent(k)}">${esc(k)}</a>`).join("")}</div></div>`)}</section>`:""};
+const partnerBlock=()=>`<section class="khoi sat">${W(`<div class="the-hoc"><div><span class="nhan">Đối tác</span><h2 style="margin-top:var(--khoang-2)">${esc(DT().tieu_de||MAC_DINH.dt_tieu_de)}.</h2><p class="phu">${esc(DT().mo_ta||MAC_DINH.dt_mo_ta)}</p><div class="hang-nut"><a class="btn phu-btn" href="#doi-tac">Tìm hiểu chương trình</a></div></div>
+  <ul class="vien-thuoc">${pick(DT().phu_hop,MAC_DINH.dt_phu_hop).map(x=>`<li>${esc(splitTitle(x)[0]||x)}</li>`).join("")}</ul></div>`)}</section>`;
+/* ---------- trang chủ: 3 mảng + đối tác + học miễn phí ---------- */
 function home(){const seo=SITE.seo||{},tc=TC();setMeta(seo.tieu_de||(SITE.ten_web||"SONA")+" · "+khauHieu(),seo.mo_ta);
-  const feat=PRODUCTS.filter(p=>p.noi_bat);const list=(feat.length?feat:PRODUCTS).slice(0,4);
-  const stage=tc.anh_banner?`<img class="banner" src="${esc(tc.anh_banner)}" alt="">`:list.length?`<div class="san-khau" role="img" aria-label="Ảnh màn hình app, dữ liệu mẫu">${list.slice(0,2).map((p,i)=>phone(firstShot(p),p.ten,p.anh_ghi_chu||"Ảnh màn hình",i?"thap phai":"")).join("")}</div>`:"";
-  const tags=pick(tc.mot_man_nhan,MAC_DINH.mot_man_nhan);const fl=folders().slice(0,3).map(x=>x[0]);
+  const feat=APPS().filter(p=>p.noi_bat);const apps=(feat.length?feat:APPS()).slice(0,2);const svcs=SVCS();
+  const links=["#app","#dich-vu","#tai-lieu"],ic=[ICON.app2,ICON.layers,ICON.book];
+  const mang=pick(tc.ba_mang,MAC_DINH.ba_mang).slice(0,3);
   $("#app").innerHTML=`<section class="hero">${W(`<span class="nhan">${esc(tc.nhan||MAC_DINH.nhan)}</span><h1>${esc(khauHieu())}</h1><p class="phu">${esc(tc.mo_ta||MAC_DINH.mo_ta)}</p>
-    <div class="hang-nut">${contactBtn("Liên hệ Zalo")}<a class="btn phu-btn" href="${esc(tc.nut_link||"#san-pham")}"${/^https:/.test(tc.nut_link||"")?' target="_blank" rel="noopener"':""}>${esc(tc.nut_chu||"Xem sản phẩm")}</a></div>${stage}`)}</section>
-  <section class="khoi" id="khoi-sp">${W(`${head("",tc.tieu_de_goi_y||MAC_DINH.tieu_de_sp,tc.mo_ta_goi_y||MAC_DINH.mo_ta_sp)}
-    ${list.length?`<div class="cards">${list.map(p=>card(p,list.length===1)).join("")}</div>`:`<div class="empty"><b>Sản phẩm sắp ra mắt</b>Anh chị nhắn Zalo SONA để được tư vấn nhé.</div>`}`)}</section>
-  ${promises()}
-  <section class="khoi">${W(`<div class="hai-cot"><div>${head("",tc.mot_man_tieu_de||MAC_DINH.mot_man_tieu_de,tc.mot_man_mo_ta||MAC_DINH.mot_man_mo_ta)}<ul class="vien-thuoc">${tags.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
-    <div class="khung-ngang" role="img" aria-label="Ảnh màn hình app, dữ liệu mẫu"><div class="may-tinh-bang">${tc.anh_mot_man?`<img src="${esc(tc.anh_mot_man)}" alt="Ảnh màn hình app (dữ liệu mẫu)" style="width:100%;height:100%;object-fit:cover">`:`<div class="man"><b>${esc(list[0]?.ten||"App SONA")}</b><span>Ảnh màn hình Tổng quan</span><small>dữ liệu mẫu · sắp có</small></div>`}</div></div></div>`)}</section>
-  ${howTo(pick(TT().cach_mua,MAC_DINH.cach_mua))}
-  ${POSTS.length?`<section class="khoi">${W(`<div class="the-hoc"><div><span class="nhan">Miễn phí</span><h2 style="margin-top:var(--khoang-2)">Học AI cho chủ tiệm.</h2><p class="phu">Bài ngắn, đọc vài phút, làm được ngay.</p><div class="hang-nut"><a class="btn phu-btn" href="#hoc">Vào học</a></div></div>
-    <div class="vien-thuoc">${fl.map(k=>`<a href="#hoc/${encodeURIComponent(k)}">${esc(k)}</a>`).join("")}</div></div>`)}</section>`:""}
-  ${band()}`}
-/* ---------- trang Sản phẩm (đặc tả 6) ---------- */
-function productsPage(){const tc=TC();setMeta("Sản phẩm · "+(SITE.ten_web||"SONA"),"Phần mềm đơn giản cho chủ kinh doanh nhỏ của SONA. Trả một lần, không phí tháng.");
-  const cmp=PRODUCTS.filter(p=>lines(p.chon_neu).length);
-  $("#app").innerHTML=`<section class="page-h">${W(`<div class="dau-khoi"><h1>Sản phẩm</h1><p class="phu">${esc(tc.mo_ta_trang_sp||"Phần mềm đơn giản cho chủ kinh doanh nhỏ. Bắt đầu với hai app quản lý spa.")}</p></div>
-    <div class="search" id="sbox"${tc.an_o_tim?" hidden":""}>${ICON.search}<input id="q" type="search" enterkeyhint="search" autocomplete="off" placeholder="${esc(tc.o_tim||"Anh chị đang cần gì?")}" aria-label="Tìm sản phẩm"><button class="clr" id="clr" aria-label="Xóa tìm kiếm">×</button></div>
-    <nav class="cats" id="cats" aria-label="Nhóm sản phẩm"${tc.an_loc_loai?" hidden":""}></nav><div class="cards" id="grid"></div>`)}</section>
+    <div class="hang-nut">${contactBtn("Liên hệ Zalo")}<a class="btn phu-btn" href="${esc(tc.nut_link||"#dich-vu")}"${/^https:/.test(tc.nut_link||"")?' target="_blank" rel="noopener"':""}>${esc(tc.nut_chu||"Xem dịch vụ")}</a></div>
+    ${tc.anh_banner?`<img class="banner" src="${esc(tc.anh_banner)}" alt="">`:""}
+    <div class="ba-mang">${mang.map((x,i)=>{const[t,d]=splitTitle(x);return`<a class="mang" href="${links[i]}"><span class="o-ico">${ic[i]}</span><h3>${esc(t||d)}</h3>${t?`<p>${esc(d)}</p>`:""}<span class="nut-chu">Xem ${esc((t||"").toLowerCase()||"thêm")} ${ICON.arrow}</span></a>`}).join("")}</div>`)}</section>
+  <section class="khoi" id="khoi-sp">${W(`${head("App",tc.tieu_de_goi_y||MAC_DINH.tieu_de_sp,tc.mo_ta_goi_y||MAC_DINH.mo_ta_sp)}
+    ${apps.length?`<div class="cards">${apps.map(p=>card(p,apps.length===1)).join("")}</div>`:`<div class="empty"><b>App sắp ra mắt</b>Anh chị nhắn Zalo SONA để được tư vấn nhé.</div>`}
+    <div class="hang-nut"><a class="btn phu-btn" href="#app">Xem tất cả app</a></div>`)}</section>
+  ${svcs.length?`<section class="khoi nen-phu">${W(`${head("Dịch vụ",DV().tieu_de_trang_chu||"SONA làm theo nhu cầu.",DV().mo_ta||MAC_DINH.dv_mo_ta)}<div class="cards bon">${svcs.map(p=>card(p)).join("")}</div>`)}</section>`:""}
+  <section class="khoi">${W(`<h2>${esc(tc.tieu_de_cach_lam||"Làm việc với SONA.")}</h2>${stepsHtml(pick(tc.cach_lam,MAC_DINH.cach_lam))}`)}</section>
+  ${learnBlock()}${partnerBlock()}${band()}`}
+/* ---------- mảng 1: App ---------- */
+function appPage(){const tc=TC();setMeta((TC().app_tieu_de||MAC_DINH.app_tieu_de)+" · "+(SITE.ten_web||"SONA"),MAC_DINH.app_mo_ta);
+  const cmp=APPS().filter(p=>lines(p.chon_neu).length);
+  $("#app").innerHTML=pageHead("App",tc.app_tieu_de||MAC_DINH.app_tieu_de,tc.app_mo_ta||MAC_DINH.app_mo_ta,`
+    <div class="search" id="sbox"${tc.an_o_tim?" hidden":""}>${ICON.search}<input id="q" type="search" enterkeyhint="search" autocomplete="off" placeholder="${esc(tc.o_tim||"Anh chị đang cần app gì?")}" aria-label="Tìm app"><button class="clr" id="clr" aria-label="Xóa tìm kiếm">×</button></div>
+    <nav class="cats" id="cats" aria-label="Nhóm app"${tc.an_loc_loai?" hidden":""}></nav><div class="cards" id="grid"></div>`)+`
   ${cmp.length>1?`<section class="khoi nen-phu">${W(`<h2>Chưa biết chọn app nào?</h2><div class="so-sanh">${cmp.slice(0,2).map(p=>`<div><h3>Chọn ${esc(p.ten)} nếu</h3><ul class="cham">${lines(p.chon_neu).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`).join("")}</div><div class="hang-nut">${contactBtn("Hỏi SONA qua Zalo")}</div>`)}</section>`:""}
-  ${band()}`;
+  ${promises()}${howTo(pick(TT().cach_mua,MAC_DINH.cach_mua),"",TT().ghi_chu_buoc||MAC_DINH.ghi_chu_buoc)}${band()}`;
   const q=$("#q");q.value=Q;$("#sbox").classList.toggle("has",!!Q);
   q.oninput=()=>{Q=q.value;$("#sbox").classList.toggle("has",!!Q);renderGrid()};q.onkeydown=e=>{if(e.key==="Enter")q.blur()};
   $("#clr").onclick=()=>{Q="";q.value="";$("#sbox").classList.remove("has");q.focus();renderGrid()};renderGrid()}
 function renderGrid(){const words=norm(Q).split(/\s+/).filter(Boolean);
   const hit=p=>{const hay=norm([p.ten,p.phu_de,p.loai,p.nhan,p.nhom,p.cho_ai,...lines(p.loi_ich),...lines(p.van_de),...lines(p.the_y)].join(" "));return words.every(w=>hay.includes(w))};
-  const have=[...new Set(PRODUCTS.map(groupOf))];
+  const have=[...new Set(APPS().map(groupOf))];
   $("#cats").innerHTML=have.length>1?`<button class="cat${CAT?"":" on"}" data-c="" aria-pressed="${!CAT}">Tất cả</button>`+have.map(k=>`<button class="cat${CAT===k?" on":""}" data-c="${esc(k)}" aria-pressed="${CAT===k}">${esc(k)}</button>`).join(""):"";
   document.querySelectorAll(".cat").forEach(b=>b.onclick=()=>{CAT=b.dataset.c;renderGrid()});
-  const list=PRODUCTS.filter(hit).filter(p=>!CAT||groupOf(p)===CAT);
-  $("#grid").innerHTML=list.length?list.map(p=>card(p,false)).join(""):`<div class="empty"><b>${words.length?"Chưa có sản phẩm phù hợp":"Sản phẩm sắp ra mắt"}</b>${words.length?"Anh chị thử từ khóa khác.":"Anh chị nhắn Zalo SONA để được tư vấn nhé."}</div>`;bindZalo()}
-/* ---------- trang chi tiết sản phẩm: MỘT KHUNG CHUNG cho mọi sản phẩm (đặc tả 7) ----------
-   Trường trong products.json: nhan, ten, phu_de, diem_nhan[], anh_bia, van_de[] ("Trước → Với app"),
+  const list=APPS().filter(hit).filter(p=>!CAT||groupOf(p)===CAT);
+  $("#grid").innerHTML=list.length?list.map(p=>card(p,false)).join(""):`<div class="empty"><b>${words.length?"Chưa có app phù hợp":"App sắp ra mắt"}</b>${words.length?"Anh chị thử từ khóa khác.":"Anh chị nhắn Zalo SONA để được tư vấn nhé."}</div>`;bindZalo()}
+/* ---------- mảng 2: Dịch vụ ---------- */
+function servicesPage(){const d=DV();setMeta((d.tieu_de||MAC_DINH.dv_tieu_de)+" · "+(SITE.ten_web||"SONA"),d.mo_ta||MAC_DINH.dv_mo_ta);const svcs=SVCS();
+  $("#app").innerHTML=pageHead("Dịch vụ",d.tieu_de||MAC_DINH.dv_tieu_de,d.mo_ta||MAC_DINH.dv_mo_ta,
+    svcs.length?`<div class="cards bon">${svcs.map(p=>card(p)).join("")}</div>`:`<div class="empty"><b>Dịch vụ đang cập nhật</b>Anh chị nhắn Zalo SONA để được tư vấn nhé.</div>`)+
+  howTo(pick(d.quy_trinh,MAC_DINH.cach_lam),"Cách SONA làm việc.",d.ghi_chu||MAC_DINH.dv_ghi_chu)+band()}
+/* ---------- mảng 3: Tài liệu & Ebook (sắp ra mắt, D-046) ---------- */
+function docsPage(){const t=TL();setMeta((t.tieu_de||MAC_DINH.tl_tieu_de)+" · "+(SITE.ten_web||"SONA"),t.mo_ta||MAC_DINH.tl_mo_ta);const docs=DOCS();
+  const nut=contactBtn("Nhận thông báo qua Zalo","Nhận thông báo Tài liệu & Ebook SONA");
+  const khung=docs.length?docs.map(p=>card(p)).join(""):[1,2,3].map(i=>`<article class="card sap"><span class="nhan">Sắp ra mắt</span><div class="sap-bia">${ICON.book}</div><h3>Tài liệu ${i}</h3><p class="cau">Đang chuẩn bị.</p></article>`).join("");
+  $("#app").innerHTML=pageHead("Tài liệu & Ebook",t.tieu_de||MAC_DINH.tl_tieu_de,t.mo_ta||MAC_DINH.tl_mo_ta,`<div class="hang-nut">${nut}<a class="btn phu-btn" href="#hoc">Đọc bài miễn phí</a></div><div class="cards ba">${khung}</div><p class="ghi-chu">${esc(t.ghi_chu||MAC_DINH.tl_ghi_chu)}</p>`)+learnBlock()+band()}
+/* ---------- Đối tác SONA ---------- */
+function partnerPage(){const d=DT();setMeta((d.tieu_de||MAC_DINH.dt_tieu_de)+" · "+(SITE.ten_web||"SONA"),d.mo_ta||MAC_DINH.dt_mo_ta);
+  const form=/^https:\/\//.test(d.link_form||"")?`<a class="btn phu-btn" href="${esc(d.link_form)}" target="_blank" rel="noopener">Điền form đăng ký</a>`:"";
+  const btns=`<div class="hang-nut">${contactBtn("Đăng ký đối tác","Đăng ký đối tác SONA")}${form}</div>`;
+  $("#app").innerHTML=pageHead("Đối tác",d.tieu_de||MAC_DINH.dt_tieu_de,d.mo_ta||MAC_DINH.dt_mo_ta,btns)+`
+  <section class="khoi" id="phu-hop">${W(`<h2>Ai phù hợp.</h2>${cols3(pick(d.phu_hop,MAC_DINH.dt_phu_hop),[ICON.users,ICON.layers,ICON.app2])}`)}</section>
+  <section class="khoi nen-phu" id="quyen-loi">${W(`<h2>Quyền lợi.</h2>${cols3(pick(d.quyen_loi,MAC_DINH.dt_quyen_loi),[ICON.bill,ICON.chat,ICON.lock])}`)}</section>
+  <section class="khoi" id="dang-ky">${W(`<h2>Các bước đăng ký.</h2>${stepsHtml(pick(d.buoc,MAC_DINH.dt_buoc),"bon")}${btns}<p class="ghi-chu">${esc(d.ghi_chu||MAC_DINH.dt_ghi_chu)}</p>`)}</section>`}
+/* ---------- trang chi tiết: MỘT KHUNG CHUNG cho mọi app, dịch vụ, tài liệu (đặc tả 7) ----------
+   Trường trong products.json: nhan, ten, phu_de, diem_nhan[], anh_bia, van_de[] ("Trước → Sau"),
    loi_ich[] ("Tên: mô tả"), anh_minh_hoa[], cho_ai, cach_nhan, cam_ket, noi_dung, cau_hoi[], nut, ma_zalo.
+   Dịch vụ dùng cùng khung: "Làm gì" thay "Tính năng", "Quy trình làm việc" thay "Cách bắt đầu", không có khối ảnh màn hình nếu chưa có ảnh.
    Khối nào trống dữ liệu thì ẩn. Không có trường giá, không có nút mua (D-045). */
 function product(p){setMeta((p.seo_tieu_de||p.ten)+" · "+(SITE.ten_web||"SONA"),p.seo_mo_ta||p.phu_de);
+  const svc=isSvc(p);
   const vd=lines(p.van_de),li=lines(p.loi_ich),ca=lines(p.cho_ai),cn=lines(p.cach_nhan),dn=lines(p.diem_nhan),im=lines(p.anh_minh_hoa),qa=(p.cau_hoi||[]).filter(q=>q&&q.hoi);
   const caps=lines(p.chu_thich_anh);
-  const heroImg=p.anh_bia?`<img class="bia" src="${esc(p.anh_bia)}" alt="${esc(p.ten)}">`:phone(im[0],p.ten,caps[0]||"Ảnh màn hình");
-  $("#app").innerHTML=W(`<a class="back" href="#san-pham">← Tất cả sản phẩm</a>
+  const heroImg=p.anh_bia?`<img class="bia" src="${esc(p.anh_bia)}" alt="${esc(p.ten)}">`:svc?`<div class="o-ico lon">${svcIcon(p)}</div>`:phone(im[0],p.ten,caps[0]||"Ảnh màn hình");
+  const back=svc?["#dich-vu","Tất cả dịch vụ"]:isDoc(p)?["#tai-lieu","Tài liệu & Ebook"]:["#app","Tất cả app"];
+  $("#app").innerHTML=W(`<a class="back" href="${back[0]}">← ${back[1]}</a>
   <section class="pd-top"><div><span class="nhan">${esc(p.nhan||groupOf(p))}</span><h1>${esc(p.ten)}</h1>${p.phu_de?`<p class="phu">${esc(p.phu_de)}</p>`:""}
     ${dn.length?`<ul class="chips">${dn.map(x=>`<li>${ICON.check}${esc(x)}</li>`).join("")}</ul>`:""}
-    <div class="hang-nut">${contactBtn(p.nut||"Liên hệ Zalo",p)}${li.length?`<a class="btn phu-btn" href="#tinh-nang" data-jump>Xem tính năng</a>`:""}</div></div>
-    <div class="pd-anh">${heroImg}</div></section>`)+`
-  ${vd.length?`<section class="khoi nen-phu" id="van-de">${W(`${head("Giải quyết việc gì",p.tieu_de_van_de||"Bớt sổ, bớt nhớ.")}<ul class="pains">${vd.map(x=>{const[a,b]=String(x).split(/\s*→\s*/);return b?`<li><p class="truoc">${esc(a)}</p><p class="sau">${esc(b)}</p></li>`:`<li><p>${esc(a)}</p></li>`}).join("")}</ul>`)}</section>`:""}
-  ${li.length?`<section class="khoi" id="tinh-nang">${W(`${head("Tính năng chính","Anh chị nhận được.")}<div class="feats">${li.map((x,i)=>{const[t,d]=splitTitle(x);return`<div class="box"><div class="o-ico">${FEAT_ICONS[i%FEAT_ICONS.length]}</div>${t?`<h3>${esc(t)}</h3>`:""}<p>${esc(d)}</p></div>`}).join("")}</div>`)}</section>`:""}
-  <section class="khoi nen-phu" id="anh-man-hinh">${W(`${head("Ảnh màn hình","Xem app trên điện thoại.")}
+    <div class="hang-nut">${contactBtn(p.nut||"Liên hệ Zalo",p)}${li.length?`<a class="btn phu-btn" href="#tinh-nang" data-jump>${svc?"SONA làm gì":"Xem tính năng"}</a>`:""}</div></div>
+    <div class="pd-anh${svc&&!p.anh_bia?" dv":""}">${heroImg}</div></section>`)+`
+  ${vd.length?`<section class="khoi nen-phu" id="van-de">${W(`${head(svc?"Vấn đề":"Giải quyết việc gì",p.tieu_de_van_de||"Bớt sổ, bớt nhớ.")}<ul class="pains">${vd.map(x=>{const[a,b]=String(x).split(/\s*→\s*/);return b?`<li><p class="truoc">${esc(a)}</p><p class="sau${svc?" dv":""}">${esc(b)}</p></li>`:`<li><p>${esc(a)}</p></li>`}).join("")}</ul>`)}</section>`:""}
+  ${li.length?`<section class="khoi" id="tinh-nang">${W(`${head(svc?"Làm gì":"Tính năng chính",svc?"SONA làm cho anh chị.":"Anh chị nhận được.")}<div class="feats">${li.map((x,i)=>{const[t,d]=splitTitle(x);return`<div class="box"><div class="o-ico">${FEAT_ICONS[i%FEAT_ICONS.length]}</div>${t?`<h3>${esc(t)}</h3>`:""}<p>${esc(d)}</p></div>`}).join("")}</div>`)}</section>`:""}
+  ${svc&&!im.length?"":`<section class="khoi nen-phu" id="anh-man-hinh">${W(`${head(svc?"Hình ảnh":"Ảnh màn hình",svc?"Hình ảnh minh họa.":"Xem app trên điện thoại.")}
     ${im.length?`<div class="gal">${im.map((u,i)=>`<figure>${phone(u,p.ten,caps[i]||"")}<figcaption>${esc(caps[i]||"Ảnh màn hình")} · dữ liệu mẫu</figcaption></figure>`).join("")}</div>`
-      :`<div class="note">Ảnh màn hình chụp với dữ liệu mẫu đang được cập nhật. Anh chị nhắn Zalo SONA để xem bản demo.</div>`}`)}</section>
-  ${ca.length?`<section class="khoi" id="danh-cho-ai">${W(`<div class="rong-chu"><span class="nhan">Dành cho ai</span><h2 style="margin-top:var(--khoang-2)">Phù hợp với tiệm nào.</h2><ul class="cham" style="margin-top:var(--khoang-6)">${ca.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`)}</section>`:""}
-  ${cn.length?`<section class="khoi nen-phu" id="bat-dau">${W(`<h2>Cách bắt đầu.</h2>${p.cam_ket?`<p class="phu" style="margin-top:var(--khoang-4);max-width:var(--rong-chu)">${esc(p.cam_ket)}</p>`:""}${stepsHtml(cn,"doc")}`)}</section>`:""}
+      :`<div class="note">Ảnh màn hình chụp với dữ liệu mẫu đang được cập nhật. Anh chị nhắn Zalo SONA để xem bản demo.</div>`}`)}</section>`}
+  ${ca.length?`<section class="khoi" id="danh-cho-ai">${W(`<div class="rong-chu"><span class="nhan">Dành cho ai</span><h2 style="margin-top:var(--khoang-2)">${svc?"Phù hợp với ai.":"Phù hợp với tiệm nào."}</h2><ul class="cham" style="margin-top:var(--khoang-6)">${ca.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`)}</section>`:""}
+  ${cn.length?`<section class="khoi nen-phu" id="bat-dau">${W(`<h2>${svc?"Quy trình làm việc.":"Cách bắt đầu."}</h2>${p.cam_ket?`<p class="phu" style="margin-top:var(--khoang-4);max-width:var(--rong-chu)">${esc(p.cam_ket)}</p>`:""}${stepsHtml(cn,"doc")}`)}</section>`:""}
   ${p.noi_dung?`<section class="khoi">${W(`<div class="art body" style="padding:0">${md(p.noi_dung)}</div>`)}</section>`:""}
   ${qa.length?`<section class="khoi" id="hoi-dap">${W(`<h2>Câu hỏi thường gặp.</h2><div class="faq">${qa.map(q=>`<details><summary>${esc(q.hoi)}</summary><p>${esc(q.dap)}</p></details>`).join("")}</div>`)}</section>`:""}
-  ${band("Quan tâm "+p.ten+"?","Nhắn Zalo SONA để xem bản demo dữ liệu mẫu, được tư vấn và báo giá riêng.",p)}
+  ${band((svc?"Cần ":"Quan tâm ")+p.ten+"?",svc?"Kể nhu cầu qua Zalo. SONA báo cách làm và giá trước, anh chị đồng ý mới làm.":"Nhắn Zalo SONA để xem bản demo dữ liệu mẫu, được tư vấn và báo giá riêng.",p)}
   <div class="sticky"><b>${esc(p.ten)}</b>${contactBtn("Liên hệ",p,"nho")}</div>`;
   document.querySelectorAll("[data-jump]").forEach(a=>a.onclick=e=>{e.preventDefault();document.getElementById("tinh-nang")?.scrollIntoView({behavior:"smooth"})});
   document.querySelectorAll("#app [data-cp]").forEach(b=>b.onclick=()=>copy(b.dataset.cp))}
-/* ---------- Giới thiệu SONA (đặc tả 8) ---------- */
+/* ---------- Giới thiệu SONA ---------- */
 function infoPage(){const t=TT();setMeta("Giới thiệu · "+(SITE.ten_web||"SONA"),t.lam_gi||MAC_DINH.lam_gi);
   const gt=pick(t.gia_tri,MAC_DINH.gia_tri);
   $("#app").innerHTML=`<section class="page-h giua">${W(`<span class="nhan">Về ${esc(SITE.ten_web||"SONA")}</span><h1 style="font-size:var(--chu-hien-thi)">${esc(khauHieu())}</h1><p class="phu">${esc(t.lam_gi||MAC_DINH.lam_gi)}</p>`)}</section>
   <section class="khoi">${W(`<div class="hai-cot"><h2>${esc(t.cau_chuyen_tieu_de||MAC_DINH.cau_chuyen_tieu_de)}</h2><p class="phu">${esc(t.cau_chuyen||MAC_DINH.cau_chuyen)}</p></div>`)}</section>
   <section class="khoi nen-phu">${W(`<h2>Điều SONA giữ.</h2><div class="gia-tri">${gt.map((x,i)=>{const[a,d]=splitTitle(x);return`<div class="box"><span class="so">${i+1}</span>${a?`<h3>${esc(a)}</h3>`:""}<p>${esc(d)}</p></div>`}).join("")}</div>`)}</section>
-  ${band()}`}
-/* ---------- Liên hệ (đặc tả 9) ---------- */
+  ${partnerBlock().replace('class="khoi sat"','class="khoi"')}${band()}`}
+/* ---------- Liên hệ ---------- */
 function contactPage(){const l=LH(),S=SITE.mang_xa_hoi||{};setMeta("Liên hệ · "+(SITE.ten_web||"SONA"),l.loi_moi||MAC_DINH.loi_moi);
   const links=[["Facebook",S.facebook],["TikTok",S.tiktok],["YouTube",S.youtube]].filter(x=>/^https:\/\//.test(x[1]||""));
   const ma=PRODUCTS.map(p=>p.ma_zalo).filter(Boolean).slice(0,3);
   $("#app").innerHTML=`<section class="page-h giua">${W(`<h1>Liên hệ ${esc(SITE.ten_web||"SONA")}</h1><p class="phu">${esc(l.loi_moi||MAC_DINH.loi_moi)}</p>
     <div class="zcard"><div class="o-ico" style="margin-left:auto;margin-right:auto">${ICON.chat}</div><span class="nhan">Zalo</span><div class="num">${esc(zaloShow())}</div><div class="hang-nut">${contactBtn("Mở Zalo")}</div>
-      <p class="nho-chu">Trả lời từ ${esc(l.gio||MAC_DINH.gio)} hằng ngày.${ma.length?` Khi nhắn, anh chị ghi giúp mã ${ma.map(esc).join(" hoặc ")} để SONA biết anh chị quan tâm sản phẩm nào.`:""}</p></div>
+      <p class="nho-chu">Trả lời từ ${esc(l.gio||MAC_DINH.gio)} hằng ngày.${ma.length?` Khi nhắn, anh chị ghi giúp mã ${ma.map(esc).join(", ")} để SONA biết anh chị quan tâm việc nào.`:""}</p></div>
     ${SITE.hotline||SITE.email||SITE.dia_chi?`<div class="kv">${SITE.hotline?`<div><span>Hotline</span><b>${esc(SITE.hotline)}</b></div>`:""}${SITE.email?`<div><span>Email</span><b>${esc(SITE.email)}</b></div>`:""}${SITE.dia_chi?`<div><span>Địa chỉ</span><b>${esc(SITE.dia_chi)}</b></div>`:""}</div>`:""}
     ${links.length?`<div class="mxh"><h3>Theo dõi SONA</h3><div class="vien-thuoc">${links.map(([n,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)}</a>`).join("")}</div></div>`:""}
     <p class="rieng-tu">${esc(l.rieng_tu||MAC_DINH.rieng_tu)}</p>`)}</section>`}
-/* ---------- Học AI miễn phí: thư mục → bài (giữ nguyên nội dung và cách dùng) ---------- */
+/* ---------- Học kiến thức miễn phí (trước là "Học AI"): thư mục → bài. Giữ bài cũ, #hoc và /bai/<slug>/ vẫn chạy ---------- */
 const postHit=words=>a=>{const hay=norm([a.tieu_de,a.tom_tat,a.chu_de,a.noi_dung].join(" "));return words.every(w=>hay.includes(w))};
 const fmtDate=d=>{const m=String(d||"").match(/(\d{4})-(\d{2})-(\d{2})/);return m?m[3]+"/"+m[2]+"/"+m[1]:""};
 const lessonCard=a=>`<a class="ls" href="#bai/${esc(a.slug)}"><span class="meta"><b>${esc(a.chu_de||"Kiến thức AI")}</b>· ${esc(fmtDate(a.ngay))} · ${esc(a.phut||3)} phút đọc</span><h3>${esc(a.tieu_de)}</h3><p>${esc(a.tom_tat)}</p></a>`;
 const FOLDER_ORDER=["Bắt đầu","Viết nội dung","Chăm khách","Bán hàng","Quản lý tiệm"];
 const folders=()=>{const m={};POSTS.forEach(a=>{const k=a.chu_de||"Kiến thức AI";(m[k]=m[k]||[]).push(a)});return Object.entries(m).sort((a,b)=>(FOLDER_ORDER.indexOf(a[0])+99)%99-(FOLDER_ORDER.indexOf(b[0])+99)%99)};
-function hocPage(){setMeta("Học AI miễn phí · "+(SITE.ten_web||"SONA"),"Bài học AI miễn phí cho người kinh doanh nhỏ, mỗi bài đọc khoảng 3 phút, làm được ngay.");
-  $("#app").innerHTML=W(`<section class="hoc-hero"><span class="free">Miễn phí</span><h1>Học AI miễn phí</h1><p>Chọn một thư mục để xem bài. Mỗi bài đọc khoảng 3 phút, làm được ngay.</p></section>
+function hocPage(){const H=HOC();setMeta((H.tieu_de||MAC_DINH.hoc_tieu_de)+" · "+(SITE.ten_web||"SONA"),H.mo_ta||MAC_DINH.hoc_mo_ta);
+  $("#app").innerHTML=W(`<section class="hoc-hero"><span class="free">Miễn phí</span><h1>${esc(H.tieu_de||MAC_DINH.hoc_tieu_de)}</h1><p>${esc(H.mo_ta||MAC_DINH.hoc_mo_ta)}</p></section>
   <div class="search" id="hbox" style="max-width:none">${ICON.search}<input id="hq" type="search" enterkeyhint="search" autocomplete="off" placeholder="Tìm bài học..." aria-label="Tìm bài học"><button class="clr" id="hclr" aria-label="Xóa tìm kiếm">×</button></div>
   <div class="folders" id="folders"></div>`);
   const q=$("#hq");const draw=()=>{const words=norm(q.value).split(/\s+/).filter(Boolean);$("#hbox").classList.toggle("has",!!q.value);
@@ -551,8 +638,8 @@ function hocPage(){setMeta("Học AI miễn phí · "+(SITE.ten_web||"SONA"),"B�
     $("#folders").className="folders";const F=folders();
     $("#folders").innerHTML=F.length?F.map(([k,ls])=>`<a class="folder" href="#hoc/${encodeURIComponent(k)}">${ICON.folder}<span><b>${esc(k)}</b><small>${ls.length} bài</small></span><i>${ICON.arrow}</i></a>`).join(""):`<div class="empty"><b>Bài học đầu tiên sắp lên</b></div>`};
   q.oninput=draw;q.onkeydown=e=>{if(e.key==="Enter")q.blur()};$("#hclr").onclick=()=>{q.value="";q.focus();draw()};draw()}
-function hocFolder(k){const ls=POSTS.filter(a=>(a.chu_de||"Kiến thức AI")===k);document.title=k+" · Học AI miễn phí";
-  $("#app").innerHTML=W(`<a class="back" href="#hoc">← Học AI miễn phí</a><section class="hoc-hero" style="padding-top:var(--khoang-5)"><h1>${esc(k)}</h1><p>${ls.length} bài</p></section><div class="lessons">${ls.map(lessonCard).join("")||`<div class="empty"><b>Thư mục này chưa có bài</b></div>`}</div>`)}
+function hocFolder(k){const ls=POSTS.filter(a=>(a.chu_de||"Kiến thức AI")===k);document.title=k+" · Học miễn phí";
+  $("#app").innerHTML=W(`<a class="back" href="#hoc">← Học kiến thức miễn phí</a><section class="hoc-hero" style="padding-top:var(--khoang-5)"><h1>${esc(k)}</h1><p>${ls.length} bài</p></section><div class="lessons">${ls.map(lessonCard).join("")||`<div class="empty"><b>Thư mục này chưa có bài</b></div>`}</div>`)}
 const safeUrl=u=>/^(https:\/\/|img\/|#)[^\s"'<>]*$/.test(u)&&!u.includes("..");
 function md(src){const inl=t=>esc(t).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>").replace(/\[([^\]]+)\]\(([^)\s]+)\)/g,(m,x,u)=>safeUrl(u)?`<a href="${u}"${/^https/.test(u)?' target="_blank" rel="noopener"':""}>${x}</a>`:m);const out=[];let ul=null;
   String(src||"").split(/\n/).forEach(l=>{const t=l.trim();
@@ -563,7 +650,7 @@ function md(src){const inl=t=>esc(t).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>").repla
     else out.push("<p>"+inl(t)+"</p>")});
   return out.map(x=>Array.isArray(x)?"<ul>"+x.join("")+"</ul>":x).join("")}
 function article(a){setMeta((a.seo_tieu_de||a.tieu_de)+" · "+(SITE.ten_web||"SONA"),a.seo_mo_ta||a.tom_tat);const sp=a.sp&&PRODUCTS.find(p=>p.slug===a.sp);
-  $("#app").innerHTML=W(`<article class="art"><a class="back" href="#hoc">← Học AI miễn phí</a>
+  $("#app").innerHTML=W(`<article class="art"><a class="back" href="#hoc">← Học kiến thức miễn phí</a>
   <div class="meta"><span class="free">Miễn phí</span><span>${esc(a.chu_de||"")}</span><span>${esc(fmtDate(a.ngay))}</span><span>${esc(a.phut||3)} phút đọc</span></div>
   <h1>${esc(a.tieu_de)}</h1>${a.anh?`<div class="cover"><img src="${esc(a.anh)}" alt="${esc(a.tieu_de)}"></div>`:""}${a.viec?`<div class="lamngay"><b>Làm ngay 1 việc</b><p>${esc(a.viec)}</p></div>`:""}<div class="body">${md(a.noi_dung)}</div>
   ${sp?`<div class="cta"><b>Muốn có công cụ làm sẵn?</b><p>${esc(sp.ten)}</p><a class="btn" href="#sp/${esc(sp.slug)}">Xem sản phẩm ${ICON.arrow}</a></div>`:""}
@@ -574,8 +661,10 @@ function pageView(pg){setMeta((pg.seo_tieu_de||pg.tieu_de)+" · "+(SITE.ten_web|
   document.querySelectorAll("[data-cp]").forEach(b=>b.onclick=()=>copy(b.dataset.cp))}
 /* ---------- menu điện thoại, đổi sáng/tối, viền menu khi cuộn ---------- */
 const mo=$("#moMenu"),bang=$("#bangMenu");
-function closeMenu(){bang.classList.remove("mo");mo.setAttribute("aria-expanded","false")}
+function closeMenu(){bang.classList.remove("mo");mo.setAttribute("aria-expanded","false");const w=document.getElementById("navDvWrap");if(w){w.classList.remove("mo");$("#navDv").setAttribute("aria-expanded","false")}}
 mo.onclick=()=>{const m=bang.classList.toggle("mo");mo.setAttribute("aria-expanded",m)};
+$("#navDv").onclick=()=>{const w=$("#navDvWrap"),m=w.classList.toggle("mo");$("#navDv").setAttribute("aria-expanded",m)};
+addEventListener("click",e=>{if(!e.target.closest("#navDvWrap")){$("#navDvWrap").classList.remove("mo");$("#navDv").setAttribute("aria-expanded","false")}});
 $("#doiNen").onclick=()=>{const r=document.documentElement,cur=r.getAttribute("data-theme");const dark=cur==="dark"||(!cur&&matchMedia("(prefers-color-scheme: dark)").matches);const nx=dark?"light":"dark";r.setAttribute("data-theme",nx);try{localStorage.setItem("sona-nen",nx)}catch(e){}};
 addEventListener("scroll",()=>$("#menu").classList.toggle("da-cuon",scrollY>8),{passive:true});
 addEventListener("keydown",e=>{if(e.key==="Escape")closeMenu()});

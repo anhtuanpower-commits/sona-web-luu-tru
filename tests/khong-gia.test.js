@@ -22,6 +22,10 @@ test("luật nhận ra chuỗi giá, không bắt nhầm chữ thường", () =>
     assert.deepEqual(timGia(s), [], "bắt nhầm: " + s);
   assert.equal(boGia("App 390.000đ trả một lần"), "App trả một lần");
 });
+test("link form đối tác: để trống hợp lệ, có thì phải https", () => {
+  assert.deepEqual(checkSite({ ten_web: "S", doi_tac: { link_form: "" } }).filter(i => i.loi), []);
+  assert.ok(checkSite({ ten_web: "S", doi_tac: { link_form: "javascript:x" } }).some(i => i.loi && i.truong === "doi_tac.link_form"));
+});
 test("dữ liệu sản phẩm, cấu hình, trang không còn giá hay trường giá", () => {
   assert.deepEqual(timGiaTrongDuLieu(real.products), []);
   assert.deepEqual(timGiaTrongDuLieu(real.pages), []);

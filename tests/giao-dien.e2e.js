@@ -268,11 +268,14 @@ await step("14. Dữ liệu sau khi sửa vẫn hợp lệ, tạo được trang
 });
 await step("15. Web công khai hiển thị tốt trên điện thoại: mọi trang không tràn ngang, không có giá", async () => {
   const p = await ctx.newPage(); await p.setViewportSize({ width: 390, height: 844 });
-  for (const h of ["", "#san-pham", "#sp/pyna-spa-pro", "#sp/pyna-home-spa", "#gioi-thieu", "#lien-he", "#hoc"]) {
+  for (const h of ["", "#app", "#sp/pyna-spa-pro", "#dich-vu", "#dich-vu/lam-app-theo-nhu-cau", "#dich-vu/thiet-ke-web", "#dich-vu/marketing-da-kenh", "#dich-vu/edit-video", "#tai-lieu", "#hoc", "#doi-tac", "#gioi-thieu", "#lien-he"]) {
     await p.goto(`${BASE}/index.html${h}`); await p.waitForSelector("#app > *"); await p.waitForTimeout(150);
     ok(await p.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), "tràn ngang ở " + (h || "#"));
     ok(!/\d[\d.,]*\s?(đ|₫|vnđ)(?![\p{L}])/iu.test(await p.locator("body").innerText()), "còn giá ở " + (h || "#"));
   }
+  await p.goto(`${BASE}/index.html#doi-tac`); await p.waitForSelector("#app > *");
+  ok((await p.locator("[data-zalo]").first().getAttribute("data-zalo")) === "Đăng ký đối tác SONA", "nút Đăng ký đối tác thiếu tin soạn sẵn");
+  await p.goto(`${BASE}/bai/${readJ("posts.json").find(a => a.trang_thai !== "nhap").slug}/`); await p.waitForSelector(".art h1");
   await p.goto(`${BASE}/`); await p.waitForSelector(".card");
   await p.screenshot({ path: join(SHOTS, "06-web-cong-khai-mobile.png") }); await p.close();
 });

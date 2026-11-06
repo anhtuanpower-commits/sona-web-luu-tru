@@ -58,7 +58,7 @@ Bấm **Xem trước** để xem trên khung điện thoại hoặc máy tính, 
 
 Menu **Sản phẩm** → **Thêm sản phẩm** (hoặc bấm vào sản phẩm có sẵn):
 
-Mỗi sản phẩm dùng chung một khung trang (D-051, PV-015). Mục nào để trống thì web tự ẩn mục đó.
+Mỗi sản phẩm dùng chung một khung trang (D-051, PV-015). **Dịch vụ** cũng thêm ở đây, chọn Loại "Dịch vụ": dịch vụ tự vào menu con Dịch vụ, trang `#dich-vu` và trang chủ; trang chi tiết ở `#dich-vu/<đường-dẫn>`. Sản phẩm Loại "Tài liệu" đang hiện tự vào trang Tài liệu & Ebook. Mục nào để trống thì web tự ẩn mục đó.
 
 1. **Thông tin chính**: Tên, Loại (App, Tài liệu, Dịch vụ), Nhãn nhỏ, Mô tả ngắn, Điểm nhấn (mỗi dòng một ý ngắn).
 2. **Vấn đề giải quyết**: mỗi dòng một vấn đề khách đang gặp.
@@ -87,7 +87,7 @@ Bài đã xuất bản muốn gỡ xuống: **Chuyển về nháp**. Bài học 
 
 ## 8. Trang riêng
 
-Menu **Trang** → **Tạo trang mới**: dùng cho Chính sách đổi trả, Hướng dẫn… Bật **Hiện link ở chân trang web** để khách thấy link dưới cuối mọi trang. Trang **Giới thiệu và Liên hệ** sửa được đoạn giới thiệu, giá trị cốt lõi, cách làm việc và lời mời liên hệ. Không ghi giá ở bất kỳ trang nào (D-045).
+Menu **Trang** → **Tạo trang mới**: dùng cho Chính sách đổi trả, Hướng dẫn… Bật **Hiện link ở chân trang web** để khách thấy link dưới cuối mọi trang. Trang **Các trang hệ thống** sửa chữ cho Giới thiệu, Dịch vụ, Tài liệu & Ebook, Học miễn phí, Đối tác SONA (kể cả link Google Form đăng ký, để trống thì ẩn nút) và Liên hệ. Không ghi giá ở bất kỳ trang nào (D-045).
 
 ## 9. Thay ảnh
 
