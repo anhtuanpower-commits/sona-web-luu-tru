@@ -6,10 +6,11 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, rmSync } from "node
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { isDraft, isHidden } from "../admin/kiem-tra.js";
+import { boGia, timGia } from "../admin/khong-gia.js";
 
 export const GENERATED_DIRS = ["sp", "bai", "trang"];
 const MARK = /<!--seo:dau-->[\s\S]*?<!--seo:cuoi-->/;
-const DEFAULT_DESC = "Công cụ AI đơn giản cho người kinh doanh bận rộn: tài liệu, app và dịch vụ dùng được ngay.";
+const DEFAULT_DESC = "SONA làm phần mềm đơn giản cho chủ kinh doanh nhỏ. App quản lý spa trả một lần, không phí tháng.";
 const escA = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const clip = (s, n) => { s = String(s || "").replace(/\s+/g, " ").trim(); return s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s; };
 
@@ -22,6 +23,8 @@ export function baseUrl(site, env = {}) {
 const abs = (base, u) => !u ? "" : /^https?:\/\//.test(u) ? u : base + String(u).replace(/^\.?\//, "");
 
 export function headBlock({ base, path, title, desc, image, type = "website", siteName, favicon, route }) {
+  // D-045: tiêu đề, mô tả trên Google/Facebook/Zalo không được có giá.
+  title = boGia(title); desc = boGia(desc);
   const depth = path ? path.split("/").filter(Boolean).length : 0;
   const url = base + path;
   return "<!--seo:dau-->" + (depth ? `<base href="${"../".repeat(depth)}">` : "") +
@@ -67,6 +70,11 @@ export function build({ site = {}, products = [], posts = [], pages = [], indexH
     const path = `trang/${pg.slug}/`;
     files[path + "index.html"] = page(path, { title: (pg.seo_tieu_de || pg.tieu_de) + " · " + siteName, desc: pg.seo_mo_ta || clip(String(pg.noi_dung || "").replace(/[#>*\-[\]()!]/g, " "), 160) || DEFAULT_DESC, image: pg.anh || defImg, route: "trang/" + pg.slug });
     urls.push({ loc: base + path });
+  }
+  // Chốt chặn cuối: không trang SEO nào được chứa chuỗi giá trong khối đầu trang.
+  for (const [f, c] of Object.entries(files)) {
+    const head = (c.match(MARK) || [""])[0], hit = timGia(head);
+    if (hit.length) throw new Error(`${f}: khối SEO còn chuỗi giá "${hit[0]}" (D-045)`);
   }
   files["sitemap.xml"] = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
     urls.map(u => `  <url><loc>${escA(u.loc)}</loc>${u.lastmod ? `<lastmod>${u.lastmod}</lastmod>` : ""}</url>`).join("\n") + "\n</urlset>\n";

@@ -378,7 +378,7 @@ function applySiteForm(site, root) {
     if (site.thanh_toan.so_tai_khoan) site.thanh_toan.so_tai_khoan = site.thanh_toan.so_tai_khoan.replace(/\s/g, "");
     if (site.thanh_toan.ten_tai_khoan) site.thanh_toan.ten_tai_khoan = site.thanh_toan.ten_tai_khoan.toUpperCase();
   }
-  ["trang_chu", "thong_tin", "seo", "mang_xa_hoi"].forEach(k => { if (site[k] && !Object.keys(site[k]).length) delete site[k]; });
+  ["trang_chu", "thong_tin", "lien_he", "seo", "mang_xa_hoi"].forEach(k => { if (site[k] && !Object.keys(site[k]).length) delete site[k]; });
   return site;
 }
 function siteEditor({ title, sub, cr, sections, pv = "", message, after }) {
@@ -401,39 +401,41 @@ function viewHome() {
   siteEditor({
     title: "Trang chủ", sub: "Sửa phần đầu trang chủ và các khối đang có. Để trống ô nào thì web giữ chữ mặc định.", cr: [["Trang chủ"]], pv: "#", message: "Sửa trang chủ",
     sections: [
-      { t: "Khu đầu trang", h: field("slogan", "Dòng nhỏ trên cùng", s.slogan, { ph: "Công nghệ tiện ích cho mọi người" })
-        + field("khau_hieu", "Tiêu đề lớn", s.khau_hieu, { ph: "Công cụ AI đơn giản cho người kinh doanh bận rộn", hint: "Chữ <b>AI</b> trong tiêu đề tự tô màu vàng." })
-        + field("trang_chu.mo_ta", "Mô tả dưới tiêu đề (không bắt buộc)", tc.mo_ta, { area: true, rows: 2 })
+      { t: "Khu đầu trang", h: field("khau_hieu", "Khẩu hiệu (tiêu đề lớn, dùng chung cả web)", s.khau_hieu, { ph: "Công nghệ cho mọi người", hint: "SONA chỉ dùng một khẩu hiệu. Khẩu hiệu này hiện ở trang chủ, trang Giới thiệu, chân trang và tiêu đề Google." })
+        + field("trang_chu.mo_ta", "Mô tả dưới tiêu đề", tc.mo_ta, { area: true, rows: 3 })
         + imageField("trang_chu.anh_banner", "Ảnh banner (không bắt buộc)", tc.anh_banner, "Ảnh ngang tỉ lệ khoảng 16:7, hiện phía trên tiêu đề.") },
-      { t: "Nút kêu gọi hành động", d: "Nút vàng dưới ô tìm kiếm. Điền đủ hai ô thì nút mới hiện.", h: field("trang_chu.nut_chu", "Chữ trên nút", tc.nut_chu, { ph: "Nhắn Zalo tư vấn" })
-        + field("trang_chu.nut_link", "Nút dẫn tới", tc.nut_link, { ph: "#hoc", hint: "Trang trong web: <b>#hoc</b>, <b>#thong-tin</b>, <b>#sp/duong-dan-san-pham</b>. Trang ngoài: bắt đầu bằng <b>https://</b>" }) },
-      { t: "Ô tìm kiếm", h: toggle("!trang_chu.an_o_tim", "Hiện ô tìm kiếm", !tc.an_o_tim) + field("trang_chu.o_tim", "Chữ gợi ý trong ô", tc.o_tim, { ph: "Anh chị đang cần gì?" }) },
-      { t: "Khối gợi ý sản phẩm", d: `Thứ tự, ẩn hay hiện từng sản phẩm sửa ở mục <a href="#/san-pham">Sản phẩm</a>.`, h: field("trang_chu.tieu_de_goi_y", "Tiêu đề khối", tc.tieu_de_goi_y, { ph: "Gợi ý cho anh chị" })
-        + toggle("!trang_chu.an_loc_loai", "Hiện bộ lọc loại sản phẩm (Tài liệu, App, Dịch vụ)", !tc.an_loc_loai) },
+      { t: "Nút chính", d: "Nút đầu tiên dưới mô tả. Nút thứ hai luôn là Liên hệ tư vấn qua Zalo.", h: field("trang_chu.nut_chu", "Chữ trên nút", tc.nut_chu, { ph: "Xem sản phẩm" })
+        + field("trang_chu.nut_link", "Nút dẫn tới", tc.nut_link, { ph: "#san-pham", hint: "Trang trong web: <b>#san-pham</b>, <b>#hoc</b>, <b>#gioi-thieu</b>, <b>#lien-he</b>, <b>#sp/duong-dan-san-pham</b>. Trang ngoài: bắt đầu bằng <b>https://</b>" }) },
+      { t: "Cam kết của SONA", d: "Các ô ngay dưới phần đầu trang chủ. Chỉ ghi điều đã được duyệt.", h: field("trang_chu.cam_ket[]", "Mỗi dòng một cam kết, dạng \"Tiêu đề: mô tả\"", (tc.cam_ket || []).join("\n"), { area: true, rows: 4, ph: "Trả một lần, không phí tháng: Mua một lần, không thu phí phần mềm hằng tháng." }) },
+      { t: "Ô tìm kiếm (trang Sản phẩm)", h: toggle("!trang_chu.an_o_tim", "Hiện ô tìm kiếm", !tc.an_o_tim) + field("trang_chu.o_tim", "Chữ gợi ý trong ô", tc.o_tim, { ph: "Anh chị đang cần gì?" }) },
+      { t: "Khối gợi ý sản phẩm", d: `Thứ tự, ẩn hay hiện từng sản phẩm sửa ở mục <a href="#/san-pham">Sản phẩm</a>.`, h: field("trang_chu.tieu_de_goi_y", "Tiêu đề khối sản phẩm ở trang chủ (hiện 3 sản phẩm đầu)", tc.tieu_de_goi_y, { ph: "Sản phẩm của SONA" })
+        + toggle("!trang_chu.an_loc_loai", "Hiện bộ lọc loại sản phẩm ở trang Sản phẩm (App, Tài liệu, Dịch vụ)", !tc.an_loc_loai) },
     ],
   });
 }
 function viewInfoPage() {
   const t = D.site.thong_tin || {};
   siteEditor({
-    title: "Thông tin SONA", sub: "Trang hệ thống, không xóa được. Thông tin liên hệ và tài khoản nhận tiền sửa ở Cấu hình web.", cr: [["Trang", "#/trang"], ["Thông tin SONA"]], pv: "#thong-tin", message: "Sửa trang Thông tin",
+    title: "Giới thiệu và Liên hệ", sub: "Hai trang hệ thống, không xóa được. Số Zalo, hotline, email sửa ở Cấu hình web.", cr: [["Trang", "#/trang"], ["Giới thiệu và Liên hệ"]], pv: "#gioi-thieu", message: "Sửa trang Giới thiệu, Liên hệ",
     sections: [
       { t: "SONA làm gì", h: field("thong_tin.lam_gi", "Đoạn giới thiệu", t.lam_gi, { area: true, rows: 4, ph: "SONA làm công cụ AI đơn giản cho người kinh doanh nhỏ ở Việt Nam…" }) },
-      { t: "Mua như thế nào", d: "Các bước này hiện ở trang Thông tin và ở mọi trang sản phẩm.", h: field("thong_tin.cach_mua[]", "Mỗi dòng một bước", (t.cach_mua || []).join("\n"), { area: true, rows: 4, ph: "Chọn sản phẩm, bấm Sử dụng ngay, quét mã QR bằng app ngân hàng.\nNhắn Zalo SONA mã đơn hiện trên màn hình.\nSONA gửi sản phẩm qua Zalo trong giờ làm việc 8h–20h." }) },
+      { t: "Giá trị cốt lõi", h: field("thong_tin.gia_tri[]", "Mỗi dòng một giá trị, dạng \"Tên: mô tả\"", (t.gia_tri || []).join("\n"), { area: true, rows: 5, hint: "Để trống thì web dùng 5 giá trị cốt lõi SONA (bản rút gọn)." }) },
+      { t: "Cách làm việc với SONA", d: "Hiện ở trang chủ và trang Giới thiệu. Mua hàng chỉ qua Liên hệ, không có chuyển khoản trên web (D-045).", h: field("thong_tin.cach_mua[]", "Mỗi dòng một bước", (t.cach_mua || []).join("\n"), { area: true, rows: 4, ph: "Nhắn Zalo SONA, kể tiệm mình đang cần gì.\nSONA tư vấn sản phẩm phù hợp và báo giá riêng cho anh chị.\nHẹn giờ, SONA cài đặt cùng anh chị và hỗ trợ qua Zalo." }) },
+      { t: "Trang Liên hệ", h: field("lien_he.loi_moi", "Lời mời liên hệ", D.site.lien_he?.loi_moi, { area: true, rows: 2 }) + field("lien_he.gio", "Giờ trả lời tin nhắn", D.site.lien_he?.gio, { ph: "8h–20h" }) },
     ],
   });
 }
 function viewSettings() {
   const s = D.site, m = s.mang_xa_hoi || {}, t = s.thanh_toan || {};
   siteEditor({
-    title: "Cấu hình web", sub: "Tên, logo, liên hệ, mạng xã hội, chân trang và tài khoản nhận tiền.", cr: [["Cấu hình web"]], pv: "#thong-tin", message: "Sửa cấu hình web",
+    title: "Cấu hình web", sub: "Tên, logo, liên hệ, mạng xã hội, chân trang và tài khoản nhận tiền.", cr: [["Cấu hình web"]], pv: "#lien-he", message: "Sửa cấu hình web",
     sections: [
-      { t: "Thương hiệu", h: field("ten_web", "Tên web", s.ten_web, { req: true }) + imageField("logo", "Logo (ảnh vuông)", s.logo, "Hiện ở góc trên và trang Thông tin. Nên dùng ảnh PNG vuông 192×192.") + imageField("favicon", "Biểu tượng tab trình duyệt (favicon)", s.favicon, "Ảnh PNG vuông nhỏ, 48×48 đến 192×192.") },
-      { t: "Liên hệ", d: "Web chưa có biểu mẫu liên hệ. Khách liên hệ qua Zalo, hotline, email dưới đây; các nút này hiện ở đầu trang, chân trang và trang Thông tin.", h:
+      { t: "Thương hiệu", h: field("ten_web", "Tên web", s.ten_web, { req: true }) + imageField("logo", "Logo (ảnh vuông)", s.logo, "Hiện ở góc trên trang web. Nên dùng ảnh PNG vuông 192×192.") + imageField("favicon", "Biểu tượng tab trình duyệt (favicon)", s.favicon, "Ảnh PNG vuông nhỏ, 48×48 đến 192×192.") },
+      { t: "Liên hệ", d: "Web chưa có biểu mẫu liên hệ. Khách liên hệ qua Zalo, hotline, email dưới đây; các thông tin này hiện ở chân trang và trang Liên hệ.", h:
         field("zalo", "Số Zalo", s.zalo, { inputmode: "tel" }) + field("hotline", "Hotline", s.hotline, { inputmode: "tel" }) + field("email", "Email", s.email, { type: "email" }) + field("dia_chi", "Địa chỉ (không bắt buộc)", s.dia_chi) },
       { t: "Mạng xã hội", h: field("mang_xa_hoi.facebook", "Facebook", m.facebook, { ph: "https://facebook.com/…" }) + field("mang_xa_hoi.tiktok", "TikTok", m.tiktok, { ph: "https://tiktok.com/@…" }) + field("mang_xa_hoi.youtube", "YouTube", m.youtube, { ph: "https://youtube.com/@…" }) },
-      { t: "Chân trang", h: field("chan_trang", "Dòng chữ cuối trang", s.chan_trang, { ph: ph("© " + (s.ten_web || "SONA") + " · " + (s.slogan || "") + (s.email ? " · " + s.email : "")), hint: "Để trống thì web tự ghi tên, khẩu hiệu và email." }) },
-      { t: "Tài khoản nhận tiền (mã QR)", d: `<span class="warnline">${I.warn} Chỉ ghi thông tin NHẬN tiền công khai. Không bao giờ ghi mật khẩu hay mã OTP.</span>`, h:
+      { t: "Chân trang", h: field("chan_trang", "Dòng chữ cuối trang", s.chan_trang, { ph: ph("© " + (s.ten_web || "SONA") + " · " + (s.khau_hieu || "") + (s.email ? " · " + s.email : "")), hint: "Để trống thì web tự ghi tên, khẩu hiệu và email." }) },
+      { t: "Tài khoản nhận tiền (lưu tham khảo, web không hiện)", d: `<span class="warnline">${I.warn} Theo D-045 web không có mã QR hay số tiền; mục này chỉ lưu lại. Không bao giờ ghi mật khẩu hay mã OTP.</span>`, h:
         field("thanh_toan.ten_ngan_hang", "Tên ngân hàng", t.ten_ngan_hang) + field("thanh_toan.ngan_hang", "Mã ngân hàng (6 số)", t.ngan_hang, { inputmode: "numeric", hint: "VietinBank 970415 · Vietcombank 970436 · MB 970422 · Techcombank 970407 · BIDV 970418 · ACB 970416 · Agribank 970405" })
         + field("thanh_toan.so_tai_khoan", "Số tài khoản", t.so_tai_khoan, { inputmode: "numeric" }) + field("thanh_toan.ten_tai_khoan", "Tên chủ tài khoản (không dấu)", t.ten_tai_khoan) },
     ],
@@ -447,7 +449,7 @@ function viewSeo() {
     title: "SEO", sub: "Cách web hiện trên Google và khi chia sẻ link lên Facebook, Zalo.", cr: [["SEO"]], pv: null, message: "Sửa SEO mặc định",
     sections: [
       { t: "Mặc định cho trang chủ", h: field("seo.tieu_de", "Tiêu đề trên Google", seo.tieu_de, { count: SEO_TITLE_MAX, ph: (s.ten_web || "SONA") + " · " + (s.khau_hieu || "") })
-        + field("seo.mo_ta", "Mô tả trên Google", seo.mo_ta, { area: true, rows: 3, count: SEO_DESC_MAX, ph: "Công cụ AI đơn giản cho người kinh doanh bận rộn: tài liệu, app và dịch vụ dùng được ngay." })
+        + field("seo.mo_ta", "Mô tả trên Google", seo.mo_ta, { area: true, rows: 3, count: SEO_DESC_MAX, ph: "SONA làm phần mềm đơn giản cho chủ kinh doanh nhỏ. App quản lý spa trả một lần, không phí tháng." })
         + imageField("seo.anh", "Ảnh khi chia sẻ link", seo.anh, "Ảnh ngang 1200×630. Để trống thì dùng logo SONA.")
         + field("seo.dia_chi_web", "Địa chỉ web chính thức", seo.dia_chi_web, { ph: "https://" + G.REPO.owner.toLowerCase() + ".github.io/" + G.REPO.repo + "/", hint: "Khi gắn tên miền riêng, đổi thành <b>https://tenmien.vn/</b> (có dấu / ở cuối)." })
         + `<div class="snip" id="snip"></div>` },
@@ -458,7 +460,7 @@ function viewSeo() {
     after: root => {
       const draw = () => {
         const f = formData(root), base = f["seo.dia_chi_web"] || `https://${G.REPO.owner.toLowerCase()}.github.io/${G.REPO.repo}/`;
-        const t = f["seo.tieu_de"] || (s.ten_web || "SONA") + (s.khau_hieu ? " · " + s.khau_hieu : ""), d = f["seo.mo_ta"] || "Công cụ AI đơn giản cho người kinh doanh bận rộn: tài liệu, app và dịch vụ dùng được ngay.";
+        const t = f["seo.tieu_de"] || (s.ten_web || "SONA") + (s.khau_hieu ? " · " + s.khau_hieu : ""), d = f["seo.mo_ta"] || "SONA làm phần mềm đơn giản cho chủ kinh doanh nhỏ. App quản lý spa trả một lần, không phí tháng.";
         const im = f["seo.anh"] || "img/logo-full.jpg";
         $("#snip", root).innerHTML = `<p class="hint">Xem thử trên Google</p><div class="gsnip"><small>${esc(base)}</small><b>${esc(t.slice(0, SEO_TITLE_MAX))}</b><span>${esc(d.slice(0, SEO_DESC_MAX))}</span></div>
           <p class="hint">Xem thử khi chia sẻ lên Facebook, Zalo</p><div class="share"><img src="${esc(DEMO_BLOBS[im] || "../" + im)}" data-raw="${esc(im)}" alt=""><div><small>${esc(base.replace(/^https:\/\//, "").split("/")[0].toUpperCase())}</small><b>${esc(t)}</b><span>${esc(d)}</span></div></div>`;
@@ -472,7 +474,7 @@ function viewSeo() {
 function viewPages() {
   crumbs([["Trang"]]);
   const sys = [["Trang chủ", "Khu đầu trang, nút, ô tìm kiếm, khối gợi ý", "#/trang-chu", "Sửa"], ["Sản phẩm", "Danh sách và trang chi tiết sản phẩm", "#/san-pham", "Quản lý"],
-    ["Học AI", "Thư mục và bài học", "#/bai-viet", "Quản lý"], ["Thông tin SONA", "Giới thiệu, cách mua, liên hệ", "#/trang/thong-tin", "Sửa"]];
+    ["Học AI", "Thư mục và bài học", "#/bai-viet", "Quản lý"], ["Giới thiệu và Liên hệ", "Giới thiệu SONA, giá trị, cách làm việc, liên hệ", "#/trang/thong-tin", "Sửa"]];
   view(`${head("Trang", "Trang hệ thống của web và các trang riêng anh chị tự tạo (giới thiệu, chính sách, hướng dẫn…).", `<a class="btn" href="#/trang/moi">${I.plus} Tạo trang mới</a>`)}
   <section class="panel"><h2>Trang hệ thống</h2><div class="rows">${sys.map(([t, d, h, a]) => `<a class="rowi" href="${h}"><span class="ri">${I.lock}</span><span class="rt"><b>${t}</b><small>${d}</small></span>${chip("Hệ thống")}<span class="rgo">${a} ›</span></a>`).join("")}</div></section>
   <section class="panel"><h2>Trang riêng</h2>${D.pages.length ? `<div class="rows">${D.pages.map(p => `<a class="rowi" href="#/trang/${esc(p.slug)}"><span class="ri">${I.page}</span><span class="rt"><b>${esc(p.tieu_de || "(chưa có tiêu đề)")}</b><small>/trang/${esc(p.slug)}/${p.cap_nhat ? " · sửa " + fmtDate(p.cap_nhat) : ""}</small></span>${isDraft(p) ? chip("Nháp", "warn") : chip("Đã xuất bản", "ok")}<span class="rgo">Sửa ›</span></a>`).join("")}</div>`
@@ -573,7 +575,8 @@ function viewPosts() {
 
 /* ================= sản phẩm ================= */
 const catOf = p => /app/i.test(p.loai || "") ? "App" : /dịch vụ|dich vu/i.test(p.loai || "") ? "Dịch vụ" : "Tài liệu";
-const priceOf = p => p.goi?.[0]?.so_tien ? fmtMoney(p.goi[0].so_tien) : (p.goi?.[0]?.gia || "");
+// D-045: web không đăng giá, danh sách sản phẩm hiện nhãn thay cho giá.
+const labelOf = p => p.nhan || catOf(p);
 function viewProducts() {
   crumbs([["Sản phẩm"]]);
   const st = { q: "", t: "" };
@@ -586,7 +589,7 @@ function viewProducts() {
     const list = D.products.map((p, i) => ({ p, i })).filter(({ p }) => (!st.t || catOf(p) === st.t) && w.every(k => norm([p.ten, p.phu_de].join(" ")).includes(k)));
     $("#sl").innerHTML = list.length ? `<div class="rows">${list.map(({ p, i }) => `<div class="rowi prod">
       <a class="pth" href="#/san-pham/${esc(p.slug)}">${p.anh_bia ? thumb(p.anh_bia) : `<span class="ri">${I.box}</span>`}</a>
-      <a class="rt" href="#/san-pham/${esc(p.slug)}"><b>${esc(p.ten || "(chưa có tên)")}</b><small>${esc(catOf(p))} · ${esc(priceOf(p))}${p.goi?.length > 1 ? ` · ${p.goi.length} gói` : ""}</small></a>
+      <a class="rt" href="#/san-pham/${esc(p.slug)}"><b>${esc(p.ten || "(chưa có tên)")}</b><small>${esc(catOf(p))} · ${esc(labelOf(p))}</small></a>
       ${isHidden(p) ? chip("Đang ẩn", "warn") : chip("Đang hiện", "ok")}
       ${filtered ? "" : `<span class="ord"><button class="iconbtn" data-mv="-1" data-s="${esc(p.slug)}" aria-label="Đưa lên" ${i === 0 ? "disabled" : ""}>${I.up}</button><button class="iconbtn" data-mv="1" data-s="${esc(p.slug)}" aria-label="Đưa xuống" ${i === D.products.length - 1 ? "disabled" : ""}>${I.down}</button></span>`}
     </div>`).join("")}</div>` : empty(D.products.length ? "Không có sản phẩm phù hợp" : "Chưa có sản phẩm", "", D.products.length ? "" : `<a class="btn ghost" href="#/san-pham/moi">${I.plus} Thêm sản phẩm đầu tiên</a>`);
@@ -605,8 +608,6 @@ function viewProducts() {
   draw();
 }
 const rowF = (k, label, v, o = {}) => `<div class="fld" data-k="${k}"><label>${esc(label)}</label>${o.area ? `<textarea data-k="${k}" rows="${o.rows || 2}">${esc(v)}</textarea>` : `<input data-k="${k}" type="${o.type || "text"}" value="${esc(v ?? "")}" ${o.ph ? `placeholder="${esc(o.ph)}"` : ""} ${o.type === "number" ? 'min="0" step="1000" inputmode="numeric"' : ""}>`}${o.hint ? `<p class="hint">${o.hint}</p>` : ""}<p class="ferr" hidden></p></div>`;
-const goiRow = g => `<div class="subrow" data-row><div class="fgrid two">${rowF("ten", "Tên gói", g.ten)}${rowF("so_tien", "Giá bán (đồng)", g.so_tien || "", { type: "number", ph: "390000" })}</div>
-  <div class="fgrid two">${rowF("gia_niem_yet", "Giá gốc (chỉ điền khi thật sự giảm giá)", g.gia_niem_yet || "", { type: "number" })}${rowF("mo_ta", "Mô tả gói", g.mo_ta)}</div><button type="button" class="btn danger sm" data-rm>Xóa gói</button></div>`;
 const qaRow = q => `<div class="subrow" data-row>${rowF("hoi", "Câu hỏi", q.hoi)}${rowF("dap", "Trả lời", q.dap, { area: true })}<button type="button" class="btn danger sm" data-rm>Xóa câu hỏi</button></div>`;
 const galRow = p => `<div class="galit" data-row data-path="${esc(p)}">${thumb(p)}<button type="button" class="iconbtn" data-rm aria-label="Bỏ ảnh">${I.x}</button></div>`;
 
@@ -615,22 +616,26 @@ function viewProductForm(slug) {
   const orig = isNew ? null : D.products.find(x => x.slug === slug);
   if (!isNew && !orig) { crumbs([["Sản phẩm", "#/san-pham"], ["Không tìm thấy"]]); view(empty("Không tìm thấy sản phẩm này", "Có thể đã bị xóa hoặc đổi đường dẫn.", `<a class="btn ghost" href="#/san-pham">‹ Về danh sách</a>`)); return; }
   const n = D.products.length + 1;
-  const p = isNew ? { slug: "", ma: "SP" + String(n).padStart(2, "0"), loai: "Tài liệu", ten: "", phu_de: "", cho_ai: "", loi_ich: [], goi: [{ ten: "", gia: "", mo_ta: "", so_tien: 0 }], cach_nhan: "", cau_hoi: [], an: true } : structuredClone(orig);
+  const p = isNew ? { slug: "", ma: "SP" + String(n).padStart(2, "0"), loai: "Tài liệu", ten: "", phu_de: "", cho_ai: "", loi_ich: [], van_de: [], diem_nhan: [], cach_nhan: "", cau_hoi: [], nut: "Liên hệ tư vấn", an: true } : structuredClone(orig);
   crumbs([["Sản phẩm", "#/san-pham"], [isNew ? "Sản phẩm mới" : p.ten || p.slug]]);
   view(`<form id="pf" class="edit" novalidate>
     <div class="phead"><div><h1>${esc(isNew ? "Thêm sản phẩm" : p.ten)}</h1><p class="muted">${isHidden(p) ? chip("Đang ẩn", "warn") + " Khách chưa thấy." : chip("Đang hiện", "ok") + ` <a href="../#sp/${esc(p.slug)}" target="_blank" rel="noopener">Xem trên web ↗</a>`}</p></div></div>
     <div class="ecols"><div class="emain stack">
       <section class="panel"><h2>Thông tin chính</h2><div class="fgrid">${field("ten", "Tên sản phẩm", p.ten, { req: true, ph: "Lịch Đăng Spa: Hết Lo Nghĩ Bài Mỗi Tuần" })}
         ${field("loai", "Loại", catOf(p), { options: ["Tài liệu", "App", "Dịch vụ"] })}
-        ${field("phu_de", "Mô tả ngắn (hiện trên thẻ sản phẩm)", p.phu_de, { area: true, rows: 3 })}${field("cho_ai", "Dành cho ai", p.cho_ai)}</div></section>
-      <section class="panel"><h2>Hình ảnh</h2><div class="fgrid">${imageField("anh_bia", "Ảnh bìa", p.anh_bia, "Ảnh ngang tỉ lệ 16:10, hiện trên thẻ sản phẩm và đầu trang chi tiết.")}
-        <div class="fld" data-f="anh_minh_hoa"><label>Ảnh minh họa thêm (không bắt buộc)</label><div class="gal" data-rows="anh_minh_hoa">${(p.anh_minh_hoa || []).map(galRow).join("")}</div><div><button type="button" class="btn ghost sm" id="addGal">${I.plus} Thêm ảnh</button></div></div></div></section>
-      <section class="panel"><h2>Lợi ích</h2>${field("loi_ich", "Mỗi dòng một lợi ích", (p.loi_ich || []).join("\n"), { area: true, rows: 5 })}</section>
+        ${field("nhan", "Nhãn nhỏ trên tên (không bắt buộc)", p.nhan, { ph: "App quản lý · Spa có nhân viên" })}
+        ${field("phu_de", "Mô tả ngắn (hiện trên thẻ sản phẩm và dưới tên)", p.phu_de, { area: true, rows: 3 })}
+        ${field("diem_nhan", "Điểm nhấn (mỗi dòng một ý ngắn, hiện dưới mô tả)", (p.diem_nhan || []).join("\n"), { area: true, rows: 3, ph: "Trả một lần, không phí tháng" })}</div>
+        <p class="hint">Web không đăng giá (D-045). Không ghi số tiền ở bất kỳ ô nào; khách hỏi giá qua nút Liên hệ.</p></section>
+      <section class="panel"><h2>Vấn đề giải quyết</h2>${field("van_de", "Mỗi dòng một vấn đề khách đang gặp", (p.van_de || []).join("\n"), { area: true, rows: 4, ph: "Lịch hẹn ghi sổ, ghi Zalo, dễ sót khách" })}</section>
+      <section class="panel"><h2>Tính năng chính</h2>${field("loi_ich", "Mỗi dòng một tính năng. Viết \"Tên: mô tả\" để có tiêu đề riêng", (p.loi_ich || []).join("\n"), { area: true, rows: 6, ph: "Lịch hẹn & khách hàng: Lịch hẹn, hồ sơ khách hàng" })}</section>
+      <section class="panel"><h2>Hình ảnh</h2><div class="fgrid">${imageField("anh_bia", "Ảnh bìa", p.anh_bia, "Ảnh ngang tỉ lệ 16:9, hiện trên thẻ sản phẩm và đầu trang chi tiết.")}
+        <div class="fld" data-f="anh_minh_hoa"><label>Ảnh màn hình (chỉ ảnh chụp với dữ liệu mẫu, không dùng dữ liệu khách thật)</label><div class="gal" data-rows="anh_minh_hoa">${(p.anh_minh_hoa || []).map(galRow).join("")}</div><div><button type="button" class="btn ghost sm" id="addGal">${I.plus} Thêm ảnh</button></div></div></div></section>
+      <section class="panel"><h2>Dành cho ai</h2>${field("cho_ai", "Mỗi dòng một kiểu khách phù hợp", p.cho_ai, { area: true, rows: 4 })}</section>
       <section class="panel"><h2>Nội dung chi tiết</h2>${mdEditor("noi_dung", "Phần chi tiết (không bắt buộc, hiện dưới mục lợi ích)", p.noi_dung || "")}</section>
-      <section class="panel"><h2>Gói và giá</h2><p class="hint">Chỉ nhập giá đã chốt. Giá gốc chỉ điền khi thật sự đang giảm giá, web sẽ hiện gạch ngang và phần trăm giảm.</p>
-        <div class="fld" data-f="goi"><div class="subrows" data-rows="goi">${(p.goi || []).map(goiRow).join("")}</div><p class="ferr" hidden></p></div><div><button type="button" class="btn ghost sm" id="addGoi">${I.plus} Thêm gói</button></div></section>
       <section class="panel"><h2>Câu hỏi thường gặp</h2><div class="subrows" data-rows="cau_hoi">${(p.cau_hoi || []).map(qaRow).join("")}</div><div><button type="button" class="btn ghost sm" id="addQa">${I.plus} Thêm câu hỏi</button></div></section>
-      <section class="panel"><h2>Cách nhận và cam kết</h2><div class="fgrid">${field("cach_nhan", "Cách nhận sản phẩm", p.cach_nhan, { area: true, rows: 3 })}${field("cam_ket", "Cam kết", p.cam_ket, { area: true, rows: 2 })}</div></section>
+      <section class="panel"><h2>Cách bắt đầu và cam kết</h2><div class="fgrid">${field("cach_nhan", "Các bước bắt đầu (mỗi dòng một bước)", p.cach_nhan, { area: true, rows: 4 })}${field("cam_ket", "Cam kết (chỉ ghi điều đã được duyệt)", p.cam_ket, { area: true, rows: 2 })}</div></section>
+      <section class="panel"><h2>Nút Liên hệ</h2><div class="fgrid two">${field("nut", "Chữ trên nút", p.nut, { ph: "Liên hệ tư vấn" })}${field("ma_zalo", "Mã trong tin nhắn Zalo", p.ma_zalo, { ph: "SPAPRO", hint: "Khách bấm nút, web chép sẵn tin \"MÃ – Em muốn tư vấn Tên sản phẩm\" để SONA biết khách đến từ trang nào." })}</div></section>
     </div>
     <aside class="eside stack">
       <section class="panel"><h2>Lưu</h2>${toggle("hien", "Hiện trên web", !isHidden(p), isNew ? "Sản phẩm mới để ẩn, xem trước xong mới bật." : "")}
@@ -646,17 +651,18 @@ function viewProductForm(slug) {
   $("#f_ten").addEventListener("input", () => { if (!slugTouched) $("#f_slug").value = slugify($("#f_ten").value); slugUrl(); });
   slugUrl();
   const addRow = (sel, html) => { $(`[data-rows="${sel}"]`, root).insertAdjacentHTML("beforeend", html); DIRTY = true; };
-  $("#addGoi").onclick = () => addRow("goi", goiRow({}));
   $("#addQa").onclick = () => { addRow("cau_hoi", qaRow({})); $$('[data-rows="cau_hoi"] [data-row]', root).pop().querySelector("input").focus(); };
   $("#addGal").onclick = async () => { const im = await pickImage("img/anh"); if (im) addRow("anh_minh_hoa", galRow(im)); };
   root.addEventListener("click", e => { const b = e.target.closest("[data-rm]"); if (b) { b.closest("[data-row]").remove(); DIRTY = true; } });
   const collect = () => {
     const f = formData(root), x = structuredClone(p);
-    Object.assign(x, { ten: f.ten, slug: slugify(f.slug || f.ten), loai: f.loai, phu_de: f.phu_de, cho_ai: f.cho_ai, cach_nhan: f.cach_nhan, loi_ich: f.loi_ich.split("\n").map(s => s.trim()).filter(Boolean) });
-    for (const k of ["cam_ket", "anh_bia", "seo_tieu_de", "seo_mo_ta"]) { if (f[k]) x[k] = f[k]; else delete x[k]; }
+    const ls = v => String(v || "").split("\n").map(s => s.trim()).filter(Boolean);
+    Object.assign(x, { ten: f.ten, slug: slugify(f.slug || f.ten), loai: f.loai, phu_de: f.phu_de, cho_ai: f.cho_ai, cach_nhan: f.cach_nhan, loi_ich: ls(f.loi_ich), van_de: ls(f.van_de), diem_nhan: ls(f.diem_nhan) });
+    for (const k of ["nhan", "nut", "cam_ket", "anh_bia", "seo_tieu_de", "seo_mo_ta"]) { if (f[k]) x[k] = f[k]; else delete x[k]; }
+    if (f.ma_zalo) x.ma_zalo = f.ma_zalo.toUpperCase(); else delete x.ma_zalo;
+    delete x.goi; // D-045: bỏ gói giá cũ nếu còn
     const nd = $("#f_noi_dung").value.trim(); if (nd) x.noi_dung = nd; else delete x.noi_dung;
     const rows = k => $$(`[data-rows="${k}"] > [data-row]`, root).map(r => Object.fromEntries($$("[data-k]:is(input,textarea)", r).map(i => [i.dataset.k, i.value.trim()])));
-    x.goi = rows("goi").map(g => { const t = Math.round(+g.so_tien || 0), ny = Math.round(+g.gia_niem_yet || 0); const o = { ten: g.ten, gia: t ? fmtMoney(t) : "", mo_ta: g.mo_ta, so_tien: t }; if (ny) o.gia_niem_yet = ny; return o; });
     x.cau_hoi = rows("cau_hoi").filter(q => q.hoi).map(q => ({ hoi: q.hoi, dap: q.dap }));
     const gal = $$('[data-rows="anh_minh_hoa"] > [data-row]', root).map(r => r.dataset.path); if (gal.length) x.anh_minh_hoa = gal; else delete x.anh_minh_hoa;
     if (f.hien) delete x.an; else x.an = true;
@@ -665,10 +671,7 @@ function viewProductForm(slug) {
   const valid = x => {
     const list = D.products.filter(y => y.slug !== p.slug || isNew).concat(x);
     const iss = checkProduct(x, { ...D, products: list }, imageSet()).filter(i => i.loi);
-    showErrors(root, iss.filter(i => !/^goi\.\d/.test(i.truong)));
-    // lỗi trong từng gói: đánh dấu đúng ô của gói đó
-    iss.forEach(i => { const m = i.truong.match(/^goi\.(\d+)\.(\w+)$/); if (!m) return; const r = $$('[data-rows="goi"] > [data-row]', root)[+m[1]]; const f = r && $(`.fld[data-k="${m[2]}"]`, r); if (f) { f.classList.add("bad"); const e = $(".ferr", f); e.hidden = false; e.textContent = i.msg; } });
-    if (iss.some(i => /^goi\.\d/.test(i.truong)) && !iss.some(i => !/^goi\.\d/.test(i.truong))) $(".subrow .fld.bad", root)?.scrollIntoView({ behavior: "smooth", block: "center" });
+    showErrors(root, iss);
     if (iss.length) toast(`Còn ${iss.length} chỗ cần sửa, xem chữ đỏ.`, "err");
     return !iss.length;
   };

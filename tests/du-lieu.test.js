@@ -7,7 +7,7 @@ import { build, baseUrl } from "../scripts/tao-trang-seo.js";
 const read = f => JSON.parse(readFileSync(new URL("../" + f, import.meta.url), "utf8"));
 const real = { site: read("site.json"), products: read("products.json"), posts: read("posts.json"), pages: read("pages.json") };
 const indexHtml = readFileSync(new URL("../index.html", import.meta.url), "utf8");
-const goodProduct = { slug: "a", ten: "A", phu_de: "x", anh_bia: "img/a.jpg", goi: [{ ten: "G", so_tien: 100000 }] };
+const goodProduct = { slug: "a", ten: "A", phu_de: "x", anh_bia: "img/a.jpg", loi_ich: ["Tính năng: mô tả"] };
 
 test("dữ liệu thật trong kho không có lỗi", () => {
   assert.deepEqual(kiemTra(real).filter(i => i.loi), []);
@@ -15,12 +15,13 @@ test("dữ liệu thật trong kho không có lỗi", () => {
 test("slugify bỏ dấu tiếng Việt", () => {
   assert.equal(slugify("Lịch Đăng Spa: Hết Lo!"), "lich-dang-spa-het-lo");
 });
-test("sản phẩm thiếu tên, giá, trùng đường dẫn bị chặn", () => {
+test("sản phẩm thiếu tên, có giá, trùng đường dẫn bị chặn; không cần giá để lưu", () => {
   const loi = p => checkProduct(p, { products: [p, goodProduct] }).filter(i => i.loi).map(i => i.truong);
+  assert.deepEqual(loi({ ...goodProduct, slug: "b" }), []);
   assert.ok(loi({ ...goodProduct, ten: "" }).includes("ten"));
-  assert.ok(loi({ ...goodProduct, slug: "b", goi: [{ so_tien: 0 }] }).includes("goi.0.so_tien"));
+  assert.ok(loi({ ...goodProduct, slug: "b", goi: [{ so_tien: 100000 }] }).includes("goi"));
   assert.ok(loi({ ...goodProduct }).includes("slug"));
-  assert.ok(loi({ ...goodProduct, slug: "b", goi: [{ so_tien: 100, gia_niem_yet: 50 }] }).includes("goi.0.gia_niem_yet"));
+  assert.ok(loi({ ...goodProduct, slug: "b", ma_zalo: "có dấu" }).includes("ma_zalo"));
   assert.ok(loi({ ...goodProduct, slug: "b", anh_bia: "javascript:alert(1)" }).includes("anh_bia"));
 });
 test("bài viết sai ngày, nháp không cần nội dung", () => {

@@ -2,7 +2,9 @@
    Dùng chung cho trang Admin (chặn trước khi lưu) và GitHub Actions (scripts/kiem-tra-du-lieu.js).
    Mỗi vấn đề: {file, slug, ten, truong, loi, msg}. loi=true là lỗi phải sửa, loi=false là cảnh báo. */
 
-export const RESERVED = ["sp", "bai", "hoc", "trang", "thong-tin", "admin", "img", "app", "scripts", "tests"];
+import { timGiaTrongDuLieu } from "./khong-gia.js";
+
+export const RESERVED = ["sp", "bai", "hoc", "trang", "thong-tin", "gioi-thieu", "lien-he", "san-pham", "admin", "img", "app", "scripts", "tests"];
 export const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 export const SEO_TITLE_MAX = 65;
 export const SEO_DESC_MAX = 160;
@@ -39,12 +41,13 @@ export function checkProduct(p, all = {}, images = null) {
   if (!p || typeof p !== "object") return [{ file: "products", slug: "", ten: "", truong: "", loi: true, msg: "Sản phẩm không đúng dạng." }];
   if (!String(p.ten || "").trim()) push(out, "products", p, "ten", true, "Chưa có tên sản phẩm.");
   slugChecks(out, "products", p, list);
-  if (!Array.isArray(p.goi) || !p.goi.length) push(out, "products", p, "goi", true, "Chưa có gói giá nào.");
-  else p.goi.forEach((g, i) => {
-    if (!(Number(g.so_tien) > 0)) push(out, "products", p, "goi." + i + ".so_tien", true, `Gói ${i + 1}: giá bán phải là số lớn hơn 0.`);
-    if (g.gia_niem_yet != null && !(Number(g.gia_niem_yet) > Number(g.so_tien))) push(out, "products", p, "goi." + i + ".gia_niem_yet", true, `Gói ${i + 1}: giá gốc phải lớn hơn giá bán, hoặc để trống.`);
-  });
-  if (!p.anh_bia) push(out, "products", p, "anh_bia", false, "Chưa có ảnh bìa.");
+  // D-045: không có giá trên web. Mọi trường giá và chuỗi giống giá đều bị chặn.
+  timGiaTrongDuLieu(p).forEach(g => push(out, "products", p, g.duong_dan.split(/[.[]/)[0], true,
+    `Web không đăng giá (D-045). Bỏ "${g.chuoi}" ở mục ${g.duong_dan}; khách hỏi giá qua nút Liên hệ.`));
+  if (p.ma_zalo && !/^[A-Z0-9-]{2,20}$/.test(p.ma_zalo)) push(out, "products", p, "ma_zalo", true, "Mã tin nhắn Zalo chỉ gồm chữ in hoa không dấu, số, dấu gạch ngang.");
+  if (p.anh_minh_hoa != null && !Array.isArray(p.anh_minh_hoa)) push(out, "products", p, "anh_minh_hoa", true, "Ảnh màn hình phải là danh sách.");
+  if (!p.anh_bia) push(out, "products", p, "anh_bia", false, "Chưa có ảnh bìa, web dùng biểu tượng thay thế.");
+  if (!(Array.isArray(p.loi_ich) && p.loi_ich.length)) push(out, "products", p, "loi_ich", false, "Chưa có tính năng chính.");
   [p.anh_bia, ...(p.anh_minh_hoa || [])].forEach(u => {
     if (!okImg(u)) push(out, "products", p, "anh_bia", true, "Đường dẫn ảnh không hợp lệ.");
     else if (u && images && !/^https:/.test(u) && !images.has(u)) push(out, "products", p, "anh_bia", false, `Không thấy ảnh ${u} trong kho.`);
@@ -65,6 +68,7 @@ export function checkPost(a, all = {}, images = null) {
   else if (a.anh && images && !/^https:/.test(a.anh) && !images.has(a.anh)) push(out, "posts", a, "anh", false, `Không thấy ảnh ${a.anh} trong kho.`);
   if (!String(a.tom_tat || "").trim()) push(out, "posts", a, "tom_tat", false, "Chưa có tóm tắt, danh sách bài và Google sẽ thiếu mô tả.");
   if (!String(a.noi_dung || "").trim() && !isDraft(a)) push(out, "posts", a, "noi_dung", true, "Bài đã xuất bản nhưng chưa có nội dung.");
+  timGiaTrongDuLieu({ tieu_de: a.tieu_de, tom_tat: a.tom_tat, seo_tieu_de: a.seo_tieu_de, seo_mo_ta: a.seo_mo_ta }).forEach(g => push(out, "posts", a, g.duong_dan, false, `Có chuỗi giống giá "${g.chuoi}" ở ${g.duong_dan}. Web không đăng giá sản phẩm (D-045).`));
   if (a.sp && all.products && !all.products.some(p => p.slug === a.sp)) push(out, "posts", a, "sp", false, `Sản phẩm gợi ý "${a.sp}" không còn trên web.`);
   seoChecks(out, "posts", a);
   return out;
@@ -79,6 +83,7 @@ export function checkPage(pg, all = {}, images = null) {
   if (!okImg(pg.anh)) push(out, "pages", pg, "anh", true, "Đường dẫn ảnh không hợp lệ.");
   else if (pg.anh && images && !/^https:/.test(pg.anh) && !images.has(pg.anh)) push(out, "pages", pg, "anh", false, `Không thấy ảnh ${pg.anh} trong kho.`);
   if (!String(pg.noi_dung || "").trim() && !isDraft(pg)) push(out, "pages", pg, "noi_dung", true, "Trang đã xuất bản nhưng chưa có nội dung.");
+  timGiaTrongDuLieu(pg).forEach(g => push(out, "pages", pg, g.duong_dan.split(/[.[]/)[0], true, `Web không đăng giá (D-045). Bỏ "${g.chuoi}" ở mục ${g.duong_dan}.`));
   seoChecks(out, "pages", pg);
   return out;
 }
@@ -88,6 +93,9 @@ export function checkSite(s, images = null) {
   if (!s || typeof s !== "object" || Array.isArray(s)) return [{ file: f, slug: "", ten: "", truong: "", loi: true, msg: "Thông tin web không đúng dạng." }];
   if (SECRET_RE.test(JSON.stringify(s))) push(out, f, it, "", true, "Thông tin web có vẻ chứa mật khẩu, mã OTP hoặc mã truy cập. Không được lưu những thứ này lên web.");
   if (!String(s.ten_web || "").trim()) push(out, f, it, "ten_web", true, "Chưa có tên web.");
+  // Bỏ qua thanh_toan (số tài khoản là số, không phải giá) và ghi_chu.
+  timGiaTrongDuLieu(s, { bo_qua: ["thanh_toan", "zalo", "hotline"] }).forEach(g => push(out, f, it, g.duong_dan.split(/[.[]/)[0], true, `Web không đăng giá (D-045). Bỏ "${g.chuoi}" ở mục ${g.duong_dan}.`));
+  if (s.slogan && s.khau_hieu && s.slogan !== s.khau_hieu) push(out, f, it, "slogan", false, "Web chỉ dùng một khẩu hiệu. Ô \"slogan\" cũ khác \"khau_hieu\"; web chỉ hiện khau_hieu.");
   if (s.zalo && !/^[\d\s.+]{8,15}$/.test(s.zalo)) push(out, f, it, "zalo", true, "Số Zalo chỉ gồm chữ số.");
   if (s.hotline && !/^[\d\s.+()-]{6,20}$/.test(s.hotline)) push(out, f, it, "hotline", true, "Hotline chỉ gồm chữ số.");
   if (s.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.email)) push(out, f, it, "email", true, "Email chưa đúng dạng.");

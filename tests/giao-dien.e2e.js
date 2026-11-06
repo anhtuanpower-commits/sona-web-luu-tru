@@ -153,31 +153,36 @@ await step("6. Bài viết nháp không hiện trên web, xuất bản thì hi�
   await page.click("#pub"); await page.waitForTimeout(700);
   p = await publicView("#bai/bai-thu-nghiem-nhap"); ok((await p.locator(".art h1").innerText()) === "Bài thử nghiệm nháp", "bài đã xuất bản chưa hiện"); await p.close();
 });
-await step("7. Kiểm tra dữ liệu: sản phẩm thiếu giá bị chặn, file không đổi", async () => {
+await step("7. Kiểm tra dữ liệu: form không có ô giá; ghi giá vào mô tả bị chặn (D-045), file không đổi", async () => {
   const before = readFileSync(join(SITE, "products.json"), "utf8");
   await page.goto(`${BASE}/admin/#/san-pham/moi`); await page.waitForSelector("#f_ten");
+  ok(!(await page.locator('[data-k="so_tien"], [data-k="gia_niem_yet"], #addGoi').count()), "form còn ô giá");
   await page.fill("#f_ten", "Sản phẩm thử");
+  await page.fill("#f_phu_de", "Chỉ 390.000đ, trả một lần");
   await page.click("#sv"); await page.waitForTimeout(300);
-  ok(await page.locator(".subrow .fld.bad").count() >= 1, "không đánh dấu ô giá");
+  ok(await page.locator('.fld.bad[data-f="phu_de"]').count() === 1, "không chặn giá trong mô tả");
   ok(readFileSync(join(SITE, "products.json"), "utf8") === before, "vẫn ghi file");
-  await page.fill('[data-rows="goi"] [data-row] input[data-k="ten"]', "Gói cơ bản");
-  await page.fill('[data-rows="goi"] [data-row] input[data-k="so_tien"]', "250000");
-  await page.fill('[data-rows="goi"] [data-row] input[data-k="gia_niem_yet"]', "100000");
-  await page.click("#sv"); await page.waitForTimeout(300);
-  ok(/giá gốc/.test(await page.locator(".subrow .fld.bad .ferr").first().innerText()), "không chặn giá gốc thấp hơn giá bán");
-  await page.fill('[data-rows="goi"] [data-row] input[data-k="gia_niem_yet"]', "");
 });
-await step("8. Tạo sản phẩm ẩn, bật hiện thì có trên web; sửa giá", async () => {
+await step("8. Tạo sản phẩm ẩn theo khung chung, bật hiện thì có trên web, không có giá, có nút Liên hệ", async () => {
   await page.fill("#f_phu_de", "Mô tả ngắn thử");
+  await page.fill("#f_van_de", "Vấn đề một\nVấn đề hai");
+  await page.fill("#f_loi_ich", "Lịch hẹn: Ghi lịch hẹn\nBáo cáo: Xem báo cáo");
+  await page.fill("#f_ma_zalo", "thu");
   await page.click("#sv"); await page.waitForURL(/#\/san-pham\/san-pham-thu$/);
   let x = readJ("products.json").find(p => p.slug === "san-pham-thu");
-  ok(x && x.an === true && x.goi[0].so_tien === 250000 && x.goi[0].gia === "250.000đ", "sản phẩm lưu sai");
+  ok(x && x.an === true && !("goi" in x) && x.van_de.length === 2 && x.loi_ich.length === 2 && x.ma_zalo === "THU", "sản phẩm lưu sai");
   let p = await publicView("#sp/san-pham-thu"); ok(!(await p.locator(".pd-top h1").count()), "sản phẩm ẩn vẫn hiện"); await p.close();
   await page.check("#f_hien", { force: true });
-  await page.fill('[data-rows="goi"] [data-row] input[data-k="so_tien"]', "290000");
   await page.click("#sv"); await page.waitForTimeout(700);
-  x = readJ("products.json").find(p => p.slug === "san-pham-thu"); ok(!x.an && x.goi[0].so_tien === 290000, "chưa bật hiện hoặc chưa sửa giá");
-  p = await publicView("#sp/san-pham-thu"); ok((await p.locator("#bigPrice").innerText()).includes("290.000đ"), "giá trên web chưa đổi"); await p.close();
+  x = readJ("products.json").find(p => p.slug === "san-pham-thu"); ok(!x.an, "chưa bật hiện");
+  p = await publicView("#sp/san-pham-thu");
+  ok((await p.locator(".pd-top h1").innerText()) === "Sản phẩm thử", "web chưa hiện sản phẩm");
+  ok(await p.locator("#van-de li").count() === 2 && await p.locator("#tinh-nang .box").count() === 2, "thiếu mục vấn đề hoặc tính năng");
+  ok(await p.locator("#anh-man-hinh").count() === 1 && await p.locator("#hoi-dap").count() === 0, "mục ảnh màn hình/hỏi đáp sai");
+  ok(/^https:\/\/zalo\.me\//.test(await p.locator(".pd-top a[data-zalo]").getAttribute("href")), "nút Liên hệ không mở Zalo");
+  ok((await p.locator(".pd-top a[data-zalo]").getAttribute("data-zalo")).startsWith("THU – "), "tin nhắn Zalo thiếu mã sản phẩm");
+  ok(!/\d[\d.,]*\s?(đ|₫|vnđ)(?![\p{L}])/iu.test(await p.locator("body").innerText()), "trang sản phẩm còn giá");
+  await p.close();
   await shot("03-san-pham-desktop"); await noOverflow(); await shot("03-san-pham-mobile", 390); await noOverflow(); await page.setViewportSize({ width: 1280, height: 860 });
 });
 await step("9. Tải ảnh lên, chặn file giả ảnh, dùng ảnh làm banner trang chủ", async () => {
@@ -197,10 +202,11 @@ await step("9. Tải ảnh lên, chặn file giả ảnh, dùng ảnh làm banne
   await page.uncheck("#f__trang_chu_an_loc_loai", { force: true });
   await page.click("#sv"); await page.waitForTimeout(700);
   const s = readJ("site.json"); ok(s.trang_chu?.anh_banner === "img/anh/anh-thu-banner.png" && s.trang_chu.an_loc_loai === true && s.khau_hieu === "Công cụ AI cho tiệm nhỏ", "site.json chưa đúng");
-  const p = await publicView("");
+  let p = await publicView("");
   ok(await p.locator('img.banner[src="img/anh/anh-thu-banner.png"]').count() === 1, "web chưa có banner");
-  ok(!(await p.locator("#cats").isVisible()), "bộ lọc loại vẫn hiện"); ok((await p.locator(".hero h1").innerText()).includes("tiệm nhỏ"), "tiêu đề chưa đổi");
+  ok((await p.locator(".hero h1").innerText()).includes("tiệm nhỏ"), "tiêu đề chưa đổi");
   await p.close();
+  p = await publicView("#san-pham"); ok(!(await p.locator("#cats").isVisible()), "bộ lọc loại vẫn hiện"); await p.close();
   await page.goto(`${BASE}/admin/#/anh`); await page.waitForSelector('.icard[data-p="img/anh/anh-thu-banner.png"]');
   await page.click('.icard[data-p="img/anh/anh-thu-banner.png"]'); await page.waitForSelector("#rm");
   ok(await page.locator("#rm").isDisabled(), "cho xóa ảnh đang dùng"); await page.keyboard.press("Escape");
@@ -260,9 +266,14 @@ await step("14. Dữ liệu sau khi sửa vẫn hợp lệ, tạo được trang
   ok((await p.title()).startsWith("Sản phẩm thử"), "tiêu đề trang SEO sai");
   await p.close();
 });
-await step("15. Web công khai hiển thị tốt trên điện thoại", async () => {
-  const p = await ctx.newPage(); await p.setViewportSize({ width: 390, height: 844 }); await p.goto(`${BASE}/`); await p.waitForSelector(".card");
-  ok(await p.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), "web công khai tràn ngang");
+await step("15. Web công khai hiển thị tốt trên điện thoại: mọi trang không tràn ngang, không có giá", async () => {
+  const p = await ctx.newPage(); await p.setViewportSize({ width: 390, height: 844 });
+  for (const h of ["", "#san-pham", "#sp/pyna-spa-pro", "#sp/pyna-home-spa", "#gioi-thieu", "#lien-he", "#hoc"]) {
+    await p.goto(`${BASE}/index.html${h}`); await p.waitForSelector("#app > *"); await p.waitForTimeout(150);
+    ok(await p.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), "tràn ngang ở " + (h || "#"));
+    ok(!/\d[\d.,]*\s?(đ|₫|vnđ)(?![\p{L}])/iu.test(await p.locator("body").innerText()), "còn giá ở " + (h || "#"));
+  }
+  await p.goto(`${BASE}/`); await p.waitForSelector(".card");
   await p.screenshot({ path: join(SHOTS, "06-web-cong-khai-mobile.png") }); await p.close();
 });
 

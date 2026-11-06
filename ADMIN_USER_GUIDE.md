@@ -45,11 +45,12 @@ Lưu xong, web thật cập nhật sau khoảng **1–2 phút**. Mở web và k�
 
 Menu **Trang chủ**:
 
-- **Dòng nhỏ trên cùng**, **Tiêu đề lớn** (chữ AI tự tô vàng), **Mô tả dưới tiêu đề**.
+- **Khẩu hiệu** (một câu duy nhất cho cả web, hiện là "Công nghệ cho mọi người") và **Mô tả dưới tiêu đề**.
 - **Ảnh banner**: bấm **Chọn ảnh**, chọn ảnh có sẵn hoặc **Tải ảnh mới**.
-- **Nút kêu gọi hành động**: điền chữ trên nút và nơi nút dẫn tới (ví dụ `#hoc`, `#thong-tin`, `#sp/duong-dan-san-pham` hoặc link `https://…`).
-- **Ô tìm kiếm** và **Bộ lọc loại sản phẩm**: bật hoặc tắt.
-- **Tiêu đề khối gợi ý** (mặc định "Gợi ý cho anh chị").
+- **Nút chính**: điền chữ trên nút và nơi nút dẫn tới (ví dụ `#san-pham`, `#hoc`, `#gioi-thieu`, `#lien-he`, `#sp/duong-dan-san-pham` hoặc link `https://…`).
+- **Cam kết của SONA**: các ô dưới phần đầu trang, mỗi dòng `Tiêu đề: mô tả`.
+- **Ô tìm kiếm** và **Bộ lọc loại sản phẩm** (ở trang Sản phẩm): bật hoặc tắt.
+- **Tiêu đề khối sản phẩm** ở trang chủ (mặc định "Sản phẩm của SONA"; trang chủ hiện 3 sản phẩm đầu theo thứ tự trong mục Sản phẩm).
 
 Bấm **Xem trước** để xem trên khung điện thoại hoặc máy tính, rồi bấm **Lưu thay đổi**. Ô nào để trống thì web giữ chữ mặc định như hiện nay.
 
@@ -57,13 +58,19 @@ Bấm **Xem trước** để xem trên khung điện thoại hoặc máy tính, 
 
 Menu **Sản phẩm** → **Thêm sản phẩm** (hoặc bấm vào sản phẩm có sẵn):
 
-1. **Tên**, **Loại** (Tài liệu, App, Dịch vụ), **Mô tả ngắn**, **Dành cho ai**.
-2. **Ảnh bìa** (ngang 16:10) và **Ảnh minh họa thêm** nếu có.
-3. **Lợi ích**: mỗi dòng một ý.
-4. **Nội dung chi tiết** (không bắt buộc).
-5. **Gói và giá**: giá bán ghi số, ví dụ `390000`. **Giá gốc chỉ điền khi thật sự đang giảm giá**.
-6. **Câu hỏi thường gặp**, **Cách nhận**, **Cam kết**.
-7. Bên phải (trên điện thoại ở thanh dưới cùng): bật **Hiện trên web**, bấm **Xem trước**, rồi **Lưu sản phẩm**.
+Mỗi sản phẩm dùng chung một khung trang (D-051, PV-015). Mục nào để trống thì web tự ẩn mục đó.
+
+1. **Thông tin chính**: Tên, Loại (App, Tài liệu, Dịch vụ), Nhãn nhỏ, Mô tả ngắn, Điểm nhấn (mỗi dòng một ý ngắn).
+2. **Vấn đề giải quyết**: mỗi dòng một vấn đề khách đang gặp.
+3. **Tính năng chính**: mỗi dòng một tính năng, viết `Tên: mô tả` để có tiêu đề riêng.
+4. **Hình ảnh**: Ảnh bìa (ngang 16:9) và Ảnh màn hình. **Chỉ dùng ảnh chụp với dữ liệu mẫu**, không dùng dữ liệu khách thật.
+5. **Dành cho ai**: mỗi dòng một kiểu khách phù hợp.
+6. **Nội dung chi tiết** (không bắt buộc), **Câu hỏi thường gặp**, **Cách bắt đầu** (mỗi dòng một bước), **Cam kết** (chỉ ghi điều đã được duyệt).
+7. **Nút Liên hệ**: chữ trên nút và mã tin nhắn Zalo (ví dụ `SPAPRO`).
+
+**Web không đăng giá (D-045).** Không có ô giá; nếu gõ số tiền (ví dụ số kèm "đ", "k", "triệu") vào bất kỳ ô nào, Admin báo lỗi và không cho lưu. Khách hỏi giá qua nút Liên hệ.
+
+8. Bên phải (trên điện thoại ở thanh dưới cùng): bật **Hiện trên web**, bấm **Xem trước**, rồi **Lưu sản phẩm**.
 
 Sản phẩm mới mặc định **đang ẩn**, để anh chị xem trước cho chắc rồi mới bật. Đổi thứ tự trên web: ở danh sách sản phẩm, bấm mũi tên lên, xuống.
 
@@ -80,7 +87,7 @@ Bài đã xuất bản muốn gỡ xuống: **Chuyển về nháp**. Bài học 
 
 ## 8. Trang riêng
 
-Menu **Trang** → **Tạo trang mới**: dùng cho Chính sách đổi trả, Hướng dẫn thanh toán, Giới thiệu… Bật **Hiện link ở chân trang web** để khách thấy link dưới cuối mọi trang. Trang **Thông tin SONA** sửa được đoạn giới thiệu và các bước mua hàng.
+Menu **Trang** → **Tạo trang mới**: dùng cho Chính sách đổi trả, Hướng dẫn… Bật **Hiện link ở chân trang web** để khách thấy link dưới cuối mọi trang. Trang **Giới thiệu và Liên hệ** sửa được đoạn giới thiệu, giá trị cốt lõi, cách làm việc và lời mời liên hệ. Không ghi giá ở bất kỳ trang nào (D-045).
 
 ## 9. Thay ảnh
 
