@@ -93,7 +93,8 @@ export function checkSite(s, images = null) {
   if (!s || typeof s !== "object" || Array.isArray(s)) return [{ file: f, slug: "", ten: "", truong: "", loi: true, msg: "Thông tin web không đúng dạng." }];
   if (SECRET_RE.test(JSON.stringify(s))) push(out, f, it, "", true, "Thông tin web có vẻ chứa mật khẩu, mã OTP hoặc mã truy cập. Không được lưu những thứ này lên web.");
   if (!String(s.ten_web || "").trim()) push(out, f, it, "ten_web", true, "Chưa có tên web.");
-  // Bỏ qua thanh_toan (số tài khoản là số, không phải giá) và ghi_chu.
+  // Web không đăng thông tin thanh toán (D-045; Chủ tịch duyệt gỡ 06/11). Mua hàng chỉ qua Liên hệ.
+  if (s.thanh_toan) push(out, f, it, "thanh_toan", true, "Web không đăng thông tin thanh toán, tài khoản ngân hàng. Bỏ mục thanh_toan khỏi site.json.");
   timGiaTrongDuLieu(s, { bo_qua: ["thanh_toan", "zalo", "hotline"] }).forEach(g => push(out, f, it, g.duong_dan.split(/[.[]/)[0], true, `Web không đăng giá (D-045). Bỏ "${g.chuoi}" ở mục ${g.duong_dan}.`));
   if (s.slogan && s.khau_hieu && s.slogan !== s.khau_hieu) push(out, f, it, "slogan", false, "Web chỉ dùng một khẩu hiệu. Ô \"slogan\" cũ khác \"khau_hieu\"; web chỉ hiện khau_hieu.");
   if (s.zalo && !/^[\d\s.+]{8,15}$/.test(s.zalo)) push(out, f, it, "zalo", true, "Số Zalo chỉ gồm chữ số.");

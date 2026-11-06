@@ -22,6 +22,14 @@ test("luật nhận ra chuỗi giá, không bắt nhầm chữ thường", () =>
     assert.deepEqual(timGia(s), [], "bắt nhầm: " + s);
   assert.equal(boGia("App 390.000đ trả một lần"), "App trả một lần");
 });
+test("site.json công khai không có thông tin thanh toán", () => {
+  assert.equal(real.site.thanh_toan, undefined);
+  assert.ok(checkSite({ ten_web: "S", thanh_toan: { so_tai_khoan: "123456" } }).some(i => i.loi && i.truong === "thanh_toan"));
+});
+test("web không link tới app đã giao khách (app/lds-*)", () => {
+  for (const f of ["index.html", "products.json", "site.json", "posts.json", "pages.json", "sitemap.xml"])
+    assert.ok(!/app\/lds-/.test(readFileSync(join(ROOT, f), "utf8")), f);
+});
 test("link form đối tác: để trống hợp lệ, có thì phải https", () => {
   assert.deepEqual(checkSite({ ten_web: "S", doi_tac: { link_form: "" } }).filter(i => i.loi), []);
   assert.ok(checkSite({ ten_web: "S", doi_tac: { link_form: "javascript:x" } }).some(i => i.loi && i.truong === "doi_tac.link_form"));

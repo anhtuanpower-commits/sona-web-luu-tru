@@ -76,77 +76,6 @@
     ]
   },
   {
-    "slug": "pyna-home-spa",
-    "ma": "SP04",
-    "loai": "App",
-    "nhan": "Spa nhỏ, chủ tự làm",
-    "ten": "Pyna Home Spa",
-    "phu_de": "Bán hàng, lịch hẹn, khách hàng, liệu trình, thu chi – một người dùng, giao diện gọn.",
-    "diem_nhan": [
-      "Trả một lần, không phí tháng",
-      "Dữ liệu nằm trong tài khoản Google của spa",
-      "SONA cài cùng anh chị qua gọi video"
-    ],
-    "van_de": [
-      "Ghi đơn và công nợ ra sổ. → Tạo đơn nhanh, ghi công nợ, in hóa đơn.",
-      "Lật sổ tìm khách còn buổi. → Trừ buổi liệu trình ngay khi tạo đơn.",
-      "Cuối tháng không rõ thu chi. → Sổ thu chi và báo cáo kinh doanh."
-    ],
-    "loi_ich": [
-      "Tạo đơn nhanh: Ghi đơn, công nợ, in hóa đơn khổ K80, K58, A5.",
-      "Lịch hẹn: Lịch hẹn của tiệm trên điện thoại.",
-      "Khách hàng: Hồ sơ khách, ảnh và hồ sơ da, chăm sóc khách.",
-      "Liệu trình: Trừ buổi ngay tại màn tạo đơn.",
-      "Dịch vụ và kho: Danh mục dịch vụ và hàng hóa.",
-      "Thu chi và báo cáo: Sổ thu chi, báo cáo kinh doanh."
-    ],
-    "anh_minh_hoa": [],
-    "cho_ai": "Spa tại nhà hoặc tiệm 1–3 người.\nChủ tự làm mọi việc.\nMuốn thay sổ tay bằng một app gọn.",
-    "cach_nhan": "Anh chị bấm Liên hệ, nhắn Zalo SONA để được tư vấn và hẹn giờ cài.\nAnh chị đăng nhập tài khoản Google của spa, bấm link SONA gửi để tạo bản sao app.\nSONA gọi video, hướng dẫn anh chị bật app và tự bấm cấp quyền Google.\nCùng nhau điền tên spa, dịch vụ, đặt mật khẩu.\nThêm app ra màn hình chính điện thoại là dùng hằng ngày.",
-    "cam_ket": "SONA chỉ hướng dẫn, không điều khiển máy của anh chị. App và dữ liệu nằm trong tài khoản Google của spa. Hỗ trợ qua Zalo.",
-    "cau_hoi": [
-      {
-        "hoi": "Dữ liệu của tiệm nằm ở đâu?",
-        "dap": "Trong tài khoản Google của spa. Spa giữ toàn quyền bảng dữ liệu. Với bản cài mới, SONA không giữ dữ liệu của anh chị."
-      },
-      {
-        "hoi": "Có phải trả phí hằng tháng không?",
-        "dap": "Không. Anh chị trả một lần. Nhắn Zalo SONA để được báo giá."
-      },
-      {
-        "hoi": "Em không rành công nghệ thì sao?",
-        "dap": "SONA cài cùng anh chị qua gọi video, từng bước một. SONA chỉ hướng dẫn, không điều khiển máy của anh chị."
-      },
-      {
-        "hoi": "Cần chuẩn bị gì để cài?",
-        "dap": "Một tài khoản Google của spa (Gmail), điện thoại hoặc máy tính, và một buổi hẹn gọi video với SONA để cài và làm quen."
-      },
-      {
-        "hoi": "Mua như thế nào?",
-        "dap": "Anh chị bấm Liên hệ để nhắn Zalo SONA. SONA tư vấn, báo giá riêng và hẹn giờ cài."
-      }
-    ],
-    "nut": "Liên hệ Zalo",
-    "ma_zalo": "HOMESPA",
-    "seo_tieu_de": "Pyna Home Spa – app quản lý spa tại nhà",
-    "seo_mo_ta": "Bán hàng, lịch hẹn, khách hàng, liệu trình, thu chi cho spa nhỏ, chủ tự làm. App trong tài khoản Google của spa. Trả một lần, không phí tháng.",
-    "nhom": "Quản lý spa",
-    "noi_bat": true,
-    "cau_ngan": "Cho spa tại nhà hoặc tiệm 1–3 người.",
-    "the_y": [
-      "Tạo đơn nhanh, ghi công nợ, in hóa đơn",
-      "Lịch hẹn, hồ sơ khách, ảnh và hồ sơ da",
-      "Liệu trình, trừ buổi ngay khi tạo đơn"
-    ],
-    "tieu_de_van_de": "Một người, vẫn gọn.",
-    "chon_neu": [
-      "Anh chị tự làm, tiệm 1–3 người",
-      "Cần sổ bán hàng, lịch hẹn, liệu trình gọn",
-      "Muốn in hóa đơn ngay tại quầy"
-    ],
-    "an": true
-  },
-  {
     "slug": "sheet-lich-dang-spa",
     "ma": "SP01",
     "loai": "App",
@@ -197,45 +126,6 @@
       "Bài tự đổi theo tên tiệm, dịch vụ",
       "Dùng trên điện thoại, không cần cài"
     ]
-  },
-  {
-    "slug": "chatgpt-cho-chu-spa-viet-bai-dang-tra-loi-inbox",
-    "ma": "SP02",
-    "loai": "Tài liệu",
-    "ten": "ChatGPT Cho Chủ Spa: Tự Viết Bài, Trả Lời Khách",
-    "phu_de": "Cẩm nang cầm tay chỉ việc, dùng ChatGPT viết bài khuyến mãi và trả lời tin nhắn khách hỏi giá. Không cần biết công nghệ, đọc một buổi tối là dùng được.",
-    "cho_ai": "Chủ spa nhỏ chưa từng dùng ChatGPT, muốn tự viết nội dung mà không tốn thời gian học công nghệ.",
-    "loi_ich": [
-      "Hướng dẫn mở ChatGPT lần đầu bằng lời đời thường, bấm đâu gõ gì ghi rõ từng bước",
-      "30 câu mẫu chép-dán cho spa: bài khuyến mãi, trả lời hỏi giá, nhắn khách quay lại, việc nội bộ tiệm",
-      "Lịch nội dung 4 tuần điền sẵn: mỗi tuần 3 bài đăng và 1 lần nhắn khách quen",
-      "Checklist 5 việc làm ngay trong ngày đầu tiên",
-      "Mỗi câu mẫu có kết quả thật đi kèm, biết trước máy viết ra thế nào"
-    ],
-    "cach_nhan": "Anh chị bấm Liên hệ, nhắn Zalo SONA để được tư vấn.",
-    "cau_hoi": [
-      {
-        "hoi": "Tôi chưa từng dùng ChatGPT thì có học được không?",
-        "dap": "Được. Chương 1 hướng dẫn từng bước từ lúc mở ChatGPT lần đầu, viết bằng lời đời thường, không có từ kỹ thuật."
-      },
-      {
-        "hoi": "Mua rồi mà không hiểu thì hỏi ai?",
-        "dap": "Anh chị được SoNa hỗ trợ qua Zalo trong 7 ngày, tối đa 5 câu hỏi, 8h–20h các ngày làm việc."
-      },
-      {
-        "hoi": "Có phải trả thêm tiền hàng tháng không?",
-        "dap": "Không. Mua một lần, nhận file PDF dùng mãi. ChatGPT bản miễn phí là đủ để làm theo cẩm nang."
-      },
-      {
-        "hoi": "Mua xong bao lâu thì nhận sách?",
-        "dap": "SONA gửi file PDF qua Zalo hoặc email trong giờ làm việc 8h–20h."
-      }
-    ],
-    "mau": "#C98B96",
-    "font": "Quicksand",
-    "cam_ket": "Sau khi mua, được hỗ trợ qua Zalo trong 7 ngày để hỏi thêm nếu chưa rõ cách dùng.",
-    "anh_bia": "img/covers/chatgpt-cho-chu-spa-viet-bai-dang-tra-loi-inbox.jpg",
-    "an": true
   },
   {
     "slug": "lam-app-theo-nhu-cau",

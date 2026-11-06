@@ -232,7 +232,8 @@ await step("11b. Hai người sửa cùng bài: chặn ghi đè thay đổi mớ
   article.noi_dung = "Nội dung mới từ người quản trị khác";
   writeFileSync(join(SITE, "posts.json"), JSON.stringify(posts, null, 2));
   await page.fill("#f_tom_tat", "Bản sửa cũ chưa được lưu"); await page.click("#pub");
-  ok(/vừa được sửa ở nơi khác/.test(await toastText()), "không thông báo xung đột");
+  // Chờ đúng thông báo xung đột; thông báo "Đã lưu" của bước 11 có thể còn trên màn hình.
+  ok(await page.locator(".toast", { hasText: "vừa được sửa ở nơi khác" }).waitFor({ timeout: 8000 }).then(() => true, () => false), "không thông báo xung đột");
   ok(readJ("posts.json").find(a => a.slug === article.slug).noi_dung === article.noi_dung, "ghi đè mất bản mới");
   page.once("dialog", d => d.accept());
   await page.reload(); await page.waitForSelector("#f_tieu_de");

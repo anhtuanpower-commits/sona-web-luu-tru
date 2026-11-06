@@ -216,7 +216,7 @@ header.menu.da-cuon{border-bottom-color:var(--mau-vien)}
 .steps.doc{grid-template-columns:1fr;gap:var(--khoang-5)}
 .steps.doc li{display:grid;grid-template-columns:48px 1fr;gap:var(--khoang-4);align-items:start}
 .steps.doc li::before{font-size:2rem;margin:0}
-/* ---------- 5.6 thẻ học AI ---------- */
+/* ---------- 5.6 thẻ Học miễn phí, Đối tác ---------- */
 .the-hoc{border:1px solid var(--mau-vien);border-radius:var(--bo-goc-lon);padding:clamp(24px,16px + 3vw,56px);display:grid;gap:var(--khoang-6);align-items:center}
 @media(min-width:1024px){.the-hoc{grid-template-columns:1fr auto}}
 .the-hoc .phu{margin-top:var(--khoang-3)}
@@ -313,7 +313,7 @@ body.pdp footer{padding-bottom:96px}@media(min-width:1024px){body.pdp footer{pad
 .mxh{text-align:center;margin-top:var(--khoang-7)}
 .mxh .vien-thuoc{justify-content:center;margin-top:var(--khoang-4)}
 .rieng-tu{text-align:center;color:var(--mau-chu-mo);font-size:var(--chu-nho);margin-top:var(--khoang-7)}
-/* ---------- Học AI và bài viết (giữ nội dung, đổi sang biến mới) ---------- */
+/* ---------- Học miễn phí và bài viết ---------- */
 .hoc-hero{padding-top:var(--khoang-9)}
 .hoc-hero h1{margin-top:var(--khoang-3)}
 .hoc-hero p{margin-top:var(--khoang-3);color:var(--mau-chu-phu);font-size:var(--chu-lon)}
@@ -623,7 +623,7 @@ function contactPage(){const l=LH(),S=SITE.mang_xa_hoi||{};setMeta("Liên hệ �
     ${SITE.hotline||SITE.email||SITE.dia_chi?`<div class="kv">${SITE.hotline?`<div><span>Hotline</span><b>${esc(SITE.hotline)}</b></div>`:""}${SITE.email?`<div><span>Email</span><b>${esc(SITE.email)}</b></div>`:""}${SITE.dia_chi?`<div><span>Địa chỉ</span><b>${esc(SITE.dia_chi)}</b></div>`:""}</div>`:""}
     ${links.length?`<div class="mxh"><h3>Theo dõi SONA</h3><div class="vien-thuoc">${links.map(([n,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)}</a>`).join("")}</div></div>`:""}
     <p class="rieng-tu">${esc(l.rieng_tu||MAC_DINH.rieng_tu)}</p>`)}</section>`}
-/* ---------- Học kiến thức miễn phí (trước là "Học AI"): thư mục → bài. Giữ bài cũ, #hoc và /bai/<slug>/ vẫn chạy ---------- */
+/* ---------- Học kiến thức miễn phí: thư mục → bài. Giữ bài cũ, #hoc và /bai/<slug>/ vẫn chạy ---------- */
 const postHit=words=>a=>{const hay=norm([a.tieu_de,a.tom_tat,a.chu_de,a.noi_dung].join(" "));return words.every(w=>hay.includes(w))};
 const fmtDate=d=>{const m=String(d||"").match(/(\d{4})-(\d{2})-(\d{2})/);return m?m[3]+"/"+m[2]+"/"+m[1]:""};
 const lessonCard=a=>`<a class="ls" href="#bai/${esc(a.slug)}"><span class="meta"><b>${esc(a.chu_de||"Kiến thức AI")}</b>· ${esc(fmtDate(a.ngay))} · ${esc(a.phut||3)} phút đọc</span><h3>${esc(a.tieu_de)}</h3><p>${esc(a.tom_tat)}</p></a>`;

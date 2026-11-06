@@ -247,7 +247,6 @@
     "ngay": "2026-10-09",
     "phut": 3,
     "viec": "Hôm nay nhờ AI viết 3 bài cho tuần tới rồi hẹn giờ đăng sẵn trên Trang Facebook của tiệm.",
-    "sp": "chatgpt-cho-chu-spa-viet-bai-dang-tra-loi-inbox",
     "noi_dung": "Trang Facebook của tiệm cho **hẹn giờ đăng bài miễn phí** trong Meta Business Suite. Ngồi 1 lần, cả tuần tự đăng, anh chị chỉ cần trả lời khách.\n\n## Câu lệnh chép dùng ngay\n\n> Viết 3 bài Facebook ngắn cho tiệm [tên tiệm, loại tiệm] để đăng trong tuần tới. Bài 1 giới thiệu 1 dịch vụ được khách thích nhất: [tên dịch vụ, giá]. Bài 2 kể 1 mẹo chăm sóc khách làm được tại nhà. Bài 3 nhắc ưu đãi đang có: [ưu đãi, hạn dùng]. Mỗi bài dưới 80 chữ, câu đầu gây chú ý, cuối bài ghi cách đặt lịch: [số điện thoại hoặc Zalo]. Không dùng từ tiếng Anh, không thêm thông tin tôi chưa đưa; thiếu gì thì ghi [CẦN ĐIỀN].\n\n## Làm theo 3 bước\n\n- Điền tên tiệm, dịch vụ, ưu đãi và số điện thoại vào câu lệnh, dán vào ChatGPT. Đọc lại, sửa chỗ nào ghi **[CẦN ĐIỀN]**.\n- Mở **Meta Business Suite** (app trên điện thoại hoặc trang business.facebook.com), chọn Trang của tiệm, bấm **Tạo bài viết**, dán bài 1 và thêm 1 ảnh thật của tiệm.\n- Bấm mũi tên nhỏ cạnh nút Đăng, chọn **hẹn giờ**, chọn ngày giờ. Làm tương tự cho bài 2 và bài 3, mỗi bài cách nhau 2 ngày.\n\n## Trước khi tắt máy, soát 3 điều\n\n- Mở **lịch nội dung** trong Meta Business Suite, thấy đủ 3 bài đã hẹn.\n- Giá và hạn ưu đãi trong bài **đúng với tiệm**.\n- Chọn giờ khách hay lướt điện thoại, ví dụ **trưa hoặc tối**.\n\nMẹo nhỏ: bài đã hẹn vẫn sửa hoặc xóa được trước giờ đăng, nên cứ hẹn trước rồi chỉnh sau cũng được."
   },
   {
@@ -258,7 +257,6 @@
     "ngay": "2026-10-08",
     "phut": 3,
     "viec": "Hôm nay nhờ AI viết 1 bài ưu đãi ngắn rồi đăng lên hồ sơ Google Maps của tiệm.",
-    "sp": "chatgpt-cho-chu-spa-viet-bai-dang-tra-loi-inbox",
     "noi_dung": "Khách tìm tiệm trên Google Maps sẽ thấy bài đăng của tiệm. Đăng bài ở đây **không tốn tiền quảng cáo**. Trên điện thoại khách chỉ thấy khoảng **1 dòng rưỡi đầu**, nên ưu đãi phải nằm ngay câu đầu.\n\n## Câu lệnh chép dùng ngay\n\n> Viết 1 bài ưu đãi cho tiệm [tên tiệm, loại tiệm] để đăng lên Google Maps. Câu đầu tiên dưới 90 ký tự, nói rõ ưu đãi: [ưu đãi, ví dụ giảm 20% gội đầu dưỡng sinh]. Sau đó 2 câu ngắn: áp dụng từ [ngày] đến [ngày], cách đặt lịch là [gọi hoặc nhắn Zalo số ...]. Không dùng từ tiếng Anh, không hứa điều gì ngoài ưu đãi đã ghi.\n\n## Làm theo 3 bước\n\n- Điền tên tiệm, ưu đãi, ngày và cách đặt lịch vào câu lệnh, dán vào ChatGPT. Đọc lại, sửa cho đúng giọng tiệm.\n- Mở Google Maps, vào **hồ sơ của tiệm** (tài khoản đang quản lý tiệm), tìm mục đăng bài và chọn loại **Ưu đãi**.\n- Dán bài, điền ngày bắt đầu và kết thúc giống trong bài, thêm 1 ảnh thật của tiệm rồi đăng.\n\n## Trước khi đăng, soát 3 điều\n\n- Câu đầu có **đủ ưu đãi**, khách chỉ đọc câu đó vẫn hiểu.\n- Ngày trong bài và ngày điền vào ô **khớp nhau**.\n- Nhân viên đã biết ưu đãi, để khách gọi tới **không bị hỏi lại**.\n\nMẹo nhỏ: nếu tiệm chưa có hồ sơ trên Google Maps thì để dành bài này, đăng lên Facebook hoặc Zalo trước."
   },
   {
@@ -269,7 +267,6 @@
     "ngay": "2026-10-07",
     "phut": 3,
     "viec": "Hôm nay nhờ AI viết 1 mẫu tin chúc sinh nhật rồi gửi cho khách nào có sinh nhật tuần này.",
-    "sp": "chatgpt-cho-chu-spa-viet-bai-dang-tra-loi-inbox",
     "noi_dung": "Khách quen được tiệm nhớ ngày sinh nhật sẽ thấy mình **được quan tâm**. Chỉ cần 1 mẫu tin viết sẵn là gửi được cho nhiều người.\n\n## Câu lệnh chép dùng ngay\n\n> Viết 1 tin nhắn Zalo chúc mừng sinh nhật khách quen của tiệm [tên tiệm, loại tiệm], dưới 300 ký tự, xưng em, gọi khách là [anh/chị + tên]. Chúc ngắn gọn, ấm áp, không sến. Nhắc món quà nhỏ tiệm tặng: [quà, ví dụ giảm 10% hoặc tặng 1 lần gội], dùng được trong [số ngày] ngày. Cuối tin mời khách nhắn lại để đặt lịch. Không hứa điều gì khác ngoài món quà đã ghi.\n\n## Làm theo 3 bước\n\n- Điền tên tiệm, món quà và số ngày dùng quà vào câu lệnh, dán vào ChatGPT. Đọc lại, sửa cho giống cách tiệm hay nói.\n- Lưu tin vào ghi chú điện thoại. Khi gửi, chỉ cần **đổi tên khách**.\n- Mở sổ khách hoặc danh bạ, tìm khách có sinh nhật **tuần này**, gửi qua Zalo vào buổi sáng.\n\n## Trước khi gửi, soát 3 điều\n\n- Tên khách viết **đúng**, xưng hô đúng anh hay chị.\n- Món quà và hạn dùng **đúng như tiệm sẽ làm**, nhân viên cũng biết để không từ chối khách.\n- Mỗi khách chỉ gửi **1 tin**, không gửi kèm quảng cáo khác.\n\nMẹo nhỏ: nếu tiệm chưa có ngày sinh của khách, lần tới khách đến hãy hỏi nhẹ và ghi vào sổ."
   },
   {
@@ -340,7 +337,6 @@
     "ngay": "2026-09-30",
     "phut": 3,
     "viec": "Hôm nay chọn 1 khách cũ đã lâu chưa quay lại, nhờ AI viết tin hỏi thăm rồi gửi qua Zalo.",
-    "sp": "chatgpt-cho-chu-spa-viet-bai-dang-tra-loi-inbox",
     "noi_dung": "Khách cũ đã biết tiệm, đã tin tay nghề, nên mời khách cũ quay lại thường dễ hơn tìm khách mới. Cái khó là tin nhắn phải giống **lời hỏi thăm**, không giống tin quảng cáo gửi hàng loạt.\n\n## Câu lệnh chép dùng ngay\n\n> Viết tin nhắn Zalo cho chị [tên khách], lần trước làm [tên dịch vụ] ở tiệm [tên tiệm] khoảng [số tuần] tuần trước. Hỏi thăm kết quả sau khi làm, nhắc nhẹ đã đến lúc chăm lại, mời chị chọn giờ tuần này. Dưới 60 chữ, xưng em, giọng thân mật, không dùng chữ \"khuyến mãi\".\n\n## Làm theo 3 bước\n\n- Mở danh sách khách hoặc lịch sử tin nhắn, chọn **1 khách** lâu rồi chưa quay lại.\n- Điền **tên khách, dịch vụ đã làm, số tuần** vào câu lệnh, dán vào ChatGPT.\n- Đọc lại, sửa vài chữ cho giống giọng mình, rồi gửi qua **Zalo**.\n\n## Trước khi gửi, soát 3 điều\n\n- Tên khách và dịch vụ đúng với lần khách đã làm.\n- Không hứa kết quả chắc chắn.\n- Mỗi khách một tin riêng, không gửi cùng lúc cho cả danh sách.\n\nMẹo nhỏ: khách nào trả lời, anh chị ghi lại ngày hẹn để lần sau nhắc đúng lúc."
   },
   {
@@ -360,7 +356,6 @@
     "chu_de": "Chăm khách",
     "ngay": "2026-09-27",
     "phut": 3,
-    "sp": "chatgpt-cho-chu-spa-viet-bai-dang-tra-loi-inbox",
     "noi_dung": "Khách nhắn \"giá bao nhiêu em\" mà mình chỉ trả lời đúng một con số thì rất dễ bị im luôn. Câu trả lời tốt thường có đủ 3 phần: **giá**, **khách nhận được gì**, và **một câu hỏi để khách trả lời tiếp**.\n\n## Câu lệnh chép dùng ngay\n\n> Khách nhắn: \"[dán tin nhắn của khách]\". Viết câu trả lời cho tiệm [tên tiệm]: báo giá [tên dịch vụ] là [giá], nói ngắn dịch vụ gồm những bước gì, rồi hỏi khách muốn đặt khung giờ nào. Dưới 50 chữ, xưng em, gọi khách là chị.\n\n## Vì sao câu này hiệu quả\n\n- Có sẵn **giá thật** nên máy không tự bịa giá.\n- Bắt máy nói **khách nhận được gì**, khách thấy đáng tiền hơn một con số trơn.\n- Kết bằng **câu hỏi chọn giờ**, khách dễ trả lời hơn là \"chị cần gì thêm không ạ\".\n- Giới hạn **dưới 50 chữ** để tin nhắn đọc trên điện thoại không bị dài.\n\n## Trước khi gửi, soát 3 điều\n\n- Giá và tên dịch vụ đúng với bảng giá của tiệm.\n- Không hứa kết quả chắc chắn kiểu \"đảm bảo hết mụn\".\n- Đọc lại xem có giống giọng mình nói chuyện với khách không, sửa vài chữ cho tự nhiên.\n\nMẹo nhỏ: câu trả lời nào khách hay phản hồi tốt, anh chị lưu vào ghi chú điện thoại để lần sau chép lại, khỏi phải nhờ máy viết lại.",
     "viec": "Chép câu lệnh bên dưới vào ChatGPT, sửa tên dịch vụ, lưu câu trả lời vào ghi chú điện thoại để lần sau dán ngay."
   },
@@ -371,7 +366,6 @@
     "chu_de": "Viết nội dung",
     "ngay": "2026-09-27",
     "phut": 3,
-    "sp": "chatgpt-cho-chu-spa-viet-bai-dang-tra-loi-inbox",
     "noi_dung": "Máy viết hay hay dở phụ thuộc vào việc mình đưa đủ thông tin hay chưa. Bí quyết là luôn nói rõ **4 điều**: tiệm tên gì, bán dịch vụ gì, giá bao nhiêu, khách của mình là ai.\n\n## Câu 1: Bài giới thiệu dịch vụ\n\n> Bạn là người viết bài cho tiệm nhỏ ở Việt Nam. Viết 1 bài Facebook khoảng 80 chữ giới thiệu [tên dịch vụ] giá [giá] tại [tên tiệm] ở [khu vực]. Giọng thân thiện, xưng em, gọi khách là chị. Cuối bài mời khách nhắn tin đặt lịch.\n\n## Câu 2: Bài khuyến mãi có hạn\n\n> Viết bài báo giảm [mức giảm] cho [tên dịch vụ] tại [tên tiệm], áp dụng đến [ngày hết hạn]. 5 dòng, có 2 đến 3 biểu tượng cảm xúc, nói rõ giá trước và sau khi giảm, không dùng từ \"tốt nhất\", \"số 1\".\n\n## Câu 3: Tiêu đề thu hút\n\n> Viết 5 dòng tiêu đề ngắn dưới 10 chữ cho bài khuyến mãi [tên dịch vụ] của [tên tiệm]. Mỗi dòng một kiểu: câu hỏi, con số, lợi ích, thời hạn, cảm xúc.\n\n## Khi bài chưa ưng\n\n- Dài quá: gõ tiếp \"viết ngắn lại còn 4 dòng\".\n- Khô cứng: gõ \"viết lại giọng thân mật như nói chuyện với khách quen\".\n- Sai giá hoặc sai tên: sửa tay trước khi đăng, đừng để máy tự đoán.\n\nLàm quen rồi, mỗi bài chỉ mất khoảng 1 phút thay vì ngồi nghĩ cả buổi tối.",
     "viec": "Chép câu lệnh số 1 vào ChatGPT, sửa tên dịch vụ và mức giảm, đăng bài lên Facebook tối nay."
   },
