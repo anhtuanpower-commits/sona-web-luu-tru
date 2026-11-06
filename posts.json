@@ -1,5 +1,15 @@
 [
   {
+    "slug": "tin-xin-phep-dang-anh-khach-bang-ai",
+    "tieu_de": "Nhờ AI viết tin xin phép khách trước khi đăng ảnh",
+    "tom_tat": "Một câu lệnh để AI viết tin ngắn hỏi khách có đồng ý cho tiệm đăng ảnh trước và sau khi làm.",
+    "chu_de": "Chăm khách",
+    "ngay": "2026-11-07",
+    "phut": 3,
+    "viec": "Hôm nay nhờ AI viết 1 tin xin phép đăng ảnh, lưu làm tin nhắn nhanh để gửi khách trước khi đăng.",
+    "noi_dung": "Ảnh trước và sau khi làm là cách khoe tay nghề dễ nhất. Nhưng đăng ảnh khách mà chưa hỏi dễ làm khách phật lòng.\n\n## Câu lệnh chép-dán\n\n> Bạn là chủ tiệm [tóc/nail/spa] tên [tên tiệm]. Viết giúp tôi tin nhắn Zalo dưới 50 chữ hỏi khách [tên khách] có đồng ý cho tiệm đăng ảnh trước và sau khi làm [dịch vụ] lên [Facebook/Zalo/TikTok] của tiệm không. Ghi rõ: tiệm gửi ảnh cho khách xem trước khi đăng, có thể che mặt nếu khách muốn, và khách nhắn là tiệm gỡ ảnh. Lời lẽ thân thiện, khách từ chối cũng không sao.\n\n## Cách làm\n\n- Mở ChatGPT, chép câu lệnh trên vào.\n- Thay chữ trong ngoặc vuông, đọc lại rồi lưu làm **tin nhắn nhanh** trong Zalo.\n- Hỏi khách **trước khi chụp**, hoặc lúc khách đang ngắm kết quả.\n- Chỉ đăng khi khách trả lời **đồng ý**. Giữ lại tin nhắn đó.\n\n## Lưu ý\n\n- Gửi ảnh cho khách xem trước, khách không thích tấm nào thì bỏ tấm đó.\n- Khách nhắn muốn gỡ ảnh thì gỡ ngay.\n- Khách không đồng ý thì vẫn cảm ơn, đừng hỏi lại nhiều lần."
+  },
+  {
     "slug": "tin-bao-tiem-con-cho-trong-bang-ai",
     "tieu_de": "Nhờ AI viết tin báo khách khi tiệm còn chỗ trống",
     "tom_tat": "Một câu lệnh để AI viết tin ngắn mời khách quen vào giờ trống vừa có người hủy.",
