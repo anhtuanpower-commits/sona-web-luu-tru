@@ -22,21 +22,52 @@
     "youtube": "https://www.youtube.com/@sonaai-vn"
   },
   "trang_chu": {
-    "mo_ta": "SONA làm phần mềm đơn giản cho chủ kinh doanh nhỏ. Sản phẩm đầu tiên: app quản lý spa trả một lần, không phí tháng, dữ liệu nằm trong tài khoản Google của spa.",
+    "nhan": "SONA · Phần mềm cho chủ spa",
+    "mo_ta": "Hai app quản lý spa gọn trong điện thoại. Dữ liệu nằm trong tài khoản Google của chính tiệm anh chị.",
     "nut_chu": "Xem sản phẩm",
     "nut_link": "#san-pham",
-    "tieu_de_goi_y": "Sản phẩm của SONA"
+    "tieu_de_goi_y": "Hai app, hai cỡ tiệm.",
+    "mo_ta_goi_y": "Chọn app hợp với cách tiệm anh chị đang làm.",
+    "tieu_de_cam_ket": "Đơn giản ngay từ đầu.",
+    "cam_ket": [
+      "Trả một lần: Không thu phí phần mềm hằng tháng.",
+      "Dữ liệu là của tiệm: App và dữ liệu nằm trong tài khoản Google của spa. Tiệm giữ toàn quyền.",
+      "SONA cài cùng anh chị: Hẹn giờ gọi video, hướng dẫn từng bước. Anh chị tự bấm, SONA không điều khiển máy."
+    ],
+    "mot_man_tieu_de": "Việc cả ngày, gọn trên một app.",
+    "mot_man_mo_ta": "Từ lúc khách đặt lịch đến lúc chốt tiền cuối ngày, anh chị xem và ghi ở cùng một chỗ.",
+    "mot_man_nhan": [
+      "Lịch hẹn",
+      "Tạo đơn",
+      "Tiền quầy",
+      "Liệu trình",
+      "Chấm công",
+      "Hoa hồng & lương"
+    ]
   },
   "thong_tin": {
-    "lam_gi": "SONA (SoNa Software) làm phần mềm đơn giản cho chủ kinh doanh nhỏ ở Việt Nam. Sản phẩm đầu tiên là app quản lý spa: cài vào tài khoản Google của spa, dùng trên điện thoại, trả một lần, không phí tháng.",
+    "lam_gi": "SONA làm phần mềm đơn giản cho người kinh doanh nhỏ. Dễ hiểu, dễ dùng, dữ liệu là của chính anh chị.",
+    "cau_chuyen_tieu_de": "Bắt đầu từ tiệm spa.",
+    "cau_chuyen": "Chủ spa nhỏ làm nhiều việc cùng lúc: đón khách, làm dịch vụ, ghi sổ, tính tiền. SONA bắt đầu từ đó, với hai app quản lý spa chạy trong tài khoản Google của chính tiệm. Sau spa, SONA sẽ làm thêm công cụ cho các ngành kinh doanh nhỏ khác.",
+    "gia_tri": [
+      "Thấu hiểu khách hàng: Làm đúng vấn đề khách đang gặp.",
+      "Nhanh gọn: Biến việc phức tạp thành đơn giản.",
+      "Uy tín: Hứa gì làm nấy, minh bạch.",
+      "Hiệu quả: Tập trung vào kết quả.",
+      "Dữ liệu: Quyết định dựa trên thực tế."
+    ],
     "cach_mua": [
-      "Nhắn Zalo SONA, kể tiệm mình đang cần gì.",
-      "SONA tư vấn sản phẩm phù hợp và báo giá riêng cho anh chị.",
-      "Hẹn giờ, SONA cài đặt cùng anh chị và hỗ trợ qua Zalo."
-    ]
+      "Nhắn Zalo SONA: Kể cách tiệm đang làm. SONA gợi ý app phù hợp.",
+      "Hẹn giờ gọi video: SONA hướng dẫn anh chị cài app vào tài khoản Google của spa và tự bấm cấp quyền.",
+      "Dùng hằng ngày: Thêm app ra màn hình chính điện thoại, mở là dùng."
+    ],
+    "ghi_chu_buoc": "Anh chị chỉ cần một tài khoản Google của spa và điện thoại hoặc máy tính."
   },
   "lien_he": {
     "gio": "8h–20h",
-    "loi_moi": "Anh chị nhắn Zalo SONA để được tư vấn sản phẩm phù hợp và báo giá riêng."
+    "loi_moi": "Nhắn Zalo là nhanh nhất. SONA tư vấn, báo giá riêng và hẹn giờ cài app cùng anh chị.",
+    "band_tieu_de": "Muốn xem app chạy thế nào?",
+    "band_mo_ta": "Nhắn Zalo SONA để xem bản demo dữ liệu mẫu và được tư vấn app hợp với tiệm.",
+    "rieng_tu": "SONA chỉ dùng số Zalo của anh chị để tư vấn và hỗ trợ. Nhắn \"Dừng\" là SONA không nhắn nữa."
   }
 }

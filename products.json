@@ -3,32 +3,31 @@
     "slug": "pyna-spa-pro",
     "ma": "SP03",
     "loai": "App",
-    "nhan": "App quản lý · Spa có nhân viên",
+    "nhan": "Spa có nhân viên",
     "ten": "Pyna Spa Pro",
-    "phu_de": "App quản lý cho spa có nhân viên: lịch hẹn, đơn hàng, tiền quầy, liệu trình, chấm công, hoa hồng – gom về một app chạy trong tài khoản Google của spa. Do SONA phát triển.",
+    "phu_de": "Lịch hẹn, đơn hàng, tiền quầy, liệu trình, chấm công, hoa hồng – gom về một app chạy trong tài khoản Google của spa.",
     "diem_nhan": [
       "Trả một lần, không phí tháng",
       "Dữ liệu nằm trong tài khoản Google của spa",
       "SONA cài cùng anh chị qua gọi video"
     ],
     "van_de": [
-      "Lịch hẹn ghi sổ, ghi Zalo, dễ sót khách",
-      "Không nhớ khách nào còn buổi liệu trình",
-      "Cuối ngày khó biết quầy đã thu bao nhiêu",
-      "Chấm công, hoa hồng và lương của nhân viên ghi rải rác nhiều nơi",
-      "Ngại phần mềm thu phí hằng tháng"
+      "Lịch hẹn ghi sổ, nhắn Zalo, dễ sót. → Lịch hẹn và hồ sơ khách ghi trên cùng một app.",
+      "Chấm công, hoa hồng ghi rải rác nhiều nơi. → Có mục Chấm công và mục Hoa hồng & lương.",
+      "Không nhớ khách nào còn buổi liệu trình. → Có mục Liệu trình theo dõi gói buổi của khách."
     ],
     "loi_ich": [
       "Phân vai trò: Tài khoản theo vai trò chủ, quản lý, lễ tân, kỹ thuật viên.",
-      "Lịch hẹn & khách hàng: Lịch hẹn, hồ sơ khách hàng, ghi tình trạng da mỗi buổi, chăm sóc khách.",
-      "Bán hàng & tiền quầy: Tạo đơn, danh sách đơn hàng, tiền quầy.",
-      "Liệu trình: Mục Liệu trình theo dõi gói buổi của khách.",
-      "Nhân sự: Chấm công, lịch làm, báo cáo ngày, mục Hoa hồng & lương.",
-      "Dịch vụ, kho & thu chi: Dịch vụ & kho hàng, báo cáo & thu chi.",
-      "Đào tạo nhân viên: Mục kịch bản tư vấn và kiến thức cho nhân viên."
+      "Lịch hẹn: Mục lịch hẹn của tiệm.",
+      "Khách hàng: Hồ sơ khách, hồ sơ da trong ngày, chăm sóc khách.",
+      "Đơn hàng và tiền quầy: Tạo đơn, danh sách đơn hàng, tiền quầy.",
+      "Liệu trình: Theo dõi gói buổi liệu trình của khách.",
+      "Nhân sự: Chấm công, lịch làm, báo cáo ngày, hoa hồng và lương.",
+      "Dịch vụ và kho: Dịch vụ, kho hàng, báo cáo và thu chi.",
+      "Tư vấn: Kịch bản tư vấn và kiến thức cho nhân viên."
     ],
     "anh_minh_hoa": [],
-    "cho_ai": "Spa có lễ tân, quản lý và nhiều kỹ thuật viên\nĐang ghi lịch hẹn bằng sổ hoặc Zalo\nMuốn có một chỗ ghi chấm công, hoa hồng và lương cho nhân viên\nKhông muốn trả phí phần mềm hằng tháng",
+    "cho_ai": "Spa có lễ tân, quản lý và nhiều kỹ thuật viên.\nĐang ghi lịch bằng sổ hoặc Zalo.\nMuốn một chỗ ghi chấm công, hoa hồng và lương cho nhân viên.",
     "cach_nhan": "Anh chị bấm Liên hệ, nhắn Zalo SONA để được tư vấn và hẹn giờ cài.\nAnh chị đăng nhập tài khoản Google của spa, bấm link SONA gửi để tạo bản sao app.\nSONA gọi video, hướng dẫn anh chị bật app và tự bấm cấp quyền Google.\nCùng nhau điền tên spa, dịch vụ, nhân viên, đặt mật khẩu.\nThêm app ra màn hình chính điện thoại là dùng hằng ngày.",
     "cam_ket": "SONA chỉ hướng dẫn, không điều khiển máy của anh chị. App và dữ liệu nằm trong tài khoản Google của spa. Hỗ trợ qua Zalo.",
     "cau_hoi": [
@@ -38,7 +37,7 @@
       },
       {
         "hoi": "Có phải trả phí hằng tháng không?",
-        "dap": "Không. Trả một lần, không phí tháng. SONA báo giá riêng khi tư vấn qua Zalo."
+        "dap": "Không. Anh chị trả một lần. Nhắn Zalo SONA để được báo giá."
       },
       {
         "hoi": "Em không rành công nghệ thì sao?",
@@ -57,39 +56,52 @@
         "dap": "Anh chị bấm Liên hệ để nhắn Zalo SONA. SONA tư vấn, báo giá riêng và hẹn giờ cài."
       }
     ],
-    "nut": "Liên hệ tư vấn",
+    "nut": "Liên hệ Zalo",
     "ma_zalo": "SPAPRO",
     "seo_tieu_de": "Pyna Spa Pro – app quản lý spa có nhân viên",
-    "seo_mo_ta": "Lịch hẹn, đơn hàng, tiền quầy, liệu trình, chấm công, hoa hồng trên một app trong tài khoản Google của spa. Trả một lần, không phí tháng."
+    "seo_mo_ta": "Lịch hẹn, đơn hàng, tiền quầy, liệu trình, chấm công, hoa hồng trên một app trong tài khoản Google của spa. Trả một lần, không phí tháng.",
+    "nhom": "Quản lý spa",
+    "noi_bat": true,
+    "cau_ngan": "Cho spa có lễ tân, quản lý và nhiều kỹ thuật viên.",
+    "the_y": [
+      "Phân vai trò: chủ, quản lý, lễ tân, kỹ thuật viên",
+      "Lịch hẹn, đơn hàng, tiền quầy, liệu trình",
+      "Chấm công, hoa hồng và lương"
+    ],
+    "tieu_de_van_de": "Bớt sổ, bớt nhớ.",
+    "chon_neu": [
+      "Tiệm có lễ tân hoặc nhiều kỹ thuật viên",
+      "Cần ghi chấm công, hoa hồng và lương",
+      "Cần quầy thu ngân và báo cáo ngày"
+    ]
   },
   {
     "slug": "pyna-home-spa",
     "ma": "SP04",
     "loai": "App",
-    "nhan": "App quản lý · Spa tại nhà",
+    "nhan": "Spa nhỏ, chủ tự làm",
     "ten": "Pyna Home Spa",
-    "phu_de": "Sổ quản lý cho spa tại nhà và spa nhỏ, chủ tự làm: bán hàng, lịch hẹn, khách hàng, liệu trình, thu chi – một người dùng, giao diện gọn. Do SONA phát triển.",
+    "phu_de": "Bán hàng, lịch hẹn, khách hàng, liệu trình, thu chi – một người dùng, giao diện gọn.",
     "diem_nhan": [
       "Trả một lần, không phí tháng",
       "Dữ liệu nằm trong tài khoản Google của spa",
       "SONA cài cùng anh chị qua gọi video"
     ],
     "van_de": [
-      "Một mình vừa làm dịch vụ vừa ghi sổ",
-      "Quên khách nào còn buổi liệu trình",
-      "Công nợ, tiền thu ghi rải rác, cuối tháng khó cộng",
-      "Ngại phần mềm thu phí hằng tháng"
+      "Ghi đơn và công nợ ra sổ. → Tạo đơn nhanh, ghi công nợ, in hóa đơn.",
+      "Lật sổ tìm khách còn buổi. → Trừ buổi liệu trình ngay khi tạo đơn.",
+      "Cuối tháng không rõ thu chi. → Sổ thu chi và báo cáo kinh doanh."
     ],
     "loi_ich": [
-      "Bán hàng nhanh: Tạo đơn nhanh, ghi công nợ, in hóa đơn khổ K80, K58, A5.",
-      "Lịch hẹn & khách hàng: Lịch hẹn, hồ sơ khách, ảnh và hồ sơ da.",
-      "Liệu trình: Trừ buổi ngay khi tạo đơn.",
-      "Chăm sóc khách: Mục chăm sóc khách hàng.",
-      "Dịch vụ & kho: Quản lý dịch vụ và kho.",
-      "Thu chi & báo cáo: Sổ thu chi, báo cáo kinh doanh."
+      "Tạo đơn nhanh: Ghi đơn, công nợ, in hóa đơn khổ K80, K58, A5.",
+      "Lịch hẹn: Lịch hẹn của tiệm trên điện thoại.",
+      "Khách hàng: Hồ sơ khách, ảnh và hồ sơ da, chăm sóc khách.",
+      "Liệu trình: Trừ buổi ngay tại màn tạo đơn.",
+      "Dịch vụ và kho: Danh mục dịch vụ và hàng hóa.",
+      "Thu chi và báo cáo: Sổ thu chi, báo cáo kinh doanh."
     ],
     "anh_minh_hoa": [],
-    "cho_ai": "Spa tại nhà hoặc spa nhỏ 1–3 người\nChủ spa tự làm mọi việc\nCần sổ bán hàng, lịch hẹn, liệu trình và công nợ đơn giản\nKhông muốn trả phí phần mềm hằng tháng",
+    "cho_ai": "Spa tại nhà hoặc tiệm 1–3 người.\nChủ tự làm mọi việc.\nMuốn thay sổ tay bằng một app gọn.",
     "cach_nhan": "Anh chị bấm Liên hệ, nhắn Zalo SONA để được tư vấn và hẹn giờ cài.\nAnh chị đăng nhập tài khoản Google của spa, bấm link SONA gửi để tạo bản sao app.\nSONA gọi video, hướng dẫn anh chị bật app và tự bấm cấp quyền Google.\nCùng nhau điền tên spa, dịch vụ, đặt mật khẩu.\nThêm app ra màn hình chính điện thoại là dùng hằng ngày.",
     "cam_ket": "SONA chỉ hướng dẫn, không điều khiển máy của anh chị. App và dữ liệu nằm trong tài khoản Google của spa. Hỗ trợ qua Zalo.",
     "cau_hoi": [
@@ -99,7 +111,7 @@
       },
       {
         "hoi": "Có phải trả phí hằng tháng không?",
-        "dap": "Không. Trả một lần, không phí tháng. SONA báo giá riêng khi tư vấn qua Zalo."
+        "dap": "Không. Anh chị trả một lần. Nhắn Zalo SONA để được báo giá."
       },
       {
         "hoi": "Em không rành công nghệ thì sao?",
@@ -114,10 +126,25 @@
         "dap": "Anh chị bấm Liên hệ để nhắn Zalo SONA. SONA tư vấn, báo giá riêng và hẹn giờ cài."
       }
     ],
-    "nut": "Liên hệ tư vấn",
+    "nut": "Liên hệ Zalo",
     "ma_zalo": "HOMESPA",
     "seo_tieu_de": "Pyna Home Spa – app quản lý spa tại nhà",
-    "seo_mo_ta": "Bán hàng, lịch hẹn, khách hàng, liệu trình, thu chi cho spa nhỏ, chủ tự làm. App trong tài khoản Google của spa. Trả một lần, không phí tháng."
+    "seo_mo_ta": "Bán hàng, lịch hẹn, khách hàng, liệu trình, thu chi cho spa nhỏ, chủ tự làm. App trong tài khoản Google của spa. Trả một lần, không phí tháng.",
+    "nhom": "Quản lý spa",
+    "noi_bat": true,
+    "cau_ngan": "Cho spa tại nhà hoặc tiệm 1–3 người.",
+    "the_y": [
+      "Tạo đơn nhanh, ghi công nợ, in hóa đơn",
+      "Lịch hẹn, hồ sơ khách, ảnh và hồ sơ da",
+      "Liệu trình, trừ buổi ngay khi tạo đơn"
+    ],
+    "tieu_de_van_de": "Một người, vẫn gọn.",
+    "chon_neu": [
+      "Anh chị tự làm, tiệm 1–3 người",
+      "Cần sổ bán hàng, lịch hẹn, liệu trình gọn",
+      "Muốn in hóa đơn ngay tại quầy"
+    ],
+    "an": true
   },
   {
     "slug": "sheet-lich-dang-spa",
@@ -155,14 +182,21 @@
         "dap": "Không. Trả một lần, không phí tháng. SONA báo giá riêng khi tư vấn qua Zalo."
       }
     ],
-    "nhan": "App · Nội dung bài đăng",
+    "nhan": "App · Bài đăng cho spa",
     "diem_nhan": [
       "Trả một lần, không phí tháng",
       "Dùng trên điện thoại",
       "Hỗ trợ qua Zalo"
     ],
     "ma_zalo": "LICHDANG",
-    "nut": "Liên hệ tư vấn"
+    "nut": "Liên hệ Zalo",
+    "nhom": "Nội dung",
+    "noi_bat": false,
+    "the_y": [
+      "36 bài đăng viết sẵn cho 12 tuần",
+      "Bài tự đổi theo tên tiệm, dịch vụ",
+      "Dùng trên điện thoại, không cần cài"
+    ]
   },
   {
     "slug": "chatgpt-cho-chu-spa-viet-bai-dang-tra-loi-inbox",

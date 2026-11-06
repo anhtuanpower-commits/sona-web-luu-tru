@@ -12,266 +12,415 @@
 <meta property="og:image" content="https://sona.ai.vn/img/logo-full.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <script>window.SONA_ROUTE="bai/3-cau-lenh-viet-bai-khuyen-mai"</script><!--seo:cuoi-->
-<meta name="theme-color" content="#07070a">
+<meta name="theme-color" content="#ffffff">
 <link rel="apple-touch-icon" href="img/mark-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem("sona-nen");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <style>
 /* =====================================================================
-   BIẾN THIẾT KẾ (design tokens). Đổi giao diện: chỉ sửa khối :root này.
-   --mau-*   màu      --chu-*  kiểu chữ, cỡ chữ
-   --bo-goc-* bo góc  --khoang-* khoảng cách  --bong-* đổ bóng
+   BIẾN THIẾT KẾ (design tokens) – theo enterprise/marketing/THIET_KE_WEB_PV015.md mục 2.
+   Đổi giao diện: chỉ sửa các khối :root dưới đây.
+   --mau-* màu · --chu-* chữ · --bo-goc-* bo góc · --bong-* bóng · --khoang-* khoảng cách · --chuyen-* chuyển động
    ===================================================================== */
 :root{
-  --mau-nen:#07070a;           /* nền trang */
-  --mau-be-mat:#111014;        /* nền thẻ, hộp */
-  --mau-be-mat-2:#19171c;      /* nền phụ trong thẻ */
-  --mau-vien:#2b2620;          /* viền */
-  --mau-chu:#f6f1e7;           /* chữ chính */
-  --mau-chu-phu:#a8a095;       /* chữ phụ */
-  --mau-nhan:#d9b26f;          /* màu nhấn (vàng champagne) */
-  --mau-nhan-sang:#f1dcae;     /* nhấn sáng */
-  --mau-nhan-dam:#a9843f;      /* nhấn đậm */
-  --mau-nhan-nen:#d9b26f1a;    /* nền nhạt của màu nhấn */
-  --mau-chu-tren-nhan:#1a1206; /* chữ trên nút màu nhấn */
-  --mau-dau-trang:#07070ad9;   /* nền thanh đầu trang (có trong suốt) */
-  --chu-than:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --chu-tieu-de:var(--chu-than);
-  --chu-co-nho:13px;
-  --chu-co-than:15px;
-  --chu-co-lon:17px;
-  --chu-co-h3:17px;
-  --chu-co-h2:clamp(21px,3.2vw,28px);
-  --chu-co-h1:clamp(28px,5.4vw,48px);
-  --chu-dam-tieu-de:700;
-  --chu-dong:1.7;
-  --bo-goc-nho:10px;
-  --bo-goc:16px;
-  --bo-goc-lon:24px;
-  --bo-goc-nut:999px;
-  --khoang-trang:16px;         /* lề hai bên */
-  --khoang-khoi:72px;          /* khoảng giữa các khối lớn */
-  --rong-toi-da:1120px;
-  --rong-doc:760px;
-  --bong:0 10px 30px #0006;
-  --nut-nen:linear-gradient(180deg,var(--mau-nhan-sang),var(--mau-nhan) 55%,var(--mau-nhan-dam));
-}
-*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--mau-nen);color:var(--mau-chu);font-family:var(--chu-than);font-size:var(--chu-co-than);line-height:var(--chu-dong);overflow-x:hidden}
-a{color:inherit;text-decoration:none}button{font-family:inherit}img{max-width:100%}
-h1,h2,h3{font-family:var(--chu-tieu-de);font-weight:var(--chu-dam-tieu-de);letter-spacing:-.015em;margin:0}
-.wrap{max-width:var(--rong-toi-da);margin:auto;padding:0 var(--khoang-trang)}
-.doc{max-width:var(--rong-doc);margin:auto}
+  --mau-nen:#ffffff;--mau-nen-phu:#f7f4ee;--mau-nen-noi:#ffffff;
+  --mau-chu:#16140f;--mau-chu-phu:#5c574e;--mau-chu-mo:#8a8478;--mau-vien:#e8e3d9;
+  --mau-nhan:#d4a254;--mau-nhan-dam:#8a5a14;--mau-nhan-nhat:#f8eedb;--mau-chu-tren-nhan:#1a1206;
+  --mau-dai-toi:#16140f;--mau-chu-tren-toi:#f4efe6;--mau-tieu-diem:#8a5a14;--mau-khung-may:#16140f;
+  --chu-font:"Be Vietnam Pro","Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --chu-hien-thi:clamp(2.5rem,1.6rem + 3.8vw,4.5rem);
+  --chu-h1:clamp(2.25rem,1.6rem + 2.6vw,3.5rem);
+  --chu-h2:clamp(1.75rem,1.35rem + 1.7vw,2.75rem);
+  --chu-h3:clamp(1.25rem,1.1rem + .6vw,1.5rem);
+  --chu-lon:clamp(1.125rem,1.05rem + .35vw,1.375rem);
+  --chu-than:1.0625rem;--chu-nho:.875rem;--chu-nhan:.8125rem;
+  --chu-dam-tieu-de:700;--chu-dam-vua:600;--chu-dam-thuong:400;
+  --chu-dong-tieu-de:1.12;--chu-dong-than:1.6;--chu-gian-tieu-de:-.02em;
+  --bo-goc-nho:8px;--bo-goc-vua:16px;--bo-goc-lon:28px;--bo-goc-rat-lon:40px;--bo-goc-vien-thuoc:999px;
+  --bong-1:0 1px 2px rgba(22,20,15,.06);
+  --bong-2:0 1px 3px rgba(22,20,15,.06),0 6px 16px rgba(22,20,15,.06);
+  --bong-3:0 2px 6px rgba(22,20,15,.06),0 18px 40px rgba(22,20,15,.08);
+  --khoang-1:4px;--khoang-2:8px;--khoang-3:12px;--khoang-4:16px;--khoang-5:24px;
+  --khoang-6:32px;--khoang-7:48px;--khoang-8:64px;--khoang-9:96px;--khoang-10:128px;
+  --khoang-khoi:clamp(64px,40px + 6vw,128px);
+  --khoang-le:16px;--rong-noi-dung:1200px;--rong-chu:680px;--cao-menu:64px;
+  --chuyen-nhanh:150ms cubic-bezier(.2,0,0,1);--chuyen-vua:300ms cubic-bezier(.2,0,0,1);
+  color-scheme:light}
+@media(min-width:768px){:root{--khoang-le:32px}}
+@media(min-width:1200px){:root{--khoang-le:64px}}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --mau-nen:#0b0a08;--mau-nen-phu:#15130f;--mau-nen-noi:#1c1915;
+  --mau-chu:#f4efe6;--mau-chu-phu:#a8a095;--mau-chu-mo:#7d766c;--mau-vien:#2b2620;
+  --mau-nhan:#f0b458;--mau-nhan-dam:#f9e0a2;--mau-nhan-nhat:#2a1f10;
+  --mau-dai-toi:#000000;--mau-tieu-diem:#f0b458;--mau-khung-may:#3a342c;
+  --bong-1:0 1px 2px rgba(0,0,0,.5);--bong-2:0 1px 3px rgba(0,0,0,.5),0 6px 16px rgba(0,0,0,.35);--bong-3:0 2px 6px rgba(0,0,0,.5),0 18px 40px rgba(0,0,0,.45);
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --mau-nen:#0b0a08;--mau-nen-phu:#15130f;--mau-nen-noi:#1c1915;
+  --mau-chu:#f4efe6;--mau-chu-phu:#a8a095;--mau-chu-mo:#7d766c;--mau-vien:#2b2620;
+  --mau-nhan:#f0b458;--mau-nhan-dam:#f9e0a2;--mau-nhan-nhat:#2a1f10;
+  --mau-dai-toi:#000000;--mau-tieu-diem:#f0b458;--mau-khung-may:#3a342c;
+  --bong-1:0 1px 2px rgba(0,0,0,.5);--bong-2:0 1px 3px rgba(0,0,0,.5),0 6px 16px rgba(0,0,0,.35);--bong-3:0 2px 6px rgba(0,0,0,.5),0 18px 40px rgba(0,0,0,.45);
+  color-scheme:dark}
+/* ---------- nền tảng ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:var(--cao-menu)}
+body{margin:0;background:var(--mau-nen);color:var(--mau-chu);font-family:var(--chu-font);font-size:var(--chu-than);line-height:var(--chu-dong-than);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,p{margin:0}
+h1,h2{font-weight:var(--chu-dam-tieu-de);line-height:var(--chu-dong-tieu-de);letter-spacing:var(--chu-gian-tieu-de);text-wrap:balance}
+h1{font-size:var(--chu-h1)}h2{font-size:var(--chu-h2)}
+h3{font-size:var(--chu-h3);font-weight:var(--chu-dam-vua);line-height:1.3;letter-spacing:-.01em}
+p,li,b,span{overflow-wrap:anywhere}
+a{color:inherit;text-decoration:none}button{font-family:inherit}img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--mau-tieu-diem);outline-offset:2px;border-radius:var(--bo-goc-nho)}
+svg{display:block}
+.wrap{width:100%;max-width:calc(var(--rong-noi-dung) + 2*var(--khoang-le));margin:0 auto;padding:0 var(--khoang-le)}
+.khoi{padding:var(--khoang-khoi) 0}
+.khoi.sat{padding-top:0}
+.nen-phu{background:var(--mau-nen-phu)}
+.nhan{display:inline-block;font-size:var(--chu-nhan);font-weight:var(--chu-dam-vua);letter-spacing:.08em;text-transform:uppercase;color:var(--mau-nhan-dam)}
+.phu{font-size:var(--chu-lon);color:var(--mau-chu-phu);line-height:1.5}
 .muted{color:var(--mau-chu-phu)}
-/* ---------- đầu trang ---------- */
-header{position:sticky;top:0;z-index:20;background:var(--mau-dau-trang);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--mau-vien)}
-.bar{display:flex;align-items:center;gap:12px;min-height:60px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:.12em}
-.mark{width:34px;height:34px;border-radius:var(--bo-goc-nho);display:block}
-.word{color:var(--mau-nhan-sang)}
-.nav{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none;max-width:100%}
-.nav::-webkit-scrollbar{display:none}
-.nav a{white-space:nowrap;padding:8px 12px;border-radius:var(--bo-goc-nut);font-size:14px;font-weight:600;color:var(--mau-chu-phu)}
-.nav a.on,.nav a:hover{color:var(--mau-nhan-sang);background:var(--mau-nhan-nen)}
-.nav a.cta-nav{color:var(--mau-chu-tren-nhan);background:var(--nut-nen)}
-@media(max-width:600px){.bar{padding:8px 0 0;gap:4px}.nav{margin:0;padding:0 0 8px;width:100%;max-width:100%;box-sizing:border-box}.nav a{padding:7px 11px}}
-/* ---------- nút ---------- */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:var(--bo-goc-nut);padding:13px 24px;font-size:15px;font-weight:600;color:var(--mau-chu-tren-nhan);background:var(--nut-nen);cursor:pointer;white-space:nowrap}
+.dau-khoi{max-width:var(--rong-chu)}
+.dau-khoi h1,.dau-khoi h2{margin-top:var(--khoang-2)}
+.dau-khoi .phu{margin-top:var(--khoang-4)}
+.giua{text-align:center;margin-left:auto;margin-right:auto}
+.ghi-chu{margin-top:var(--khoang-7);color:var(--mau-chu-mo);font-size:var(--chu-nho)}
+/* ---------- nút (đặc tả 10.1) ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--khoang-2);min-height:48px;padding:0 var(--khoang-5);border-radius:var(--bo-goc-vien-thuoc);font:inherit;font-size:1rem;font-weight:var(--chu-dam-vua);border:1px solid transparent;cursor:pointer;white-space:nowrap;background:var(--mau-nhan);color:var(--mau-chu-tren-nhan);transition:filter var(--chuyen-nhanh),box-shadow var(--chuyen-nhanh),background var(--chuyen-nhanh),transform var(--chuyen-nhanh)}
+.btn:hover{filter:brightness(.94);box-shadow:var(--bong-1)}
+.btn:active{transform:scale(.98)}
 .btn svg{width:18px;height:18px}
-.btn.phu{background:transparent;color:var(--mau-chu);border:1px solid var(--mau-vien)}
-.btn.phu:hover{border-color:var(--mau-nhan)}
-.btn.rong{width:100%}
-.btns{display:flex;flex-wrap:wrap;gap:10px}
-/* ---------- khối chung ---------- */
-.sec{padding:var(--khoang-khoi) 0 0}
-.sec-h{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:24px}
-.sec-h h2{font-size:var(--chu-co-h2);line-height:1.3}
-.sec-h p{margin:6px 0 0;color:var(--mau-chu-phu);max-width:620px}
-.sec-h a{color:var(--mau-nhan);font-weight:600}
-.kicker{display:inline-block;font-size:var(--chu-co-nho);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mau-nhan);margin-bottom:8px}
-.box{background:var(--mau-be-mat);border:1px solid var(--mau-vien);border-radius:var(--bo-goc);padding:22px}
-.box h3{font-size:var(--chu-co-h3);margin-bottom:6px}
-.box p{margin:0;color:var(--mau-chu-phu)}
-.grid2,.grid3,.grid4{display:grid;gap:14px}
-@media(min-width:700px){.grid2{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:repeat(3,1fr)}.grid4{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1000px){.grid4{grid-template-columns:repeat(4,1fr)}}
-.ico{width:40px;height:40px;border-radius:var(--bo-goc-nho);display:grid;place-items:center;background:var(--mau-nhan-nen);color:var(--mau-nhan);margin-bottom:14px}
-.ico svg{width:20px;height:20px}
-/* ---------- trang chủ ---------- */
-.hero{padding:64px 0 8px;text-align:center}
-.hero h1{font-size:var(--chu-co-h1);line-height:1.2;max-width:820px;margin:0 auto 18px}
-.hero .lead{margin:0 auto 28px;max-width:640px;color:var(--mau-chu-phu);font-size:var(--chu-co-lon)}
-.hero .btns{justify-content:center}
-.banner{display:block;width:100%;max-width:820px;margin:0 auto 28px;border-radius:var(--bo-goc-lon);border:1px solid var(--mau-vien);aspect-ratio:16/7;object-fit:cover}
-.band{margin-top:var(--khoang-khoi);background:var(--mau-be-mat);border:1px solid var(--mau-vien);border-radius:var(--bo-goc-lon);padding:40px 24px;text-align:center}
-.band h2{font-size:var(--chu-co-h2);margin-bottom:8px}.band p{margin:0 auto 22px;color:var(--mau-chu-phu);max-width:560px}.band .btns{justify-content:center}
-/* ---------- thẻ sản phẩm ---------- */
-.cards{display:grid;gap:16px;grid-template-columns:1fr}
-@media(min-width:700px){.cards{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1000px){.cards{grid-template-columns:repeat(3,1fr)}}
-.card{background:var(--mau-be-mat);border:1px solid var(--mau-vien);border-radius:var(--bo-goc);overflow:hidden;display:flex;flex-direction:column;transition:border-color .15s}
-.card:hover{border-color:var(--mau-nhan)}
-.thumb{aspect-ratio:16/9;position:relative;display:grid;place-items:center;background:var(--mau-be-mat-2);overflow:hidden}
-.thumb img{width:100%;height:100%;object-fit:cover;display:block}
-.thumb svg{width:44px;height:44px;color:var(--mau-nhan)}
-.card .in{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
-.tag{display:inline-block;align-self:flex-start;font-size:12px;font-weight:600;color:var(--mau-nhan);background:var(--mau-nhan-nen);border-radius:var(--bo-goc-nut);padding:3px 10px}
-.card h3{font-size:var(--chu-co-h3);line-height:1.4}
-.card p{margin:0;color:var(--mau-chu-phu);font-size:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.card .more{margin-top:auto;padding-top:8px;color:var(--mau-nhan);font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:6px}
-.card .more svg{width:16px;height:16px}
-.empty{text-align:center;color:var(--mau-chu-phu);padding:40px 16px}
+.btn.phu-btn{background:transparent;color:var(--mau-chu);border-color:var(--mau-vien)}
+.btn.phu-btn:hover{background:var(--mau-nen-phu);filter:none}
+.btn.nho{min-height:40px;padding:0 18px;font-size:.9375rem}
+.nut-chu{color:var(--mau-nhan-dam);font-weight:var(--chu-dam-vua);display:inline-flex;align-items:center;gap:6px;min-height:44px}
+.nut-chu svg{width:16px;height:16px;transition:transform var(--chuyen-nhanh)}
+.nut-chu:hover svg{transform:translateX(2px)}
+.hang-nut{display:flex;flex-wrap:wrap;gap:var(--khoang-3);margin-top:var(--khoang-6)}
+.giua .hang-nut{justify-content:center}
+@media(max-width:767px){.btn{min-height:44px}}
+/* ---------- menu (10.3) ---------- */
+header.menu{position:sticky;top:0;z-index:20;height:var(--cao-menu);background:color-mix(in srgb,var(--mau-nen) 88%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color var(--chuyen-vua)}
+header.menu.da-cuon{border-bottom-color:var(--mau-vien)}
+.menu .wrap{display:flex;align-items:center;height:100%;gap:var(--khoang-4)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.25rem;letter-spacing:.04em}
+.mark{width:32px;height:32px;border-radius:var(--bo-goc-nho)}
+.nav{display:none;gap:var(--khoang-1);margin:0 auto}
+.nav a{padding:8px 16px;border-radius:var(--bo-goc-vien-thuoc);font-size:.9375rem;font-weight:500;color:var(--mau-chu-phu);transition:background var(--chuyen-nhanh),color var(--chuyen-nhanh)}
+.nav a:hover{color:var(--mau-chu);background:var(--mau-nen-phu)}
+.nav a.on{background:var(--mau-nhan-nhat);color:var(--mau-chu)}
+.menu-phai{display:flex;align-items:center;gap:var(--khoang-2);margin-left:auto}
+.nut-tron{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:transparent;border:0;color:var(--mau-chu);cursor:pointer}
+.nut-tron:hover{background:var(--mau-nen-phu)}
+.nut-tron svg{width:20px;height:20px}
+.chi-may-tinh{display:none!important}
+@media(min-width:1024px){.nav{display:flex}.menu-phai{margin-left:0}.chi-may-tinh{display:inline-flex!important}.chi-dien-thoai{display:none!important}}
+.bang-menu{position:fixed;inset:var(--cao-menu) 0 0 0;background:var(--mau-nen);padding:var(--khoang-6) var(--khoang-le);display:none;flex-direction:column;gap:var(--khoang-2);z-index:19}
+.bang-menu.mo{display:flex}
+.bang-menu a{font-size:1.75rem;font-weight:700;letter-spacing:-.02em;padding:var(--khoang-2) 0}
+/* ---------- khung điện thoại vẽ bằng CSS (10.5) ---------- */
+.dt{position:relative;width:min(72%,280px);aspect-ratio:390/844;border-radius:var(--bo-goc-rat-lon);border:10px solid var(--mau-khung-may);background:var(--mau-khung-may);box-shadow:var(--bong-3);flex:none;overflow:hidden}
+.dt img{width:100%;height:100%;object-fit:cover;border-radius:30px}
+.man{position:absolute;inset:0;border-radius:30px;background:var(--mau-nhan-nhat);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:clamp(64px,8vw,110px) var(--khoang-4) var(--khoang-4);text-align:center;gap:var(--khoang-2);color:var(--mau-nhan-dam)}
+.man::before{content:"";position:absolute;top:10px;left:50%;width:84px;height:22px;transform:translateX(-50%);border-radius:var(--bo-goc-vien-thuoc);background:var(--mau-khung-may)}
+.man b{font-size:1rem;font-weight:700;color:var(--mau-chu)}
+.man span{font-size:var(--chu-nho);line-height:1.45}
+.man small{font-size:var(--chu-nhan);opacity:.8}
+.dt.phai .man{background:color-mix(in srgb,var(--mau-nhan) 26%,var(--mau-nen-phu))}
+/* ---------- 5.1 mở đầu trang chủ ---------- */
+.hero{padding-top:clamp(48px,24px + 6vw,112px);text-align:center}
+.hero h1{font-size:var(--chu-hien-thi);margin-top:var(--khoang-4)}
+.hero .phu{max-width:620px;margin:var(--khoang-5) auto 0}
+.hero .hang-nut{justify-content:center}
+.san-khau{margin-top:var(--khoang-8);background:var(--mau-nen-phu);border-radius:var(--bo-goc-rat-lon);padding:clamp(40px,20px + 5vw,88px) var(--khoang-4) 0;display:flex;justify-content:center;align-items:flex-start;gap:clamp(16px,4vw,56px);overflow:hidden;height:clamp(360px,30vw + 220px,640px)}
+.san-khau .dt{border-bottom-left-radius:0;border-bottom-right-radius:0}
+.san-khau .dt.thap{margin-top:56px;display:none}
+@media(min-width:768px){.san-khau .dt.thap{display:block}}
+.banner{width:100%;margin-top:var(--khoang-8);border-radius:var(--bo-goc-rat-lon);border:1px solid var(--mau-vien);aspect-ratio:16/7;object-fit:cover}
+/* ---------- thẻ sản phẩm (5.2, 10.2) ---------- */
+.cards{display:grid;gap:var(--khoang-5);margin-top:var(--khoang-7)}
+@media(min-width:768px){.cards{grid-template-columns:1fr 1fr}}
+.card{background:var(--mau-nen-phu);border-radius:var(--bo-goc-lon);padding:clamp(24px,16px + 2vw,40px) clamp(24px,16px + 2vw,40px) 0;display:flex;flex-direction:column;overflow:hidden;transition:box-shadow var(--chuyen-vua),transform var(--chuyen-vua)}
+.card:hover{box-shadow:var(--bong-2);transform:translateY(-2px)}
+.card.mot{grid-column:1/-1}
+.card h3{font-size:clamp(1.75rem,1.4rem + 1.2vw,2.25rem);font-weight:700;letter-spacing:-.02em;margin-top:var(--khoang-2)}
+.card h3 a:hover{color:var(--mau-nhan-dam)}
+.card .cau{color:var(--mau-chu-phu);margin-top:var(--khoang-2)}
+.card .hang-nut{margin-top:var(--khoang-5);align-items:center;gap:var(--khoang-4)}
+.anh-the{margin-top:var(--khoang-6);display:flex;justify-content:center;height:clamp(240px,20vw + 160px,340px);overflow:hidden;align-items:flex-start}
+.anh-the .dt{width:min(58%,240px);border-bottom-left-radius:0;border-bottom-right-radius:0}
+.cham{list-style:none;padding:0;margin:var(--khoang-5) 0 0;display:grid;gap:var(--khoang-3)}
+.cham li{position:relative;padding-left:22px;line-height:1.5}
+.cham li::before{content:"";position:absolute;left:2px;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--mau-nhan)}
+.empty{text-align:center;color:var(--mau-chu-phu);padding:var(--khoang-7) var(--khoang-4);grid-column:1/-1}
 .empty b{display:block;color:var(--mau-chu);margin-bottom:6px}
-/* ---------- trang Sản phẩm: tìm, lọc ---------- */
-.page-h{padding:48px 0 8px}
-.page-h h1{font-size:var(--chu-co-h1);line-height:1.2;margin-bottom:10px}
-.page-h p{margin:0;color:var(--mau-chu-phu);max-width:640px;font-size:var(--chu-co-lon)}
-.search{position:relative;max-width:560px;margin:22px 0 0}
-.search svg{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--mau-chu-phu);pointer-events:none}
-.search input{width:100%;height:50px;border-radius:var(--bo-goc-nut);border:1px solid var(--mau-vien);background:var(--mau-be-mat);color:var(--mau-chu);font:inherit;font-size:16px;padding:0 48px 0 50px;outline:none;-webkit-appearance:none;appearance:none}
-.search input:focus{border-color:var(--mau-nhan)}
+/* ---------- 5.3 lời hứa ---------- */
+.luoi-3{display:grid;gap:var(--khoang-7);margin-top:var(--khoang-8)}
+@media(min-width:768px){.luoi-3{grid-template-columns:repeat(3,1fr);gap:var(--khoang-6)}}
+.loi-hua{text-align:center;max-width:340px;margin:0 auto}
+.o-ico{width:56px;height:56px;border-radius:50%;background:var(--mau-nhan-nhat);color:var(--mau-nhan-dam);display:grid;place-items:center;margin:0 auto var(--khoang-5)}
+.o-ico svg{width:24px;height:24px}
+.loi-hua p{color:var(--mau-chu-phu);margin-top:var(--khoang-2)}
+/* ---------- 5.4 hai cột, nhãn viên thuốc ---------- */
+.hai-cot{display:grid;gap:var(--khoang-7);align-items:center}
+@media(min-width:1024px){.hai-cot{grid-template-columns:5fr 7fr;gap:var(--khoang-8)}.hai-cot.deu{grid-template-columns:1fr 1fr}}
+.vien-thuoc{list-style:none;padding:0;margin:var(--khoang-6) 0 0;display:flex;flex-wrap:wrap;gap:var(--khoang-2)}
+.vien-thuoc li,.vien-thuoc a{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:1px solid var(--mau-vien);border-radius:var(--bo-goc-vien-thuoc);font-size:.9375rem;font-weight:500;background:var(--mau-nen-noi)}
+.vien-thuoc li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--mau-nhan);flex:none}
+.khung-ngang{background:var(--mau-nen-phu);border-radius:var(--bo-goc-rat-lon);padding:clamp(24px,4vw,56px)}
+.may-tinh-bang{aspect-ratio:4/3;border:10px solid var(--mau-khung-may);border-radius:28px;background:var(--mau-khung-may);box-shadow:var(--bong-3);position:relative;overflow:hidden}
+.may-tinh-bang .man{border-radius:18px;justify-content:center;padding-top:var(--khoang-5)}
+.may-tinh-bang .man::before{display:none}
+/* ---------- 5.5 các bước ---------- */
+.steps{list-style:none;padding:0;margin:var(--khoang-8) 0 0;display:grid;gap:var(--khoang-6);counter-reset:b}
+@media(min-width:768px){.steps.ba{grid-template-columns:repeat(3,1fr)}}
+.steps li{counter-increment:b;border-top:1px solid var(--mau-vien);padding-top:var(--khoang-5)}
+.steps li::before{content:counter(b);display:block;font-size:3rem;font-weight:700;line-height:1;color:var(--mau-nhan-dam);letter-spacing:-.03em;margin-bottom:var(--khoang-4)}
+.steps p{color:var(--mau-chu-phu);margin-top:var(--khoang-2)}
+.steps.doc{grid-template-columns:1fr;gap:var(--khoang-5)}
+.steps.doc li{display:grid;grid-template-columns:48px 1fr;gap:var(--khoang-4);align-items:start}
+.steps.doc li::before{font-size:2rem;margin:0}
+/* ---------- 5.6 thẻ học AI ---------- */
+.the-hoc{border:1px solid var(--mau-vien);border-radius:var(--bo-goc-lon);padding:clamp(24px,16px + 3vw,56px);display:grid;gap:var(--khoang-6);align-items:center}
+@media(min-width:1024px){.the-hoc{grid-template-columns:1fr auto}}
+.the-hoc .phu{margin-top:var(--khoang-3)}
+.the-hoc .hang-nut{margin-top:var(--khoang-5)}
+.the-hoc .vien-thuoc{margin:0}
+/* ---------- 5.7 dải kêu gọi ---------- */
+.band{position:relative;overflow:hidden;border:1px solid var(--mau-vien);background:var(--mau-dai-toi);color:var(--mau-chu-tren-toi);border-radius:var(--bo-goc-rat-lon);padding:clamp(56px,32px + 5vw,96px) var(--khoang-5);text-align:center}
+.band h2{max-width:720px;margin:0 auto}
+.band .phu{color:rgba(244,239,230,.72);max-width:560px;margin:var(--khoang-4) auto 0}
+.band .btn{background:#f0b458;color:#1a1206}
+.band .hang-nut{justify-content:center}
+.band .nho-chu{margin-top:var(--khoang-5);font-size:var(--chu-nho);color:rgba(244,239,230,.55)}
+.band .dau-s{display:none;position:absolute;right:-70px;top:50%;transform:translateY(-50%) rotate(-6deg);width:380px;height:380px;opacity:.07;pointer-events:none}
+@media(min-width:768px){.band .dau-s{display:block}}
+/* ---------- trang con: mở đầu, tìm, lọc ---------- */
+.page-h{padding-top:var(--khoang-9);padding-bottom:var(--khoang-2)}
+.page-h.giua{text-align:center}
+.page-h.giua .phu{margin-left:auto;margin-right:auto}
+.page-h h1{margin-top:var(--khoang-2)}
+.page-h .phu{margin-top:var(--khoang-4);max-width:var(--rong-chu)}
+.search{position:relative;max-width:560px;margin:var(--khoang-6) 0 0}
+.search svg{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--mau-chu-mo);pointer-events:none}
+.search input{width:100%;height:50px;border-radius:var(--bo-goc-vien-thuoc);border:1px solid var(--mau-vien);background:var(--mau-nen-noi);color:var(--mau-chu);font:inherit;font-size:16px;padding:0 48px 0 50px;outline:none;-webkit-appearance:none;appearance:none}
+.search input:focus{border-color:var(--mau-nhan-dam)}
 .search input::-webkit-search-cancel-button{display:none}
-.search .clr{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:36px;height:36px;border:0;border-radius:50%;background:var(--mau-be-mat-2);color:var(--mau-chu-phu);font-size:18px;cursor:pointer;display:none}
+.search .clr{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:40px;height:40px;border:0;border-radius:50%;background:var(--mau-nen-phu);color:var(--mau-chu-phu);font-size:18px;cursor:pointer;display:none}
 .search.has .clr{display:block}
-.cats{display:flex;gap:8px;overflow-x:auto;padding:16px 0 20px;scrollbar-width:none}
+.cats{display:flex;gap:var(--khoang-2);overflow-x:auto;padding:var(--khoang-5) 0 0;scrollbar-width:none;max-width:100%}
 .cats::-webkit-scrollbar{display:none}
-.cat{flex:none;border:1px solid var(--mau-vien);background:transparent;color:var(--mau-chu-phu);border-radius:var(--bo-goc-nut);padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer}
-.cat.on{background:var(--nut-nen);border-color:transparent;color:var(--mau-chu-tren-nhan)}
+.cat{flex:none;min-height:40px;border:1px solid var(--mau-vien);background:transparent;color:var(--mau-chu-phu);border-radius:var(--bo-goc-vien-thuoc);padding:0 18px;font-size:.9375rem;font-weight:500;cursor:pointer}
+.cat.on{background:var(--mau-nhan-nhat);border-color:transparent;color:var(--mau-chu)}
 .cats[hidden],.search[hidden]{display:none}
-/* ---------- trang chi tiết sản phẩm (khung chung) ---------- */
-.back{display:inline-flex;align-items:center;gap:6px;color:var(--mau-chu-phu);font-size:14px;padding:20px 0 0}
-.pd-top{padding:28px 0 0;max-width:820px}
-.pd-top h1{font-size:var(--chu-co-h1);line-height:1.2;margin:12px 0 14px}
-.pd-top .lead{margin:0 0 20px;color:var(--mau-chu-phu);font-size:var(--chu-co-lon)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px;padding:0;list-style:none}
-.chips li{display:inline-flex;align-items:center;gap:6px;font-size:14px;border:1px solid var(--mau-vien);border-radius:var(--bo-goc-nut);padding:6px 12px}
-.chips svg{width:16px;height:16px;color:var(--mau-nhan);flex:none}
-.cover{border-radius:var(--bo-goc-lon);overflow:hidden;border:1px solid var(--mau-vien);aspect-ratio:16/9;background:var(--mau-be-mat);margin-top:32px}
-.cover img{width:100%;height:100%;object-fit:cover;display:block}
-.pains{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-@media(min-width:700px){.pains{grid-template-columns:repeat(2,1fr)}}
-.pains li{display:flex;gap:12px;align-items:flex-start;background:var(--mau-be-mat);border:1px solid var(--mau-vien);border-radius:var(--bo-goc);padding:16px 18px}
-.pains li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--mau-nhan);margin-top:9px}
-.feat .box{height:100%}
-.ticks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-.ticks li{display:flex;gap:10px;align-items:flex-start}
-.ticks li svg{flex:none;width:20px;height:20px;margin-top:3px;color:var(--mau-nhan)}
-.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
-.gal img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:var(--bo-goc);border:1px solid var(--mau-vien);display:block;background:var(--mau-be-mat)}
-.note{border:1px dashed var(--mau-vien);border-radius:var(--bo-goc);padding:22px;color:var(--mau-chu-phu);text-align:center}
-.steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:s}
-.steps li{display:flex;gap:14px;counter-increment:s;align-items:flex-start}
-.steps li::before{content:counter(s);flex:none;width:30px;height:30px;border-radius:50%;background:var(--mau-nhan-nen);display:grid;place-items:center;font-weight:700;font-size:14px;color:var(--mau-nhan)}
-.faq details{border-top:1px solid var(--mau-vien)}.faq details:first-child{border-top:0}
-.faq summary{cursor:pointer;list-style:none;padding:16px 32px 16px 0;font-weight:600;position:relative}
+.so-sanh{display:grid;gap:var(--khoang-5);margin-top:var(--khoang-7)}
+@media(min-width:768px){.so-sanh{grid-template-columns:1fr 1fr}}
+.so-sanh>div{background:var(--mau-nen-noi);border:1px solid var(--mau-vien);border-radius:var(--bo-goc-lon);padding:clamp(24px,16px + 2vw,40px)}
+/* ---------- trang chi tiết sản phẩm (đặc tả 7) ---------- */
+.back{display:inline-flex;align-items:center;gap:6px;color:var(--mau-chu-phu);font-size:var(--chu-nho);min-height:44px;margin-top:var(--khoang-4)}
+.pd-top{padding:var(--khoang-6) 0 var(--khoang-khoi);display:grid;gap:var(--khoang-7);align-items:center}
+@media(min-width:1024px){.pd-top{grid-template-columns:1fr 1fr;gap:var(--khoang-8)}}
+.pd-top h1{margin-top:var(--khoang-3)}
+.pd-top .phu{margin-top:var(--khoang-5)}
+.pd-anh{background:var(--mau-nen-phu);border-radius:var(--bo-goc-rat-lon);padding:clamp(32px,4vw,56px) var(--khoang-4) 0;display:flex;justify-content:center;height:clamp(380px,30vw + 220px,560px);overflow:hidden}
+.pd-anh .dt{border-bottom-left-radius:0;border-bottom-right-radius:0;width:min(64%,280px)}
+.pd-anh img.bia{width:100%;height:100%;object-fit:cover;border-radius:var(--bo-goc-lon)}
+.chips{display:flex;flex-wrap:wrap;gap:var(--khoang-2);margin:var(--khoang-5) 0 0;padding:0;list-style:none}
+.chips li{display:inline-flex;align-items:center;gap:6px;font-size:var(--chu-nho);font-weight:500;border:1px solid var(--mau-vien);border-radius:var(--bo-goc-vien-thuoc);padding:6px 14px}
+.chips svg{width:16px;height:16px;color:var(--mau-nhan-dam);flex:none}
+.pains{list-style:none;margin:var(--khoang-7) 0 0;padding:0;display:grid;gap:var(--khoang-4)}
+@media(min-width:768px){.pains{grid-template-columns:repeat(3,1fr)}}
+.pains li{background:var(--mau-nen-noi);border:1px solid var(--mau-vien);border-radius:var(--bo-goc-vua);padding:var(--khoang-5)}
+.pains .truoc{color:var(--mau-chu-phu)}
+.pains .truoc::before{content:"Trước đây";display:block;font-size:var(--chu-nhan);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mau-chu-mo);margin-bottom:var(--khoang-2)}
+.pains .sau{margin-top:var(--khoang-4);padding-top:var(--khoang-4);border-top:1px solid var(--mau-vien);font-weight:500}
+.pains .sau::before{content:"Với app";display:block;font-size:var(--chu-nhan);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mau-nhan-dam);margin-bottom:var(--khoang-2)}
+.feats{display:grid;gap:var(--khoang-4);margin-top:var(--khoang-7)}
+@media(min-width:768px){.feats{grid-template-columns:1fr 1fr}}
+@media(min-width:1200px){.feats{grid-template-columns:repeat(3,1fr)}}
+.box{background:var(--mau-nen-noi);border:1px solid var(--mau-vien);border-radius:var(--bo-goc-vua);padding:var(--khoang-5)}
+.box .o-ico{margin:0 0 var(--khoang-4);width:44px;height:44px}
+.box .o-ico svg{width:20px;height:20px}
+.box h3{font-size:1.125rem}
+.box p{color:var(--mau-chu-phu);margin-top:var(--khoang-2)}
+.gal{display:flex;gap:var(--khoang-5);overflow-x:auto;scroll-snap-type:x mandatory;padding:var(--khoang-7) var(--khoang-1) var(--khoang-5);scrollbar-width:thin;max-width:100%}
+.gal figure{margin:0;flex:none;scroll-snap-align:start;width:min(64vw,240px)}
+.gal .dt{width:100%}
+.gal figcaption{margin-top:var(--khoang-3);font-size:var(--chu-nho);color:var(--mau-chu-phu);text-align:center}
+.rong-chu{max-width:var(--rong-chu)}
+.faq{margin-top:var(--khoang-6);max-width:880px}
+.faq details{border-bottom:1px solid var(--mau-vien)}
+.faq summary{cursor:pointer;list-style:none;padding:var(--khoang-5) 44px var(--khoang-5) 0;font-weight:600;font-size:1.125rem;position:relative}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";position:absolute;right:4px;top:13px;font-size:20px;color:var(--mau-chu-phu)}
-.faq details[open] summary::after{content:"–"}
-.faq details p{margin:0 0 16px;color:var(--mau-chu-phu)}
-.sticky{position:fixed;left:0;right:0;bottom:0;z-index:15;padding:10px var(--khoang-trang) calc(10px + env(safe-area-inset-bottom));background:var(--mau-dau-trang);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--mau-vien);display:flex;align-items:center;gap:12px}
-.sticky b{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px}
-@media(min-width:860px){.sticky{display:none}}
-body.pdp footer{padding-bottom:96px}@media(min-width:860px){body.pdp footer{padding-bottom:30px}}
-/* ---------- Học AI (giữ nguyên chức năng) ---------- */
-.lessons{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:14px;padding:16px 0 40px}
-.ls{background:var(--mau-be-mat);border:1px solid var(--mau-vien);border-radius:var(--bo-goc);padding:16px 18px;display:flex;flex-direction:column;gap:6px}
-.ls:hover{border-color:var(--mau-nhan)}
-.ls .meta{font-size:13px;color:var(--mau-chu-phu);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.ls .meta b{color:var(--mau-nhan);font-weight:600}
-.ls h3{font-size:16px;line-height:1.5;font-weight:600}.ls p{margin:0;color:var(--mau-chu-phu);font-size:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.folders{display:grid;gap:10px;padding:18px 0 40px}
-.folder{display:flex;align-items:center;gap:14px;background:var(--mau-be-mat);border:1px solid var(--mau-vien);border-radius:var(--bo-goc);padding:16px 18px}
-.folder:hover{border-color:var(--mau-nhan)}.folder>svg{width:28px;height:28px;color:var(--mau-nhan);flex:none}
-.folder span{flex:1;display:flex;flex-direction:column}.folder b{font-size:16px;font-weight:600}.folder small{color:var(--mau-chu-phu)}.folder i svg{width:18px;height:18px;color:var(--mau-chu-phu)}
-.free{display:inline-block;font-size:12px;font-weight:700;color:var(--mau-chu-tren-nhan);background:var(--nut-nen);border-radius:var(--bo-goc-nut);padding:2px 9px}
-.hoc-hero{padding:40px 0 6px}.hoc-hero h1{margin:8px 0;font-size:var(--chu-co-h2);line-height:1.35}.hoc-hero p{margin:0;color:var(--mau-chu-phu)}
-.lamngay{border:1px solid var(--mau-nhan);background:var(--mau-nhan-nen);border-radius:var(--bo-goc);padding:12px 14px;margin:6px 0 18px}.lamngay b{color:var(--mau-nhan);font-size:13px;letter-spacing:.04em;text-transform:uppercase}.lamngay p{margin:4px 0 0;font-weight:600}
-.art{max-width:var(--rong-doc);margin:0 auto;padding-bottom:60px}
-.art h1{font-size:var(--chu-co-h2);line-height:1.4;margin:12px 0}
-.art .meta{color:var(--mau-chu-phu);font-size:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.body{font-size:16px;line-height:1.85;margin-top:20px;overflow-wrap:anywhere}
-.body h2{font-size:19px;font-weight:600;margin:32px 0 12px}
-.body blockquote{margin:14px 0;padding:14px 16px;border-left:3px solid var(--mau-nhan);background:var(--mau-be-mat);border-radius:var(--bo-goc-nho);position:relative}
+.faq summary::after{content:"+";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:1.5rem;font-weight:400;color:var(--mau-chu-phu);transition:transform var(--chuyen-nhanh)}
+.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.faq details p{margin:0 0 var(--khoang-5);color:var(--mau-chu-phu)}
+.note{border:1px dashed var(--mau-vien);border-radius:var(--bo-goc-vua);padding:var(--khoang-5);color:var(--mau-chu-phu);text-align:center;margin-top:var(--khoang-6)}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:15;padding:10px var(--khoang-le) calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--mau-nen) 92%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid var(--mau-vien);display:flex;align-items:center;gap:var(--khoang-3)}
+.sticky b{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:var(--chu-nho)}
+@media(min-width:1024px){.sticky{display:none}}
+body.pdp footer{padding-bottom:96px}@media(min-width:1024px){body.pdp footer{padding-bottom:var(--khoang-6)}}
+/* ---------- giới thiệu: 5 giá trị ---------- */
+.gia-tri{display:grid;gap:var(--khoang-4);margin-top:var(--khoang-7)}
+@media(min-width:768px){.gia-tri{grid-template-columns:1fr 1fr}}
+@media(min-width:1200px){.gia-tri{grid-template-columns:repeat(6,1fr)}.gia-tri>.box{grid-column:span 2}.gia-tri>.box:nth-child(4){grid-column:2/span 2}}
+.gia-tri .so{font-size:var(--chu-nhan);font-weight:700;color:var(--mau-nhan-dam);margin-bottom:var(--khoang-3);display:block}
+/* ---------- liên hệ ---------- */
+.zcard{max-width:640px;margin:var(--khoang-7) auto 0;background:var(--mau-nen-phu);border-radius:var(--bo-goc-lon);padding:clamp(32px,4vw,56px) var(--khoang-5);text-align:center}
+.zcard .o-ico{margin-bottom:var(--khoang-4)}
+.zcard .num{font-size:var(--chu-h2);font-weight:700;letter-spacing:-.01em;margin-top:var(--khoang-2)}
+.zcard .hang-nut{justify-content:center;margin-top:var(--khoang-5)}
+.zcard p.nho-chu{margin-top:var(--khoang-5);font-size:var(--chu-nho);color:var(--mau-chu-phu)}
+.kv{display:grid;gap:var(--khoang-2);max-width:640px;margin:var(--khoang-6) auto 0}
+.kv div{display:flex;align-items:center;gap:var(--khoang-3);flex-wrap:wrap;border-bottom:1px solid var(--mau-vien);padding:var(--khoang-3) 0}
+.kv span{color:var(--mau-chu-phu)}.kv b{margin-left:auto;font-weight:600}
+.mxh{text-align:center;margin-top:var(--khoang-7)}
+.mxh .vien-thuoc{justify-content:center;margin-top:var(--khoang-4)}
+.rieng-tu{text-align:center;color:var(--mau-chu-mo);font-size:var(--chu-nho);margin-top:var(--khoang-7)}
+/* ---------- Học AI và bài viết (giữ nội dung, đổi sang biến mới) ---------- */
+.hoc-hero{padding-top:var(--khoang-9)}
+.hoc-hero h1{margin-top:var(--khoang-3)}
+.hoc-hero p{margin-top:var(--khoang-3);color:var(--mau-chu-phu);font-size:var(--chu-lon)}
+.free{display:inline-block;font-size:var(--chu-nhan);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mau-nhan-dam);background:var(--mau-nhan-nhat);border-radius:var(--bo-goc-vien-thuoc);padding:3px 12px}
+.lessons{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:var(--khoang-4);padding:var(--khoang-6) 0 0}
+.ls{background:var(--mau-nen-noi);border:1px solid var(--mau-vien);border-radius:var(--bo-goc-vua);padding:var(--khoang-5);display:flex;flex-direction:column;gap:var(--khoang-2);transition:box-shadow var(--chuyen-vua),transform var(--chuyen-vua)}
+.ls:hover{box-shadow:var(--bong-2);transform:translateY(-2px)}
+.ls .meta{font-size:var(--chu-nho);color:var(--mau-chu-mo);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ls .meta b{color:var(--mau-nhan-dam);font-weight:600}
+.ls h3{font-size:1.125rem;line-height:1.45}
+.ls p{color:var(--mau-chu-phu);font-size:.9375rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.folders{display:grid;gap:var(--khoang-3);padding:var(--khoang-6) 0 0}
+@media(min-width:768px){.folders{grid-template-columns:1fr 1fr}}
+.folder{display:flex;align-items:center;gap:var(--khoang-4);background:var(--mau-nen-noi);border:1px solid var(--mau-vien);border-radius:var(--bo-goc-vua);padding:var(--khoang-5)}
+.folder:hover{box-shadow:var(--bong-2)}
+.folder>svg{width:28px;height:28px;color:var(--mau-nhan-dam);flex:none}
+.folder span{flex:1;display:flex;flex-direction:column}.folder b{font-size:1.0625rem;font-weight:600}.folder small{color:var(--mau-chu-mo);font-size:var(--chu-nho)}.folder i svg{width:18px;height:18px;color:var(--mau-chu-mo)}
+.art{max-width:var(--rong-chu);margin:0 auto;padding-bottom:var(--khoang-8)}
+.art h1{font-size:clamp(1.875rem,1.4rem + 1.8vw,2.75rem);margin:var(--khoang-4) 0}
+.art .meta{color:var(--mau-chu-mo);font-size:var(--chu-nho);display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:var(--khoang-5)}
+.art .cover{margin:var(--khoang-5) 0;border-radius:var(--bo-goc-lon);overflow:hidden;border:1px solid var(--mau-vien);aspect-ratio:16/9;background:var(--mau-nen-phu)}
+.art .cover img{width:100%;height:100%;object-fit:cover}
+.lamngay{border:1px solid var(--mau-vien);background:var(--mau-nhan-nhat);border-radius:var(--bo-goc-vua);padding:var(--khoang-4) var(--khoang-5);margin:var(--khoang-2) 0 var(--khoang-5)}
+.lamngay b{color:var(--mau-nhan-dam);font-size:var(--chu-nhan);letter-spacing:.08em;text-transform:uppercase}.lamngay p{margin:4px 0 0;font-weight:600}
+.body{font-size:var(--chu-than);line-height:1.8;margin-top:var(--khoang-5)}
+.body p{margin:0 0 var(--khoang-4)}
+.body h2{font-size:1.375rem;font-weight:700;margin:var(--khoang-7) 0 var(--khoang-3)}
+.body blockquote{margin:var(--khoang-4) 0;padding:var(--khoang-4) var(--khoang-5);border-left:3px solid var(--mau-nhan);background:var(--mau-nen-phu);border-radius:var(--bo-goc-nho);position:relative}
 .body blockquote .cp{position:absolute;right:10px;top:8px}
-.body blockquote p{margin:0;padding-right:44px}
-.body ul{padding-left:20px}.body li{margin:6px 0}
-.body img{max-width:100%;border-radius:var(--bo-goc);border:1px solid var(--mau-vien);display:block;margin:16px 0}.body a{color:var(--mau-nhan);text-decoration:underline}
-.art .cover{margin:0 0 14px}
-.cp{border:0;background:transparent;color:var(--mau-nhan);font-weight:600;font-size:14px;cursor:pointer;padding:4px 0 4px 6px}
-.cta{margin-top:30px;background:var(--mau-be-mat);border:1px solid var(--mau-vien);border-radius:var(--bo-goc);padding:20px;display:grid;gap:10px;justify-items:start}
-.cta p{margin:0;color:var(--mau-chu-phu)}
-/* ---------- giới thiệu, liên hệ ---------- */
-.kv{display:grid;gap:8px}
-.kv div{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--mau-be-mat-2);border-radius:var(--bo-goc-nho);padding:12px 14px}
-.kv span{color:var(--mau-chu-phu)}.kv b{margin-left:auto;text-align:right;overflow-wrap:anywhere}
-.zcard{display:grid;gap:16px;align-items:center}
-@media(min-width:700px){.zcard{grid-template-columns:1fr auto}}
-.zcard .num{font-size:var(--chu-co-h2);font-weight:700;color:var(--mau-nhan-sang);letter-spacing:.02em}
-/* ---------- chân trang ---------- */
-footer{margin-top:var(--khoang-khoi);border-top:1px solid var(--mau-vien);color:var(--mau-chu-phu);font-size:14px;padding:32px 0 30px}
-.fgrid{display:grid;gap:22px}
-@media(min-width:760px){.fgrid{grid-template-columns:1.4fr 1fr 1fr}}
-.fgrid b{display:block;color:var(--mau-chu);margin-bottom:8px}
-.fgrid a{display:block;padding:3px 0}.fgrid a:hover{color:var(--mau-nhan-sang)}
-.fcopy{margin-top:24px;font-size:13px}
+.body blockquote p{margin:0;padding-right:48px}
+.body ul{padding-left:22px}.body li{margin:6px 0}
+.body img{max-width:100%;border-radius:var(--bo-goc-vua);border:1px solid var(--mau-vien);margin:var(--khoang-4) 0}.body a{color:var(--mau-nhan-dam);text-decoration:underline}
+.cp{border:0;background:transparent;color:var(--mau-nhan-dam);font-weight:600;font-size:var(--chu-nho);cursor:pointer;padding:4px 0 4px 6px;min-height:32px}
+.cta{margin-top:var(--khoang-7);background:var(--mau-nen-phu);border-radius:var(--bo-goc-lon);padding:var(--khoang-6);display:grid;gap:var(--khoang-3);justify-items:start}
+.cta p{color:var(--mau-chu-phu)}
+/* ---------- chân trang (10.4) ---------- */
+footer{background:var(--mau-nen-phu);border-top:1px solid var(--mau-vien);padding:var(--khoang-8) 0 var(--khoang-6);margin-top:var(--khoang-khoi);font-size:.9375rem}
+.cot-chan{display:grid;gap:var(--khoang-6);grid-template-columns:1fr 1fr}
+.cot-chan>div:first-child{grid-column:1/-1}
+@media(min-width:1024px){.cot-chan{grid-template-columns:2fr 1fr 1fr 1fr}.cot-chan>div:first-child{grid-column:auto}}
+.cot-chan h4{margin:0 0 var(--khoang-3);font-size:var(--chu-nho);font-weight:600;color:var(--mau-chu)}
+.cot-chan nav,.cot-chan .ds{display:grid;gap:var(--khoang-2)}
+.cot-chan a{color:var(--mau-chu-phu)}.cot-chan a:hover{color:var(--mau-chu)}
+.cot-chan .kh{color:var(--mau-chu-phu);margin-top:var(--khoang-3)}
+.dong-cuoi{margin-top:var(--khoang-7);padding-top:var(--khoang-5);border-top:1px solid var(--mau-vien);color:var(--mau-chu-mo);font-size:var(--chu-nho)}
 /* ---------- khác ---------- */
-.pv-bar{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--mau-nhan);color:var(--mau-chu-tren-nhan);font-size:13px;font-weight:700;text-align:center;padding:4px 10px}
-body.pv{padding-top:28px}body.pv header{top:28px}
-.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:var(--mau-chu);color:var(--mau-nen);font-weight:600;border-radius:var(--bo-goc-nut);padding:10px 18px;z-index:60;display:none;max-width:calc(100% - 32px);text-align:center}
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.pv-bar{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--mau-nhan);color:var(--mau-chu-tren-nhan);font-size:var(--chu-nhan);font-weight:700;text-align:center;padding:4px 10px}
+body.pv{padding-top:28px}body.pv header.menu{top:28px}
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:var(--mau-chu);color:var(--mau-nen);font-weight:600;border-radius:var(--bo-goc-vien-thuoc);padding:10px 18px;z-index:60;display:none;max-width:calc(100% - 32px);text-align:center;font-size:var(--chu-nho)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style></head><body>
-<header><div class="wrap bar"><a class="brand" href="#" id="brand" aria-label="SONA, về trang chủ"><img class="mark" src="img/mark-192.png" alt="" width="34" height="34"><span class="word" id="siteName">SONA</span></a>
-<nav class="nav" aria-label="Mục chính"><a href="#san-pham" id="navSp">Sản phẩm</a><a href="#hoc" id="navHoc">Học AI</a><a href="#gioi-thieu" id="navInfo">Giới thiệu</a><a href="#lien-he" id="navLh" class="cta-nav">Liên hệ</a></nav></div></header>
-<main class="wrap" id="app"></main>
-<footer><div class="wrap"><div class="fgrid"><div><b id="fName">SONA</b><span id="fSlogan"></span></div><div><b>Trang</b><nav id="flinks" aria-label="Trang khác"></nav></div><div><b>Kết nối</b><div id="fsoc"></div></div></div><div class="fcopy" id="foot">SONA</div></div></footer>
+<header class="menu" id="menu"><div class="wrap">
+  <a class="brand" href="#" id="brand" aria-label="SONA, về trang chủ"><img class="mark" src="img/mark-192.png" alt="" width="32" height="32"><span id="siteName">SONA</span></a>
+  <nav class="nav" aria-label="Mục chính"><a href="#san-pham" id="navSp">Sản phẩm</a><a href="#hoc" id="navHoc">Học AI</a><a href="#gioi-thieu" id="navInfo">Giới thiệu</a><a href="#lien-he" id="navLh">Liên hệ</a></nav>
+  <div class="menu-phai">
+    <button class="nut-tron" id="doiNen" type="button" aria-label="Đổi chế độ sáng tối"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg></button>
+    <a class="btn nho chi-may-tinh" id="zaloTop" href="#lien-he">Liên hệ Zalo</a>
+    <a class="btn nho chi-dien-thoai" id="zaloTopM" href="#lien-he">Zalo</a>
+    <button class="nut-tron chi-dien-thoai" id="moMenu" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="bangMenu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div></div></header>
+<nav class="bang-menu" id="bangMenu" aria-label="Menu điện thoại"><a href="#">Trang chủ</a><a href="#san-pham">Sản phẩm</a><a href="#hoc">Học AI</a><a href="#gioi-thieu">Giới thiệu</a><a href="#lien-he">Liên hệ</a></nav>
+<main id="app"></main>
+<footer><div class="wrap"><div class="cot-chan">
+  <div><a class="brand" href="#"><img class="mark" src="img/mark-192.png" alt="" width="32" height="32"><span id="fName">SONA</span></a><p class="kh" id="fSlogan"></p></div>
+  <div><h4>Sản phẩm</h4><nav class="ds" id="fSp" aria-label="Sản phẩm"></nav></div>
+  <div><h4>SONA</h4><nav class="ds" id="flinks" aria-label="Trang khác"></nav></div>
+  <div><h4>Liên hệ</h4><div class="ds" id="fsoc"></div></div>
+</div><div class="dong-cuoi" id="foot">© SONA</div></div></footer>
 <div class="toast" id="toast" role="status"></div>
 <script>
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const norm=s=>String(s||"").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/đ/g,"d").replace(/Đ/g,"D").toLowerCase();
+const sv=(p,w=1.75)=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg>`;
 const ICON={
-  search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>',
-  arrow:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
-  doc:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>',
-  app:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg>',
-  svc:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>',
-  check:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>',
-  shield:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>',
-  chat:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>',
-  video:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3z"/></svg>',
-  once:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>',
-  folder:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>'};
-const CATS=["App","Tài liệu","Dịch vụ"];
+  search:sv('<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>',2.2),
+  arrow:sv('<path d="M5 12h14M13 6l6 6-6 6"/>',2),
+  check:sv('<path d="M5 12l5 5L20 7"/>',2.2),
+  bill:sv('<path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/>'),
+  lock:sv('<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>'),
+  video:sv('<rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/>'),
+  chat:sv('<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>'),
+  users:sv('<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.6a3.5 3.5 0 0 1 0 6.8M21.5 20a6.5 6.5 0 0 0-4-6"/>'),
+  cal:sv('<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>'),
+  cart:sv('<path d="M3 4h2l2.4 11h11L21 8H6.2"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/>'),
+  layers:sv('<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>'),
+  clock:sv('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'),
+  box:sv('<path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/>'),
+  book:sv('<path d="M4 4h6a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-6a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h7z"/>'),
+  doc:sv('<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/>'),
+  folder:sv('<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',1.8)};
+const FEAT_ICONS=[ICON.users,ICON.cal,ICON.cart,ICON.layers,ICON.clock,ICON.box,ICON.book,ICON.doc];
+const MARK_S='<svg class="dau-s" viewBox="0 0 64 64" aria-hidden="true"><g transform="skewY(-18) translate(0 11)" fill="#f0b458"><rect x="16" y="12" width="40" height="17" rx="5"/><rect x="8" y="34" width="40" height="17" rx="5"/></g></svg>';
 const catOf=p=>/app/i.test(p.loai||"")?"App":/dịch vụ|dich vu/i.test(p.loai||"")?"Dịch vụ":"Tài liệu";
-const iconOf=p=>({App:ICON.app,"Dịch vụ":ICON.svc}[catOf(p)]||ICON.doc);
-const lines=v=>Array.isArray(v)?v.filter(Boolean):String(v||"").split("\n").map(s=>s.trim()).filter(Boolean);
+const groupOf=p=>p.nhom||catOf(p);
+const lines=v=>Array.isArray(v)?v.filter(Boolean).map(String):String(v||"").split("\n").map(s=>s.trim()).filter(Boolean);
 /* "Tiêu đề: mô tả" → [tiêu đề, mô tả] */
-const splitTitle=s=>{const i=String(s).indexOf(":");return i>0&&i<60?[s.slice(0,i).trim(),s.slice(i+1).trim()]:["",String(s)]};
+const splitTitle=s=>{s=String(s);const i=s.indexOf(":");return i>0&&i<60?[s.slice(0,i).trim(),s.slice(i+1).trim()]:["",s]};
 let SITE={},PRODUCTS=[],POSTS=[],PAGES=[],Q="",CAT="";
 /* Xem trước từ trang Admin: dữ liệu chưa lưu nằm tạm trong máy, chỉ dùng khi mở với ?preview=1 */
 const PREVIEW=/[?&]preview=1(&|$)/.test(location.search);
-/* Chữ mặc định. Mọi chữ dưới đây đều sửa được trong Admin; để trống thì web dùng chữ này. */
+/* Chữ mặc định khi ô tương ứng trong Admin để trống (theo đặc tả PV-015). Không có giá (D-045). */
 const MAC_DINH={
   khau_hieu:"Công nghệ cho mọi người",
-  mo_ta:"SONA làm phần mềm đơn giản cho chủ kinh doanh nhỏ. Sản phẩm đầu tiên: app quản lý spa trả một lần, không phí tháng, dữ liệu nằm trong tài khoản Google của spa.",
-  cam_ket:["Trả một lần, không phí tháng: Mua một lần, không thu phí phần mềm hằng tháng.","Dữ liệu là của anh chị: App và dữ liệu nằm trong tài khoản Google của spa.","Cài cùng anh chị: SONA hướng dẫn cài từng bước qua gọi video, anh chị tự bấm cấp quyền.","Hỗ trợ qua Zalo: Vướng chỗ nào, anh chị nhắn Zalo SONA."],
-  cach_mua:["Nhắn Zalo SONA, kể tiệm mình đang cần gì.","SONA tư vấn sản phẩm phù hợp và báo giá riêng cho anh chị.","Hẹn giờ, SONA cài đặt cùng anh chị và hỗ trợ qua Zalo."],
-  lam_gi:"SONA (SoNa Software) làm phần mềm đơn giản cho chủ kinh doanh nhỏ ở Việt Nam. Sản phẩm đầu tiên là app quản lý spa: cài vào tài khoản Google của spa, dùng trên điện thoại, trả một lần, không phí tháng.",
-  gia_tri:["Thấu hiểu khách hàng: Lắng nghe nhu cầu thực tế để làm sản phẩm giải quyết đúng vấn đề khách đang gặp.","Nhanh gọn – Tối ưu: Đơn giản hóa điều phức tạp, để sản phẩm dễ hiểu, dễ dùng.","Uy tín – Cam kết: Kinh doanh trung thực, cam kết đúng những gì đã hứa, minh bạch trong mọi giao dịch.","Hiệu quả – Tốc độ: Tập trung vào kết quả, làm đúng việc và đúng hạn.","Dữ liệu – Tri thức: Học hỏi không ngừng, cải tiến sản phẩm dựa trên dữ liệu và thực tế."],
+  nhan:"SONA · Phần mềm cho chủ spa",
+  mo_ta:"Hai app quản lý spa gọn trong điện thoại. Dữ liệu nằm trong tài khoản Google của chính tiệm anh chị.",
+  tieu_de_sp:"Hai app, hai cỡ tiệm.",mo_ta_sp:"Chọn app hợp với cách tiệm anh chị đang làm.",
+  tieu_de_cam_ket:"Đơn giản ngay từ đầu.",
+  cam_ket:["Trả một lần: Không thu phí phần mềm hằng tháng.","Dữ liệu là của tiệm: App và dữ liệu nằm trong tài khoản Google của spa. Tiệm giữ toàn quyền.","SONA cài cùng anh chị: Hẹn giờ gọi video, hướng dẫn từng bước. Anh chị tự bấm, SONA không điều khiển máy."],
+  mot_man_tieu_de:"Việc cả ngày, gọn trên một app.",
+  mot_man_mo_ta:"Từ lúc khách đặt lịch đến lúc chốt tiền cuối ngày, anh chị xem và ghi ở cùng một chỗ.",
+  mot_man_nhan:["Lịch hẹn","Tạo đơn","Tiền quầy","Liệu trình","Chấm công","Hoa hồng & lương"],
+  cach_mua:["Nhắn Zalo SONA: Kể cách tiệm đang làm. SONA gợi ý app phù hợp.","Hẹn giờ gọi video: SONA hướng dẫn anh chị cài app vào tài khoản Google của spa và tự bấm cấp quyền.","Dùng hằng ngày: Thêm app ra màn hình chính điện thoại, mở là dùng."],
+  ghi_chu_buoc:"Anh chị chỉ cần một tài khoản Google của spa và điện thoại hoặc máy tính.",
+  lam_gi:"SONA làm phần mềm đơn giản cho người kinh doanh nhỏ. Dễ hiểu, dễ dùng, dữ liệu là của chính anh chị.",
+  cau_chuyen_tieu_de:"Bắt đầu từ tiệm spa.",
+  cau_chuyen:"Chủ spa nhỏ làm nhiều việc cùng lúc: đón khách, làm dịch vụ, ghi sổ, tính tiền. SONA bắt đầu từ đó, với hai app quản lý spa chạy trong tài khoản Google của chính tiệm. Sau spa, SONA sẽ làm thêm công cụ cho các ngành kinh doanh nhỏ khác.",
+  gia_tri:["Thấu hiểu khách hàng: Làm đúng vấn đề khách đang gặp.","Nhanh gọn: Biến việc phức tạp thành đơn giản.","Uy tín: Hứa gì làm nấy, minh bạch.","Hiệu quả: Tập trung vào kết quả.","Dữ liệu: Quyết định dựa trên thực tế."],
   gio:"8h–20h",
-  loi_moi:"Anh chị nhắn Zalo SONA để được tư vấn sản phẩm phù hợp và báo giá riêng."};
+  loi_moi:"Nhắn Zalo là nhanh nhất. SONA tư vấn, báo giá riêng và hẹn giờ cài app cùng anh chị.",
+  band_tieu_de:"Muốn xem app chạy thế nào?",
+  band_mo_ta:"Nhắn Zalo SONA để xem bản demo dữ liệu mẫu và được tư vấn app hợp với tiệm.",
+  rieng_tu:"SONA chỉ dùng số Zalo của anh chị để tư vấn và hỗ trợ. Nhắn \"Dừng\" là SONA không nhắn nữa."};
 const TC=()=>SITE.trang_chu||{};const TT=()=>SITE.thong_tin||{};const LH=()=>SITE.lien_he||{};
 const khauHieu=()=>SITE.khau_hieu||MAC_DINH.khau_hieu;
 const pick=(v,d)=>{const l=lines(v);return l.length?l:d};
 const logoSrc=()=>SITE.logo||"img/mark-192.png";
 function setMeta(title,desc){document.title=title;const m=document.querySelector('meta[name="description"]');if(m&&desc)m.content=String(desc).slice(0, 300)}
 const zaloUrl=()=>SITE.zalo?"https://zalo.me/"+String(SITE.zalo).replace(/\D/g,""):"";
+const zaloShow=()=>{const d=String(SITE.zalo||"").replace(/\D/g,"");return d.length===10?d.slice(0,4)+" "+d.slice(4,7)+" "+d.slice(7):SITE.zalo||""};
 function toast(t){const e=$("#toast");e.textContent=t;e.style.display="block";clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display="none",2200)}
 async function copy(t){try{await navigator.clipboard.writeText(t);toast("Đã sao chép")}catch(e){toast("Giữ tay vào chữ để sao chép")}}
-/* Nút Liên hệ: mở Zalo SONA, chép sẵn tin nhắn có mã sản phẩm để SONA biết khách hỏi gì. Đây là cách mua duy nhất (D-045). */
+/* Nút Liên hệ: mở Zalo SONA, chép sẵn tin nhắn có mã sản phẩm. Đây là cách mua duy nhất (D-045). */
 function contactBtn(label,p,cls=""){const u=zaloUrl();const msg=p?`${p.ma_zalo?p.ma_zalo+" – ":""}Em muốn tư vấn ${p.ten}`:"Em cần SONA tư vấn";
-  return u?`<a class="btn ${cls}" href="${esc(u)}" target="_blank" rel="noopener" data-zalo="${esc(msg)}">${ICON.chat}${esc(label||"Liên hệ tư vấn")}</a>`:`<a class="btn ${cls}" href="#lien-he">${esc(label||"Liên hệ tư vấn")}</a>`}
+  return u?`<a class="btn ${cls}" href="${esc(u)}" target="_blank" rel="noopener" data-zalo="${esc(msg)}">${esc(label||"Liên hệ Zalo")}</a>`:`<a class="btn ${cls}" href="#lien-he">${esc(label||"Liên hệ")}</a>`}
 function bindZalo(){document.querySelectorAll("[data-zalo]").forEach(a=>a.onclick=()=>{try{navigator.clipboard.writeText(a.dataset.zalo).then(()=>toast("Đã chép tin nhắn, dán vào Zalo để gửi SONA"),()=>{})}catch(e){}})}
+/* Khung điện thoại: ảnh thật (chỉ dữ liệu mẫu) hoặc khung tạm có chữ */
+const phone=(src,t,s,cls="")=>`<div class="dt ${cls}">${src?`<img src="${esc(src)}" alt="${esc(t)}${s?" – "+esc(s):""} (dữ liệu mẫu)" loading="lazy">`:`<div class="man"><b>${esc(t)}</b><span>${esc(s||"Ảnh màn hình")}</span><small>dữ liệu mẫu · sắp có</small></div>`}</div>`;
+const firstShot=p=>lines(p.anh_minh_hoa)[0]||"";
 async function load(){
   try{[SITE,PRODUCTS]=await Promise.all([fetch("site.json").then(r=>r.json()),fetch("products.json").then(r=>r.json())])}catch(e){SITE={};PRODUCTS=[]}
   try{POSTS=await fetch("posts.json",{cache:"no-cache"}).then(r=>r.json())}catch(e){POSTS=[]}
@@ -284,106 +433,127 @@ async function load(){
   const name=SITE.ten_web||"SONA";
   $("#siteName").textContent=name;$("#fName").textContent=name;$("#fSlogan").textContent=khauHieu();document.querySelectorAll(".mark").forEach(i=>i.src=logoSrc());
   if(SITE.favicon){const l=document.querySelector('link[rel="icon"]');if(l)l.href=SITE.favicon}
-  $("#foot").textContent=SITE.chan_trang||"© "+name+" · "+khauHieu()+(SITE.email?" · "+SITE.email:"");
-  $("#flinks").innerHTML=[["#san-pham","Sản phẩm"],["#hoc","Học AI"],["#gioi-thieu","Giới thiệu SONA"],["#lien-he","Liên hệ"]].map(([h,t])=>`<a href="${h}">${t}</a>`).join("")+PAGES.filter(x=>x.hien_chan_trang).map(x=>`<a href="#trang/${esc(x.slug)}">${esc(x.tieu_de)}</a>`).join("");
+  if(zaloUrl())["#zaloTop","#zaloTopM"].forEach(s=>{const a=$(s);a.href=zaloUrl();a.target="_blank";a.rel="noopener"});
+  $("#foot").textContent=SITE.chan_trang||"© "+new Date().getFullYear()+" "+name+" · "+(SITE.seo?.dia_chi_web||"").replace(/^https:\/\/|\/$/g,"");
+  $("#fSp").innerHTML=PRODUCTS.map(p=>`<a href="#sp/${esc(p.slug)}">${esc(p.ten)}</a>`).join("");
+  $("#flinks").innerHTML=[["#gioi-thieu","Giới thiệu"],["#hoc","Học AI"],["#lien-he","Liên hệ"]].map(([h,t])=>`<a href="${h}">${t}</a>`).join("")+PAGES.filter(x=>x.hien_chan_trang).map(x=>`<a href="#trang/${esc(x.slug)}">${esc(x.tieu_de)}</a>`).join("");
   const S=SITE.mang_xa_hoi||{};const okU=u=>/^https:\/\//.test(u||"");
-  $("#fsoc").innerHTML=[SITE.hotline&&`<a href="tel:${esc(SITE.hotline.replace(/[^\d+]/g,""))}">Hotline ${esc(SITE.hotline)}</a>`,zaloUrl()&&`<a href="${zaloUrl()}" target="_blank" rel="noopener">Zalo ${esc(SITE.zalo)}</a>`,
+  $("#fsoc").innerHTML=[zaloUrl()&&`<a href="${zaloUrl()}" target="_blank" rel="noopener">Zalo ${esc(zaloShow())}</a>`,SITE.hotline&&`<a href="tel:${esc(SITE.hotline.replace(/[^\d+]/g,""))}">Hotline ${esc(SITE.hotline)}</a>`,
     okU(S.facebook)&&`<a href="${esc(S.facebook)}" target="_blank" rel="noopener">Facebook</a>`,okU(S.tiktok)&&`<a href="${esc(S.tiktok)}" target="_blank" rel="noopener">TikTok</a>`,okU(S.youtube)&&`<a href="${esc(S.youtube)}" target="_blank" rel="noopener">YouTube</a>`].filter(Boolean).join("");
   route()}
-function route(){const h=location.hash||(window.SONA_ROUTE?"#"+window.SONA_ROUTE:"");
+function route(){const h=location.hash||(window.SONA_ROUTE?"#"+window.SONA_ROUTE:"");closeMenu();
   const pm=h.match(/^#trang\/([\w-]+)/);const pg=pm&&PAGES.find(x=>x.slug===pm[1]);
   const m=h.match(/^#sp\/([\w-]+)/);const p=m&&PRODUCTS.find(x=>x.slug===m[1]);
   const b=h.match(/^#bai\/([\w-]+)/);const a=b&&POSTS.find(x=>x.slug===b[1]);
   const t=h.match(/^#hoc\/(.+)$/);const hoc=/^#hoc/.test(h)||!!a;const info=/^#(gioi-thieu|thong-tin)/.test(h);const lh=/^#lien-he/.test(h);const sp=/^#san-pham/.test(h)||!!m;
-  document.body.classList.toggle("pdp",!!p);$("#navHoc").classList.toggle("on",hoc);$("#navInfo").classList.toggle("on",info);$("#navSp").classList.toggle("on",sp);
+  document.body.classList.toggle("pdp",!!p);[["#navHoc",hoc],["#navInfo",info],["#navSp",sp],["#navLh",lh]].forEach(([s,on])=>{$(s).classList.toggle("on",on);on?$(s).setAttribute("aria-current","page"):$(s).removeAttribute("aria-current")});
   p?product(p):a?article(a):pg?pageView(pg):t?hocFolder(decodeURIComponent(t[1])):hoc?hocPage():info?infoPage():lh?contactPage():sp?productsPage():home();bindZalo();window.scrollTo(0,0)}
-/* ---------- thẻ sản phẩm (dùng chung trang chủ và trang Sản phẩm) ---------- */
-const card=p=>`<a class="card" href="#sp/${esc(p.slug)}"><div class="thumb">${p.anh_bia?`<img src="${esc(p.anh_bia)}" alt="${esc(p.ten)}" loading="lazy">`:iconOf(p)}</div>
-  <div class="in"><span class="tag">${esc(p.nhan||catOf(p))}</span><h3>${esc(p.ten)}</h3><p>${esc(p.phu_de)}</p><span class="more">Xem chi tiết ${ICON.arrow}</span></div></a>`;
-const boxes=(list,icons)=>list.map((x,i)=>{const[t,d]=splitTitle(x);return`<div class="box">${icons?`<span class="ico">${icons[i%icons.length]}</span>`:""}${t?`<h3>${esc(t)}</h3>`:""}<p>${esc(d)}</p></div>`}).join("");
-const stepsHtml=l=>`<ol class="steps">${l.map(x=>`<li><span>${esc(x)}</span></li>`).join("")}</ol>`;
-/* ---------- trang chủ ---------- */
+/* ---------- khối dùng chung ---------- */
+const W=s=>`<div class="wrap">${s}</div>`;
+const head=(nhan,h,phu,cls="")=>`<div class="dau-khoi ${cls}">${nhan?`<span class="nhan">${esc(nhan)}</span>`:""}<h2>${esc(h)}</h2>${phu?`<p class="phu">${esc(phu)}</p>`:""}</div>`;
+const card=(p,one)=>{const y=lines(p.the_y).slice(0,3);return`<article class="card${one?" mot":""}"><span class="nhan">${esc(p.nhan||groupOf(p))}</span><h3><a href="#sp/${esc(p.slug)}">${esc(p.ten)}</a></h3><p class="cau">${esc(p.cau_ngan||p.phu_de)}</p>
+  ${y.length?`<ul class="cham">${y.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}
+  <div class="hang-nut"><a class="nut-chu" href="#sp/${esc(p.slug)}">Tìm hiểu thêm ${ICON.arrow}</a>${contactBtn("Liên hệ Zalo",p,"phu-btn nho")}</div>
+  <div class="anh-the">${phone(firstShot(p),p.ten,p.anh_ghi_chu||"Ảnh màn hình",p.slug.length%2?"phai":"")}</div></article>`};
+const stepsHtml=(l,cls="ba")=>`<ol class="steps ${cls}">${l.map(x=>{const[t,d]=splitTitle(x);return`<li>${t?`<div><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`:`<p style="margin:0;color:var(--mau-chu)">${esc(d)}</p>`}</li>`}).join("")}</ol>`;
+const promises=()=>{const cm=pick(TC().cam_ket,MAC_DINH.cam_ket);const ic=[ICON.bill,ICON.lock,ICON.video,ICON.chat];
+  return`<section class="khoi nen-phu">${W(`<h2 class="giua" style="text-align:center">${esc(TC().tieu_de_cam_ket||MAC_DINH.tieu_de_cam_ket)}</h2><div class="luoi-3">${cm.map((x,i)=>{const[t,d]=splitTitle(x);return`<div class="loi-hua"><div class="o-ico">${ic[i%ic.length]}</div>${t?`<h3>${esc(t)}</h3>`:""}<p>${esc(d)}</p></div>`}).join("")}</div>`)}</section>`};
+const howTo=(l)=>`<section class="khoi nen-phu">${W(`<h2>${l.length===3?"Ba bước để bắt đầu.":"Các bước để bắt đầu."}</h2>${stepsHtml(l,l.length===3?"ba":"ba")}<p class="ghi-chu">${esc(TT().ghi_chu_buoc||MAC_DINH.ghi_chu_buoc)}</p>`)}</section>`;
+const band=(t,d,p)=>`<section class="khoi">${W(`<div class="band">${MARK_S}<h2>${esc(t||LH().band_tieu_de||MAC_DINH.band_tieu_de)}</h2><p class="phu">${esc(d||LH().band_mo_ta||MAC_DINH.band_mo_ta)}</p><div class="hang-nut">${contactBtn(SITE.zalo?"Liên hệ Zalo "+zaloShow():"Liên hệ",p)}</div><p class="nho-chu">SONA trả lời từ ${esc(LH().gio||MAC_DINH.gio)} hằng ngày.</p></div>`)}</section>`;
+/* ---------- trang chủ (đặc tả 5) ---------- */
 function home(){const seo=SITE.seo||{},tc=TC();setMeta(seo.tieu_de||(SITE.ten_web||"SONA")+" · "+khauHieu(),seo.mo_ta);
-  const feat=PRODUCTS.slice(0,3);const cm=pick(tc.cam_ket,MAC_DINH.cam_ket);const steps=pick(TT().cach_mua,MAC_DINH.cach_mua);
-  $("#app").innerHTML=`<section class="hero">${tc.anh_banner?`<img class="banner" src="${esc(tc.anh_banner)}" alt="">`:""}<h1>${esc(khauHieu())}</h1><p class="lead">${esc(tc.mo_ta||MAC_DINH.mo_ta)}</p>
-    <div class="btns"><a class="btn" href="${esc(tc.nut_link||"#san-pham")}"${/^https:/.test(tc.nut_link||"")?' target="_blank" rel="noopener"':""}>${esc(tc.nut_chu||"Xem sản phẩm")} ${ICON.arrow}</a>${contactBtn("Liên hệ tư vấn",null,"phu")}</div></section>
-  <section class="sec"><div class="grid4">${boxes(cm,[ICON.once,ICON.shield,ICON.video,ICON.chat])}</div></section>
-  <section class="sec"><div class="sec-h"><div><span class="kicker">Sản phẩm</span><h2>${esc(tc.tieu_de_goi_y||"Sản phẩm của SONA")}</h2></div><a href="#san-pham">Xem tất cả →</a></div>
-    ${feat.length?`<div class="cards">${feat.map(card).join("")}</div>`:`<div class="empty"><b>Sản phẩm sắp ra mắt</b>Anh chị nhắn Zalo SONA để được tư vấn nhé.</div>`}</section>
-  <section class="sec"><div class="grid2"><div><span class="kicker">Làm việc với SONA</span><div class="sec-h" style="margin-bottom:0"><h2>Bắt đầu trong ${steps.length} bước</h2></div><p class="muted">Không cần biết công nghệ. SONA đi cùng anh chị từ lúc tư vấn đến khi dùng được.</p></div><div class="box">${stepsHtml(steps)}</div></div></section>
-  ${POSTS.length?`<section class="sec"><div class="sec-h"><div><span class="kicker">Học AI miễn phí</span><h2>Bài mới cho chủ tiệm</h2></div><a href="#hoc">Xem tất cả →</a></div><div class="lessons" style="padding:0">${POSTS.slice(0,3).map(lessonCard).join("")}</div></section>`:""}
+  const feat=PRODUCTS.filter(p=>p.noi_bat);const list=(feat.length?feat:PRODUCTS).slice(0,4);
+  const stage=tc.anh_banner?`<img class="banner" src="${esc(tc.anh_banner)}" alt="">`:list.length?`<div class="san-khau" role="img" aria-label="Ảnh màn hình app, dữ liệu mẫu">${list.slice(0,2).map((p,i)=>phone(firstShot(p),p.ten,p.anh_ghi_chu||"Ảnh màn hình",i?"thap phai":"")).join("")}</div>`:"";
+  const tags=pick(tc.mot_man_nhan,MAC_DINH.mot_man_nhan);const fl=folders().slice(0,3).map(x=>x[0]);
+  $("#app").innerHTML=`<section class="hero">${W(`<span class="nhan">${esc(tc.nhan||MAC_DINH.nhan)}</span><h1>${esc(khauHieu())}</h1><p class="phu">${esc(tc.mo_ta||MAC_DINH.mo_ta)}</p>
+    <div class="hang-nut">${contactBtn("Liên hệ Zalo")}<a class="btn phu-btn" href="${esc(tc.nut_link||"#san-pham")}"${/^https:/.test(tc.nut_link||"")?' target="_blank" rel="noopener"':""}>${esc(tc.nut_chu||"Xem sản phẩm")}</a></div>${stage}`)}</section>
+  <section class="khoi" id="khoi-sp">${W(`${head("",tc.tieu_de_goi_y||MAC_DINH.tieu_de_sp,tc.mo_ta_goi_y||MAC_DINH.mo_ta_sp)}
+    ${list.length?`<div class="cards">${list.map(p=>card(p,list.length===1)).join("")}</div>`:`<div class="empty"><b>Sản phẩm sắp ra mắt</b>Anh chị nhắn Zalo SONA để được tư vấn nhé.</div>`}`)}</section>
+  ${promises()}
+  <section class="khoi">${W(`<div class="hai-cot"><div>${head("",tc.mot_man_tieu_de||MAC_DINH.mot_man_tieu_de,tc.mot_man_mo_ta||MAC_DINH.mot_man_mo_ta)}<ul class="vien-thuoc">${tags.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+    <div class="khung-ngang" role="img" aria-label="Ảnh màn hình app, dữ liệu mẫu"><div class="may-tinh-bang">${tc.anh_mot_man?`<img src="${esc(tc.anh_mot_man)}" alt="Ảnh màn hình app (dữ liệu mẫu)" style="width:100%;height:100%;object-fit:cover">`:`<div class="man"><b>${esc(list[0]?.ten||"App SONA")}</b><span>Ảnh màn hình Tổng quan</span><small>dữ liệu mẫu · sắp có</small></div>`}</div></div></div>`)}</section>
+  ${howTo(pick(TT().cach_mua,MAC_DINH.cach_mua))}
+  ${POSTS.length?`<section class="khoi">${W(`<div class="the-hoc"><div><span class="nhan">Miễn phí</span><h2 style="margin-top:var(--khoang-2)">Học AI cho chủ tiệm.</h2><p class="phu">Bài ngắn, đọc vài phút, làm được ngay.</p><div class="hang-nut"><a class="btn phu-btn" href="#hoc">Vào học</a></div></div>
+    <div class="vien-thuoc">${fl.map(k=>`<a href="#hoc/${encodeURIComponent(k)}">${esc(k)}</a>`).join("")}</div></div>`)}</section>`:""}
   ${band()}`}
-const band=(t,d,p)=>`<section class="band"><h2>${esc(t||"Anh chị cần tư vấn?")}</h2><p>${esc(d||LH().loi_moi||MAC_DINH.loi_moi)}</p><div class="btns">${contactBtn("Liên hệ qua Zalo",p)}</div></section>`;
-/* ---------- trang Sản phẩm ---------- */
-function productsPage(){const tc=TC();setMeta("Sản phẩm · "+(SITE.ten_web||"SONA"),"Sản phẩm của SONA: app quản lý spa trả một lần, không phí tháng.");
-  $("#app").innerHTML=`<section class="page-h"><span class="kicker">Sản phẩm</span><h1>Sản phẩm của SONA</h1><p>Mỗi sản phẩm làm cho một việc cụ thể, dễ dùng, trả một lần. Bấm vào để xem tính năng và câu hỏi thường gặp.</p>
-    <div class="search" id="sbox"${tc.an_o_tim?" hidden":""}>${ICON.search}<input id="q" type="search" enterkeyhint="search" autocomplete="off" placeholder="${esc(tc.o_tim||"Anh chị đang cần gì?")}" aria-label="Tìm sản phẩm"><button class="clr" id="clr" aria-label="Xóa tìm kiếm">×</button></div></section>
-    <nav class="cats" id="cats" aria-label="Loại sản phẩm"${tc.an_loc_loai?" hidden":""}></nav><div class="cards" id="grid"></div>${band()}`;
+/* ---------- trang Sản phẩm (đặc tả 6) ---------- */
+function productsPage(){const tc=TC();setMeta("Sản phẩm · "+(SITE.ten_web||"SONA"),"Phần mềm đơn giản cho chủ kinh doanh nhỏ của SONA. Trả một lần, không phí tháng.");
+  const cmp=PRODUCTS.filter(p=>lines(p.chon_neu).length);
+  $("#app").innerHTML=`<section class="page-h">${W(`<div class="dau-khoi"><h1>Sản phẩm</h1><p class="phu">${esc(tc.mo_ta_trang_sp||"Phần mềm đơn giản cho chủ kinh doanh nhỏ. Bắt đầu với hai app quản lý spa.")}</p></div>
+    <div class="search" id="sbox"${tc.an_o_tim?" hidden":""}>${ICON.search}<input id="q" type="search" enterkeyhint="search" autocomplete="off" placeholder="${esc(tc.o_tim||"Anh chị đang cần gì?")}" aria-label="Tìm sản phẩm"><button class="clr" id="clr" aria-label="Xóa tìm kiếm">×</button></div>
+    <nav class="cats" id="cats" aria-label="Nhóm sản phẩm"${tc.an_loc_loai?" hidden":""}></nav><div class="cards" id="grid"></div>`)}</section>
+  ${cmp.length>1?`<section class="khoi nen-phu">${W(`<h2>Chưa biết chọn app nào?</h2><div class="so-sanh">${cmp.slice(0,2).map(p=>`<div><h3>Chọn ${esc(p.ten)} nếu</h3><ul class="cham">${lines(p.chon_neu).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`).join("")}</div><div class="hang-nut">${contactBtn("Hỏi SONA qua Zalo")}</div>`)}</section>`:""}
+  ${band()}`;
   const q=$("#q");q.value=Q;$("#sbox").classList.toggle("has",!!Q);
   q.oninput=()=>{Q=q.value;$("#sbox").classList.toggle("has",!!Q);renderGrid()};q.onkeydown=e=>{if(e.key==="Enter")q.blur()};
   $("#clr").onclick=()=>{Q="";q.value="";$("#sbox").classList.remove("has");q.focus();renderGrid()};renderGrid()}
 function renderGrid(){const words=norm(Q).split(/\s+/).filter(Boolean);
-  const hit=p=>{const hay=norm([p.ten,p.phu_de,p.loai,p.nhan,p.cho_ai,...lines(p.loi_ich),...lines(p.van_de)].join(" "));return words.every(w=>hay.includes(w))};
-  const have=CATS.filter(c=>PRODUCTS.some(p=>catOf(p)===c));
+  const hit=p=>{const hay=norm([p.ten,p.phu_de,p.loai,p.nhan,p.nhom,p.cho_ai,...lines(p.loi_ich),...lines(p.van_de),...lines(p.the_y)].join(" "));return words.every(w=>hay.includes(w))};
+  const have=[...new Set(PRODUCTS.map(groupOf))];
   $("#cats").innerHTML=have.length>1?`<button class="cat${CAT?"":" on"}" data-c="" aria-pressed="${!CAT}">Tất cả</button>`+have.map(k=>`<button class="cat${CAT===k?" on":""}" data-c="${esc(k)}" aria-pressed="${CAT===k}">${esc(k)}</button>`).join(""):"";
   document.querySelectorAll(".cat").forEach(b=>b.onclick=()=>{CAT=b.dataset.c;renderGrid()});
-  const list=PRODUCTS.filter(hit).filter(p=>!CAT||catOf(p)===CAT);
-  $("#grid").innerHTML=list.length?list.map(card).join(""):`<div class="empty" style="grid-column:1/-1"><b>${words.length?"Chưa có sản phẩm phù hợp":"Sản phẩm sắp ra mắt"}</b>${words.length?"Anh chị thử từ khóa khác.":"Anh chị nhắn Zalo SONA để được tư vấn nhé."}</div>`}
-/* ---------- trang chi tiết sản phẩm: một khung chung cho mọi sản phẩm ----------
-   Lấy dữ liệu từ products.json: nhan, ten, phu_de, diem_nhan, anh_bia, van_de, loi_ich,
-   anh_minh_hoa, cho_ai, cach_nhan, cam_ket, noi_dung, cau_hoi, nut, ma_zalo. Mục nào trống thì ẩn. */
+  const list=PRODUCTS.filter(hit).filter(p=>!CAT||groupOf(p)===CAT);
+  $("#grid").innerHTML=list.length?list.map(p=>card(p,false)).join(""):`<div class="empty"><b>${words.length?"Chưa có sản phẩm phù hợp":"Sản phẩm sắp ra mắt"}</b>${words.length?"Anh chị thử từ khóa khác.":"Anh chị nhắn Zalo SONA để được tư vấn nhé."}</div>`;bindZalo()}
+/* ---------- trang chi tiết sản phẩm: MỘT KHUNG CHUNG cho mọi sản phẩm (đặc tả 7) ----------
+   Trường trong products.json: nhan, ten, phu_de, diem_nhan[], anh_bia, van_de[] ("Trước → Với app"),
+   loi_ich[] ("Tên: mô tả"), anh_minh_hoa[], cho_ai, cach_nhan, cam_ket, noi_dung, cau_hoi[], nut, ma_zalo.
+   Khối nào trống dữ liệu thì ẩn. Không có trường giá, không có nút mua (D-045). */
 function product(p){setMeta((p.seo_tieu_de||p.ten)+" · "+(SITE.ten_web||"SONA"),p.seo_mo_ta||p.phu_de);
   const vd=lines(p.van_de),li=lines(p.loi_ich),ca=lines(p.cho_ai),cn=lines(p.cach_nhan),dn=lines(p.diem_nhan),im=lines(p.anh_minh_hoa),qa=(p.cau_hoi||[]).filter(q=>q&&q.hoi);
-  const nut=p.nut||"Liên hệ tư vấn";
-  $("#app").innerHTML=`<a class="back" href="#san-pham">← Tất cả sản phẩm</a>
-  <section class="pd-top"><span class="tag">${esc(p.nhan||catOf(p))}</span><h1>${esc(p.ten)}</h1>${p.phu_de?`<p class="lead">${esc(p.phu_de)}</p>`:""}
+  const caps=lines(p.chu_thich_anh);
+  const heroImg=p.anh_bia?`<img class="bia" src="${esc(p.anh_bia)}" alt="${esc(p.ten)}">`:phone(im[0],p.ten,caps[0]||"Ảnh màn hình");
+  $("#app").innerHTML=W(`<a class="back" href="#san-pham">← Tất cả sản phẩm</a>
+  <section class="pd-top"><div><span class="nhan">${esc(p.nhan||groupOf(p))}</span><h1>${esc(p.ten)}</h1>${p.phu_de?`<p class="phu">${esc(p.phu_de)}</p>`:""}
     ${dn.length?`<ul class="chips">${dn.map(x=>`<li>${ICON.check}${esc(x)}</li>`).join("")}</ul>`:""}
-    <div class="btns">${contactBtn(nut,p)}${li.length?`<a class="btn phu" href="#tinh-nang" data-jump>Xem tính năng</a>`:""}</div></section>
-  ${p.anh_bia?`<div class="cover"><img src="${esc(p.anh_bia)}" alt="${esc(p.ten)}"></div>`:""}
-  ${vd.length?`<section class="sec" id="van-de"><div class="sec-h"><div><span class="kicker">Vấn đề</span><h2>Những việc ${esc(p.ten)} giúp anh chị gỡ</h2></div></div><ul class="pains">${vd.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></section>`:""}
-  ${li.length?`<section class="sec feat" id="tinh-nang"><div class="sec-h"><div><span class="kicker">Tính năng chính</span><h2>Có gì trong ${esc(p.ten)}</h2></div></div><div class="grid3">${boxes(li)}</div></section>`:""}
-  <section class="sec" id="anh-man-hinh"><div class="sec-h"><div><span class="kicker">Ảnh màn hình</span><h2>Giao diện app</h2></div></div>
-    ${im.length?`<div class="gal">${im.map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener"><img src="${esc(u)}" alt="Ảnh màn hình ${esc(p.ten)} (dữ liệu mẫu)" loading="lazy"></a>`).join("")}</div><p class="muted" style="font-size:13px;margin:10px 0 0">Ảnh chụp với dữ liệu mẫu.</p>`
-      :`<div class="note">Ảnh màn hình đang được cập nhật. Anh chị nhắn Zalo SONA để được xem trước.</div>`}</section>
-  ${ca.length?`<section class="sec" id="danh-cho-ai"><div class="grid2"><div><span class="kicker">Dành cho ai</span><div class="sec-h" style="margin-bottom:0"><h2>Phù hợp với tiệm nào</h2></div></div><div class="box"><ul class="ticks">${ca.map(x=>`<li>${ICON.check}<span>${esc(x)}</span></li>`).join("")}</ul></div></div></section>`:""}
-  ${cn.length||p.cam_ket?`<section class="sec" id="bat-dau"><div class="grid2"><div><span class="kicker">Cách bắt đầu</span><div class="sec-h" style="margin-bottom:0"><h2>Từ lúc liên hệ đến khi dùng</h2></div>${p.cam_ket?`<p class="muted">${esc(p.cam_ket)}</p>`:""}</div>${cn.length?`<div class="box">${cn.length>1?stepsHtml(cn):`<p>${esc(cn[0])}</p>`}</div>`:""}</div></section>`:""}
-  ${p.noi_dung?`<section class="sec"><div class="doc body">${md(p.noi_dung)}</div></section>`:""}
-  ${qa.length?`<section class="sec" id="hoi-dap"><div class="sec-h"><div><span class="kicker">Hỏi đáp</span><h2>Câu hỏi thường gặp</h2></div></div><div class="box faq">${qa.map(q=>`<details><summary>${esc(q.hoi)}</summary><p>${esc(q.dap)}</p></details>`).join("")}</div></section>`:""}
-  ${band("Quan tâm "+p.ten+"?","SONA tư vấn và báo giá riêng qua Zalo. Anh chị bấm nút dưới để nhắn SONA.",p)}
-  <div class="sticky"><b>${esc(p.ten)}</b>${contactBtn("Liên hệ",p)}</div>`;
+    <div class="hang-nut">${contactBtn(p.nut||"Liên hệ Zalo",p)}${li.length?`<a class="btn phu-btn" href="#tinh-nang" data-jump>Xem tính năng</a>`:""}</div></div>
+    <div class="pd-anh">${heroImg}</div></section>`)+`
+  ${vd.length?`<section class="khoi nen-phu" id="van-de">${W(`${head("Giải quyết việc gì",p.tieu_de_van_de||"Bớt sổ, bớt nhớ.")}<ul class="pains">${vd.map(x=>{const[a,b]=String(x).split(/\s*→\s*/);return b?`<li><p class="truoc">${esc(a)}</p><p class="sau">${esc(b)}</p></li>`:`<li><p>${esc(a)}</p></li>`}).join("")}</ul>`)}</section>`:""}
+  ${li.length?`<section class="khoi" id="tinh-nang">${W(`${head("Tính năng chính","Anh chị nhận được.")}<div class="feats">${li.map((x,i)=>{const[t,d]=splitTitle(x);return`<div class="box"><div class="o-ico">${FEAT_ICONS[i%FEAT_ICONS.length]}</div>${t?`<h3>${esc(t)}</h3>`:""}<p>${esc(d)}</p></div>`}).join("")}</div>`)}</section>`:""}
+  <section class="khoi nen-phu" id="anh-man-hinh">${W(`${head("Ảnh màn hình","Xem app trên điện thoại.")}
+    ${im.length?`<div class="gal">${im.map((u,i)=>`<figure>${phone(u,p.ten,caps[i]||"")}<figcaption>${esc(caps[i]||"Ảnh màn hình")} · dữ liệu mẫu</figcaption></figure>`).join("")}</div>`
+      :`<div class="note">Ảnh màn hình chụp với dữ liệu mẫu đang được cập nhật. Anh chị nhắn Zalo SONA để xem bản demo.</div>`}`)}</section>
+  ${ca.length?`<section class="khoi" id="danh-cho-ai">${W(`<div class="rong-chu"><span class="nhan">Dành cho ai</span><h2 style="margin-top:var(--khoang-2)">Phù hợp với tiệm nào.</h2><ul class="cham" style="margin-top:var(--khoang-6)">${ca.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`)}</section>`:""}
+  ${cn.length?`<section class="khoi nen-phu" id="bat-dau">${W(`<h2>Cách bắt đầu.</h2>${p.cam_ket?`<p class="phu" style="margin-top:var(--khoang-4);max-width:var(--rong-chu)">${esc(p.cam_ket)}</p>`:""}${stepsHtml(cn,"doc")}`)}</section>`:""}
+  ${p.noi_dung?`<section class="khoi">${W(`<div class="art body" style="padding:0">${md(p.noi_dung)}</div>`)}</section>`:""}
+  ${qa.length?`<section class="khoi" id="hoi-dap">${W(`<h2>Câu hỏi thường gặp.</h2><div class="faq">${qa.map(q=>`<details><summary>${esc(q.hoi)}</summary><p>${esc(q.dap)}</p></details>`).join("")}</div>`)}</section>`:""}
+  ${band("Quan tâm "+p.ten+"?","Nhắn Zalo SONA để xem bản demo dữ liệu mẫu, được tư vấn và báo giá riêng.",p)}
+  <div class="sticky"><b>${esc(p.ten)}</b>${contactBtn("Liên hệ",p,"nho")}</div>`;
   document.querySelectorAll("[data-jump]").forEach(a=>a.onclick=e=>{e.preventDefault();document.getElementById("tinh-nang")?.scrollIntoView({behavior:"smooth"})});
   document.querySelectorAll("#app [data-cp]").forEach(b=>b.onclick=()=>copy(b.dataset.cp))}
-/* ---------- Giới thiệu SONA ---------- */
+/* ---------- Giới thiệu SONA (đặc tả 8) ---------- */
 function infoPage(){const t=TT();setMeta("Giới thiệu · "+(SITE.ten_web||"SONA"),t.lam_gi||MAC_DINH.lam_gi);
-  const gt=pick(t.gia_tri,MAC_DINH.gia_tri),steps=pick(t.cach_mua,MAC_DINH.cach_mua);
-  $("#app").innerHTML=`<section class="page-h"><span class="kicker">Giới thiệu</span><h1>${esc(SITE.ten_web||"SONA")} · ${esc(khauHieu())}</h1><p>${esc(t.lam_gi||MAC_DINH.lam_gi)}</p></section>
-  <section class="sec"><div class="sec-h"><div><span class="kicker">Giá trị cốt lõi</span><h2>SONA làm việc theo ${gt.length} giá trị</h2></div></div><div class="grid3">${boxes(gt)}</div></section>
-  <section class="sec"><div class="grid2"><div><span class="kicker">Cách làm việc</span><div class="sec-h" style="margin-bottom:0"><h2>Mua và dùng sản phẩm SONA</h2></div><p class="muted">Mọi sản phẩm đều mua qua tư vấn trên Zalo. SONA báo giá riêng cho từng tiệm.</p></div><div class="box">${stepsHtml(steps)}</div></div></section>
+  const gt=pick(t.gia_tri,MAC_DINH.gia_tri);
+  $("#app").innerHTML=`<section class="page-h giua">${W(`<span class="nhan">Về ${esc(SITE.ten_web||"SONA")}</span><h1 style="font-size:var(--chu-hien-thi)">${esc(khauHieu())}</h1><p class="phu">${esc(t.lam_gi||MAC_DINH.lam_gi)}</p>`)}</section>
+  <section class="khoi">${W(`<div class="hai-cot"><h2>${esc(t.cau_chuyen_tieu_de||MAC_DINH.cau_chuyen_tieu_de)}</h2><p class="phu">${esc(t.cau_chuyen||MAC_DINH.cau_chuyen)}</p></div>`)}</section>
+  <section class="khoi nen-phu">${W(`<h2>Điều SONA giữ.</h2><div class="gia-tri">${gt.map((x,i)=>{const[a,d]=splitTitle(x);return`<div class="box"><span class="so">${i+1}</span>${a?`<h3>${esc(a)}</h3>`:""}<p>${esc(d)}</p></div>`}).join("")}</div>`)}</section>
   ${band()}`}
-/* ---------- Liên hệ ---------- */
+/* ---------- Liên hệ (đặc tả 9) ---------- */
 function contactPage(){const l=LH(),S=SITE.mang_xa_hoi||{};setMeta("Liên hệ · "+(SITE.ten_web||"SONA"),l.loi_moi||MAC_DINH.loi_moi);
   const links=[["Facebook",S.facebook],["TikTok",S.tiktok],["YouTube",S.youtube]].filter(x=>/^https:\/\//.test(x[1]||""));
-  $("#app").innerHTML=`<section class="page-h"><span class="kicker">Liên hệ</span><h1>Nói chuyện với SONA</h1><p>${esc(l.loi_moi||MAC_DINH.loi_moi)}</p></section>
-  <section class="sec" style="padding-top:32px"><div class="box zcard"><div><span class="kicker">Zalo SONA</span><div class="num">${esc(SITE.zalo||"")}</div><p class="muted" style="margin:4px 0 0">Trả lời tin nhắn ${esc(l.gio||MAC_DINH.gio)}</p></div>${contactBtn("Nhắn Zalo SONA")}</div></section>
-  <section class="sec" style="padding-top:16px"><div class="grid2"><div class="box"><h3>Thông tin liên hệ</h3><div class="kv" style="margin-top:12px">${SITE.zalo?`<div><span>Zalo</span><b>${esc(SITE.zalo)}</b></div>`:""}${SITE.hotline?`<div><span>Hotline</span><b>${esc(SITE.hotline)}</b></div>`:""}${SITE.email?`<div><span>Email</span><b>${esc(SITE.email)}</b></div>`:""}${SITE.dia_chi?`<div><span>Địa chỉ</span><b>${esc(SITE.dia_chi)}</b></div>`:""}</div></div>
-    <div class="box"><h3>Theo dõi SONA</h3>${links.length?`<div class="btns" style="margin-top:12px">${links.map(([n,u])=>`<a class="btn phu" href="${esc(u)}" target="_blank" rel="noopener">${esc(n)}</a>`).join("")}</div>`:`<p>Đang cập nhật.</p>`}</div></div></section>`}
-/* ---------- học AI miễn phí: thư mục → bài (giữ nguyên) ---------- */
+  const ma=PRODUCTS.map(p=>p.ma_zalo).filter(Boolean).slice(0,3);
+  $("#app").innerHTML=`<section class="page-h giua">${W(`<h1>Liên hệ ${esc(SITE.ten_web||"SONA")}</h1><p class="phu">${esc(l.loi_moi||MAC_DINH.loi_moi)}</p>
+    <div class="zcard"><div class="o-ico" style="margin-left:auto;margin-right:auto">${ICON.chat}</div><span class="nhan">Zalo</span><div class="num">${esc(zaloShow())}</div><div class="hang-nut">${contactBtn("Mở Zalo")}</div>
+      <p class="nho-chu">Trả lời từ ${esc(l.gio||MAC_DINH.gio)} hằng ngày.${ma.length?` Khi nhắn, anh chị ghi giúp mã ${ma.map(esc).join(" hoặc ")} để SONA biết anh chị quan tâm sản phẩm nào.`:""}</p></div>
+    ${SITE.hotline||SITE.email||SITE.dia_chi?`<div class="kv">${SITE.hotline?`<div><span>Hotline</span><b>${esc(SITE.hotline)}</b></div>`:""}${SITE.email?`<div><span>Email</span><b>${esc(SITE.email)}</b></div>`:""}${SITE.dia_chi?`<div><span>Địa chỉ</span><b>${esc(SITE.dia_chi)}</b></div>`:""}</div>`:""}
+    ${links.length?`<div class="mxh"><h3>Theo dõi SONA</h3><div class="vien-thuoc">${links.map(([n,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)}</a>`).join("")}</div></div>`:""}
+    <p class="rieng-tu">${esc(l.rieng_tu||MAC_DINH.rieng_tu)}</p>`)}</section>`}
+/* ---------- Học AI miễn phí: thư mục → bài (giữ nguyên nội dung và cách dùng) ---------- */
 const postHit=words=>a=>{const hay=norm([a.tieu_de,a.tom_tat,a.chu_de,a.noi_dung].join(" "));return words.every(w=>hay.includes(w))};
 const fmtDate=d=>{const m=String(d||"").match(/(\d{4})-(\d{2})-(\d{2})/);return m?m[3]+"/"+m[2]+"/"+m[1]:""};
 const lessonCard=a=>`<a class="ls" href="#bai/${esc(a.slug)}"><span class="meta"><b>${esc(a.chu_de||"Kiến thức AI")}</b>· ${esc(fmtDate(a.ngay))} · ${esc(a.phut||3)} phút đọc</span><h3>${esc(a.tieu_de)}</h3><p>${esc(a.tom_tat)}</p></a>`;
 const FOLDER_ORDER=["Bắt đầu","Viết nội dung","Chăm khách","Bán hàng","Quản lý tiệm"];
 const folders=()=>{const m={};POSTS.forEach(a=>{const k=a.chu_de||"Kiến thức AI";(m[k]=m[k]||[]).push(a)});return Object.entries(m).sort((a,b)=>(FOLDER_ORDER.indexOf(a[0])+99)%99-(FOLDER_ORDER.indexOf(b[0])+99)%99)};
 function hocPage(){setMeta("Học AI miễn phí · "+(SITE.ten_web||"SONA"),"Bài học AI miễn phí cho người kinh doanh nhỏ, mỗi bài đọc khoảng 3 phút, làm được ngay.");
-  $("#app").innerHTML=`<section class="hoc-hero"><span class="free">Miễn phí</span><h1>Học AI miễn phí</h1><p>Chọn một thư mục để xem bài. Mỗi bài đọc khoảng 3 phút, làm được ngay.</p></section>
+  $("#app").innerHTML=W(`<section class="hoc-hero"><span class="free">Miễn phí</span><h1>Học AI miễn phí</h1><p>Chọn một thư mục để xem bài. Mỗi bài đọc khoảng 3 phút, làm được ngay.</p></section>
   <div class="search" id="hbox" style="max-width:none">${ICON.search}<input id="hq" type="search" enterkeyhint="search" autocomplete="off" placeholder="Tìm bài học..." aria-label="Tìm bài học"><button class="clr" id="hclr" aria-label="Xóa tìm kiếm">×</button></div>
-  <div class="folders" id="folders"></div>`;
+  <div class="folders" id="folders"></div>`);
   const q=$("#hq");const draw=()=>{const words=norm(q.value).split(/\s+/).filter(Boolean);$("#hbox").classList.toggle("has",!!q.value);
-    if(words.length){const list=POSTS.filter(postHit(words));$("#folders").className="lessons";$("#folders").innerHTML=list.length?list.map(lessonCard).join(""):`<div class="empty" style="grid-column:1/-1"><b>Chưa có bài phù hợp</b>Anh chị thử từ khóa khác.</div>`;return}
+    if(words.length){const list=POSTS.filter(postHit(words));$("#folders").className="lessons";$("#folders").innerHTML=list.length?list.map(lessonCard).join(""):`<div class="empty"><b>Chưa có bài phù hợp</b>Anh chị thử từ khóa khác.</div>`;return}
     $("#folders").className="folders";const F=folders();
     $("#folders").innerHTML=F.length?F.map(([k,ls])=>`<a class="folder" href="#hoc/${encodeURIComponent(k)}">${ICON.folder}<span><b>${esc(k)}</b><small>${ls.length} bài</small></span><i>${ICON.arrow}</i></a>`).join(""):`<div class="empty"><b>Bài học đầu tiên sắp lên</b></div>`};
   q.oninput=draw;q.onkeydown=e=>{if(e.key==="Enter")q.blur()};$("#hclr").onclick=()=>{q.value="";q.focus();draw()};draw()}
 function hocFolder(k){const ls=POSTS.filter(a=>(a.chu_de||"Kiến thức AI")===k);document.title=k+" · Học AI miễn phí";
-  $("#app").innerHTML=`<a class="back" href="#hoc">← Học AI miễn phí</a><section class="hoc-hero" style="padding-top:10px"><h1>${esc(k)}</h1><p>${ls.length} bài</p></section><div class="lessons">${ls.map(lessonCard).join("")||`<div class="empty"><b>Thư mục này chưa có bài</b></div>`}</div>`}
+  $("#app").innerHTML=W(`<a class="back" href="#hoc">← Học AI miễn phí</a><section class="hoc-hero" style="padding-top:var(--khoang-5)"><h1>${esc(k)}</h1><p>${ls.length} bài</p></section><div class="lessons">${ls.map(lessonCard).join("")||`<div class="empty"><b>Thư mục này chưa có bài</b></div>`}</div>`)}
 const safeUrl=u=>/^(https:\/\/|img\/|#)[^\s"'<>]*$/.test(u)&&!u.includes("..");
 function md(src){const inl=t=>esc(t).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>").replace(/\[([^\]]+)\]\(([^)\s]+)\)/g,(m,x,u)=>safeUrl(u)?`<a href="${u}"${/^https/.test(u)?' target="_blank" rel="noopener"':""}>${x}</a>`:m);const out=[];let ul=null;
   String(src||"").split(/\n/).forEach(l=>{const t=l.trim();
@@ -394,14 +564,21 @@ function md(src){const inl=t=>esc(t).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>").repla
     else out.push("<p>"+inl(t)+"</p>")});
   return out.map(x=>Array.isArray(x)?"<ul>"+x.join("")+"</ul>":x).join("")}
 function article(a){setMeta((a.seo_tieu_de||a.tieu_de)+" · "+(SITE.ten_web||"SONA"),a.seo_mo_ta||a.tom_tat);const sp=a.sp&&PRODUCTS.find(p=>p.slug===a.sp);
-  $("#app").innerHTML=`<article class="art"><a class="back" href="#hoc">← Học AI miễn phí</a>
-  <div class="meta" style="margin-top:16px"><span class="free">Miễn phí</span><span>${esc(a.chu_de||"")}</span><span>${esc(fmtDate(a.ngay))}</span><span>${esc(a.phut||3)} phút đọc</span></div>
+  $("#app").innerHTML=W(`<article class="art"><a class="back" href="#hoc">← Học AI miễn phí</a>
+  <div class="meta"><span class="free">Miễn phí</span><span>${esc(a.chu_de||"")}</span><span>${esc(fmtDate(a.ngay))}</span><span>${esc(a.phut||3)} phút đọc</span></div>
   <h1>${esc(a.tieu_de)}</h1>${a.anh?`<div class="cover"><img src="${esc(a.anh)}" alt="${esc(a.tieu_de)}"></div>`:""}${a.viec?`<div class="lamngay"><b>Làm ngay 1 việc</b><p>${esc(a.viec)}</p></div>`:""}<div class="body">${md(a.noi_dung)}</div>
   ${sp?`<div class="cta"><b>Muốn có công cụ làm sẵn?</b><p>${esc(sp.ten)}</p><a class="btn" href="#sp/${esc(sp.slug)}">Xem sản phẩm ${ICON.arrow}</a></div>`:""}
-  </article>`;document.querySelectorAll("[data-cp]").forEach(b=>b.onclick=()=>copy(b.dataset.cp))}
+  </article>`);document.querySelectorAll("[data-cp]").forEach(b=>b.onclick=()=>copy(b.dataset.cp))}
 /* ---------- trang riêng tạo trong Admin ---------- */
 function pageView(pg){setMeta((pg.seo_tieu_de||pg.tieu_de)+" · "+(SITE.ten_web||"SONA"),pg.seo_mo_ta);
-  $("#app").innerHTML=`<article class="art" style="padding-top:32px"><h1>${esc(pg.tieu_de)}</h1>${pg.anh?`<div class="cover"><img src="${esc(pg.anh)}" alt="${esc(pg.tieu_de)}"></div>`:""}<div class="body">${md(pg.noi_dung)}</div></article>`;
+  $("#app").innerHTML=W(`<article class="art" style="padding-top:var(--khoang-8)"><h1>${esc(pg.tieu_de)}</h1>${pg.anh?`<div class="cover"><img src="${esc(pg.anh)}" alt="${esc(pg.tieu_de)}"></div>`:""}<div class="body">${md(pg.noi_dung)}</div></article>`);
   document.querySelectorAll("[data-cp]").forEach(b=>b.onclick=()=>copy(b.dataset.cp))}
+/* ---------- menu điện thoại, đổi sáng/tối, viền menu khi cuộn ---------- */
+const mo=$("#moMenu"),bang=$("#bangMenu");
+function closeMenu(){bang.classList.remove("mo");mo.setAttribute("aria-expanded","false")}
+mo.onclick=()=>{const m=bang.classList.toggle("mo");mo.setAttribute("aria-expanded",m)};
+$("#doiNen").onclick=()=>{const r=document.documentElement,cur=r.getAttribute("data-theme");const dark=cur==="dark"||(!cur&&matchMedia("(prefers-color-scheme: dark)").matches);const nx=dark?"light":"dark";r.setAttribute("data-theme",nx);try{localStorage.setItem("sona-nen",nx)}catch(e){}};
+addEventListener("scroll",()=>$("#menu").classList.toggle("da-cuon",scrollY>8),{passive:true});
+addEventListener("keydown",e=>{if(e.key==="Escape")closeMenu()});
 addEventListener("hashchange",route);load();
 </script></body></html>
