@@ -27,12 +27,12 @@
     "nut_chu": "Xem dịch vụ",
     "nut_link": "#dich-vu",
     "tieu_de_goi_y": "App nổi bật.",
-    "mo_ta_goi_y": "App dùng ngay trên điện thoại, dữ liệu nằm trong tài khoản Google của anh chị.",
+    "mo_ta_goi_y": "App dùng ngay trên điện thoại. Cách nhận và nơi lưu dữ liệu ghi rõ trên trang từng app.",
     "tieu_de_cam_ket": "Đơn giản ngay từ đầu.",
     "cam_ket": [
       "Trả một lần: Không thu phí phần mềm hằng tháng.",
-      "Dữ liệu là của tiệm: App và dữ liệu nằm trong tài khoản Google của spa. Tiệm giữ toàn quyền.",
-      "SONA cài cùng anh chị: Hẹn giờ gọi video, hướng dẫn từng bước. Anh chị tự bấm, SONA không điều khiển máy."
+      "Dùng trên điện thoại: Mở trên điện thoại, thêm ra màn hình chính để dùng hằng ngày.",
+      "Hỗ trợ qua Zalo: Vướng chỗ nào, anh chị nhắn Zalo SONA."
     ],
     "mot_man_tieu_de": "Việc cả ngày, gọn trên một app.",
     "mot_man_mo_ta": "Từ lúc khách đặt lịch đến lúc chốt tiền cuối ngày, anh chị xem và ghi ở cùng một chỗ.",
@@ -70,11 +70,11 @@
       "Dữ liệu: Quyết định dựa trên thực tế."
     ],
     "cach_mua": [
-      "Nhắn Zalo SONA: Kể cách tiệm đang làm. SONA gợi ý app phù hợp.",
-      "Hẹn giờ gọi video: SONA hướng dẫn anh chị cài app vào tài khoản Google của spa và tự bấm cấp quyền.",
+      "Nhắn Zalo SONA: Kể việc tiệm đang cần. SONA gợi ý app phù hợp.",
+      "Nhận app theo hướng dẫn: Cách nhận và cài tùy từng app, ghi rõ trên trang của app đó.",
       "Dùng hằng ngày: Thêm app ra màn hình chính điện thoại, mở là dùng."
     ],
-    "ghi_chu_buoc": "Anh chị chỉ cần một tài khoản Google của spa và điện thoại hoặc máy tính."
+    "ghi_chu_buoc": "Pyna Spa Pro: cài vào tài khoản Google của spa qua gọi video, dữ liệu nằm trong tài khoản của spa. Lịch Đăng Spa: dùng qua link, dữ liệu lưu trên điện thoại."
   },
   "lien_he": {
     "gio": "8h–20h",
@@ -113,14 +113,13 @@
       "Cộng tác viên: Người viết bài, dựng video, làm kỹ thuật muốn nhận việc cùng SONA."
     ],
     "quyen_loi": [
-      "Quyền lợi khi giới thiệu thành công: Mức cụ thể SONA trao đổi trực tiếp với từng đối tác.",
-      "Trao đổi trực tiếp: Làm việc với SONA qua Zalo, rõ ràng từng việc.",
-      "Hợp tác minh bạch: Thống nhất cách làm và quyền lợi trước khi bắt đầu."
+      "Quyền lợi: SONA trao đổi trực tiếp khi chương trình chính thức mở.",
+      "Minh bạch: Hai bên thống nhất cách làm và quyền lợi trước khi bắt đầu."
     ],
     "buoc": [
       "Bấm Đăng ký đối tác: Nhắn Zalo SONA tin \"Đăng ký đối tác SONA\".",
       "Giới thiệu ngắn: Anh chị là ai, muốn hợp tác theo cách nào.",
-      "SONA trao đổi trực tiếp: Cách làm việc và quyền lợi cụ thể.",
+      "SONA ghi nhận và liên hệ lại: SONA trao đổi trực tiếp khi chương trình chính thức mở.",
       "Bắt đầu hợp tác: Hai bên thống nhất rồi mới bắt đầu."
     ],
     "ghi_chu": "Web không thu thông tin cá nhân. Mọi trao đổi đăng ký làm qua Zalo."
