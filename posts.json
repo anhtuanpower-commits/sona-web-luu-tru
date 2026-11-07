@@ -1,5 +1,15 @@
 [
   {
+    "slug": "tin-bao-khach-dat-lich-tet-som-bang-ai",
+    "tieu_de": "Nhờ AI viết tin báo khách đặt lịch Tết sớm",
+    "tom_tat": "Một câu lệnh để AI viết tin ngắn báo khách quen lịch làm Tết, hạn chót đặt và ngày tiệm nghỉ.",
+    "chu_de": "Bán hàng",
+    "ngay": "2026-11-08",
+    "phut": 3,
+    "viec": "Hôm nay nhờ AI viết 1 tin báo lịch Tết, gửi trước cho khách quen.",
+    "noi_dung": "Gần Tết khách dồn lịch vào vài ngày cuối. Báo sớm giúp khách chủ động đặt, tiệm đỡ phải từ chối khách quen.\n\n## Câu lệnh chép-dán\n\n> Bạn là chủ tiệm [tóc/nail/spa] tên [tên tiệm]. Viết giúp tôi tin nhắn Zalo dưới 60 chữ báo khách quen: tiệm nhận đặt lịch làm Tết từ hôm nay đến hết ngày [hạn chót], tiệm nghỉ Tết từ ngày [ngày nghỉ] đến ngày [ngày mở lại]. Khách nhắn lại tên, dịch vụ và ngày muốn làm để tiệm giữ chỗ. Lời lẽ thân thiện, không dọa hết chỗ.\n\n## Cách làm\n\n- Mở ChatGPT, chép câu lệnh trên vào.\n- Thay chữ trong ngoặc vuông bằng **ngày thật** của tiệm, đọc lại cho đúng.\n- Gửi cho **khách quen** trước, vài hôm sau mới đăng lên trang của tiệm.\n- Khách nhắn đặt thì ghi ngay vào sổ hoặc app lịch hẹn.\n\n## Lưu ý\n\n- Chỉ ghi \"còn ít chỗ\" khi lịch thật sự gần kín.\n- Nếu tiệm cần khách cọc thì ghi rõ số tiền cọc trong tin.\n- Gần hạn chót có thể nhắc lại một lần, đừng nhắn quá nhiều."
+  },
+  {
     "slug": "tin-xin-phep-dang-anh-khach-bang-ai",
     "tieu_de": "Nhờ AI viết tin xin phép khách trước khi đăng ảnh",
     "tom_tat": "Một câu lệnh để AI viết tin ngắn hỏi khách có đồng ý cho tiệm đăng ảnh trước và sau khi làm.",
