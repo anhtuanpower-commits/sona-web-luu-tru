@@ -1,5 +1,15 @@
 [
   {
+    "slug": "tra-loi-khach-xin-bot-gia-bang-ai",
+    "tieu_de": "Nhờ AI viết câu trả lời khi khách xin bớt giá",
+    "tom_tat": "Một câu lệnh để AI viết tin trả lời lịch sự khi khách xin giảm giá, giữ giá mà vẫn giữ khách.",
+    "chu_de": "Bán hàng",
+    "ngay": "2026-11-09",
+    "phut": 3,
+    "viec": "Hôm nay nhờ AI viết 1 câu trả lời khách xin bớt giá, lưu làm tin nhắn nhanh.",
+    "noi_dung": "Khách nhắn \"bớt chút đi em\" là chuyện thường ngày. Trả lời vội dễ mất lãi hoặc mất lòng khách.\n\n## Câu lệnh chép-dán\n\n> Bạn là chủ tiệm [tóc/nail/spa] tên [tên tiệm]. Khách nhắn xin bớt giá dịch vụ [tên dịch vụ] giá [giá]. Viết giúp tôi tin nhắn Zalo dưới 60 chữ: cảm ơn khách, nói nhẹ nhàng là tiệm giữ đúng giá, và gợi ý [dịch vụ rẻ hơn hoặc quà nhỏ tiệm có thể tặng]. Lời lẽ thân thiện, không chê khách, không hứa điều tiệm không làm được.\n\n## Cách làm\n\n- Mở ChatGPT, chép câu lệnh trên vào.\n- Thay chữ trong ngoặc vuông. Chỉ ghi món quà hay gói rẻ hơn mà **tiệm thật sự có**.\n- Đọc lại, sửa cho giống giọng mình rồi lưu làm **tin nhắn nhanh** trong Zalo.\n- Lần sau khách xin bớt, mở tin đó ra, sửa tên dịch vụ rồi gửi.\n\n## Lưu ý\n\n- Khách quen gặp khó khăn thì chủ tiệm tự quyết, không cần theo mẫu.\n- Đừng giảm cho người này mà không giảm cho người khác cùng lúc, khách hay so với nhau.\n- Giữ giá đều tay giúp khách tin bảng giá của tiệm."
+  },
+  {
     "slug": "tin-bao-khach-dat-lich-tet-som-bang-ai",
     "tieu_de": "Nhờ AI viết tin báo khách đặt lịch Tết sớm",
     "tom_tat": "Một câu lệnh để AI viết tin ngắn báo khách quen lịch làm Tết, hạn chót đặt và ngày tiệm nghỉ.",
